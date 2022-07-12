@@ -25,17 +25,6 @@ class Welcome extends CI_Controller {
 	{
 		// Layouts
 		$this->load->view('layouts/main');
-		// $this->load->view('layouts/navbar');
-		// $this->load->view('layouts/sidebar');
-		// $this->load->view('layouts/footer');
 		// $this->load->view('landingPage/mainLanding');
-
-		// Data Kriteria
-		// $this->load->view('dataKriteria/createDataKriteria');
-		// $this->load->view('dataKriteria/dataKriteria');
-
-		// Landing Page
-		// $this->load->view('landing_page/index');
-
 	}
 }

@@ -55,21 +55,48 @@ License: You must have a valid license purchased only from above link or https:/
 										<td>System Architect</td>
 										<td>Edinburgh</td>
 										<td>61</td>
-										<td>2011/04/25</td>
+										<td>
+											<div class="row">
+												<a href="#" class="nav-link">
+													<i class="link-icon" data-feather="edit-2"></i>
+												</a>
+												<a href="#" class="nav-link">
+													<i class="link-icon" data-feather="trash-2"></i>
+												</a>
+											</div>
+										</td>
 									</tr>
 									<tr>
 										<td>Garrett Winters</td>
 										<td>Accountant</td>
 										<td>Tokyo</td>
 										<td>63</td>
-										<td>2011/07/25</td>
+										<td class="text-center">
+											<div class="row">
+												<a href="#" class="nav-link">
+													<i class="link-icon" data-feather="edit-2"></i>
+												</a>
+												<a href="#" class="nav-link">
+													<i class="link-icon" data-feather="trash-2"></i>
+												</a>
+											</div>
+										</td>
 									</tr>
 									<tr>
 										<td>Ashton Cox</td>
 										<td>Junior Technical Author</td>
 										<td>San Francisco</td>
 										<td>66</td>
-										<td>2009/01/12</td>
+										<td>
+											<div class="row">
+												<a href="#" class="nav-link">
+													<i class="link-icon" data-feather="edit-2"></i>
+												</a>
+												<a href="#" class="nav-link">
+													<i class="link-icon" data-feather="trash-2"></i>
+												</a>
+											</div>
+										</td>
 									</tr>
 								</tbody>
 							</table>
