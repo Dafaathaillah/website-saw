@@ -20,9 +20,11 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('layouts/main');
+		// $this->load->view('layouts/main');
 		// $this->load->view('layouts/navbar');
 		// $this->load->view('layouts/sidebar');
 		// $this->load->view('layouts/footer');
+		$this->load->view('dataKriteria/createDataKriteria');
+		// $this->load->view('dataKriteria/dataKriteria');
 	}
 }

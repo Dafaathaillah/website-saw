@@ -30,54 +30,57 @@ License: You must have a valid license purchased only from above link or https:/
 	<link rel="shortcut icon" href="assets/images/favicon.png" />
 </head>
 
+
 <body>
-	<div class="main-wrapper">
-
-		<!-- partial:partials/_sidebar.html -->
-		<?php include 'sidebar.php';?>
-		<!-- partial -->
-
-		<div class="page-wrapper">
-
-			<!-- partial:partials/_navbar.html -->
-			<?php include 'navbar.php';?>
-			<!-- partial -->
-
-			<div class="page-content">
-
-				<div class="d-flex justify-content-between align-items-center flex-wrap grid-margin">
-					<div>
-						<h4 class="mb-3 mb-md-0">Welcome to Dashboard</h4>
-					</div>
-					<div class="d-flex align-items-center flex-wrap text-nowrap">
-						<div class="input-group date datepicker dashboard-date mr-2 mb-2 mb-md-0 d-md-none d-xl-flex"
-							id="dashboardDate">
-							<span class="input-group-addon bg-transparent"><i data-feather="calendar"
-									class=" text-primary"></i></span>
-							<input type="text" class="form-control">
+	<div class="container mt-3">
+		<div class="row">
+			<div class="col-md-12 grid-margin stretch-card">
+				<div class="card">
+					<div class="card-body">
+						<h6 class="card-title">Data Table</h6>
+						<div class="table-responsive">
+							<table id="dataTableExample" class="table">
+								<thead>
+									<tr>
+										<th>Name</th>
+										<th>Position</th>
+										<th>Office</th>
+										<th>Age</th>
+										<th>Start date</th>
+										<th>Salary</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Tiger Nixon</td>
+										<td>System Architect</td>
+										<td>Edinburgh</td>
+										<td>61</td>
+										<td>2011/04/25</td>
+										<td>$320,800</td>
+									</tr>
+									<tr>
+										<td>Garrett Winters</td>
+										<td>Accountant</td>
+										<td>Tokyo</td>
+										<td>63</td>
+										<td>2011/07/25</td>
+										<td>$170,750</td>
+									</tr>
+									<tr>
+										<td>Ashton Cox</td>
+										<td>Junior Technical Author</td>
+										<td>San Francisco</td>
+										<td>66</td>
+										<td>2009/01/12</td>
+										<td>$86,000</td>
+									</tr>
+								</tbody>
+							</table>
 						</div>
-						<button type="button" class="btn btn-primary btn-icon-text mb-2 mb-md-0">
-							<i class="btn-icon-prepend" data-feather="download-cloud"></i>
-							Download Report
-						</button>
 					</div>
 				</div>
-
-				<div class="row">
-					<div class="col-12 col-xl-12 stretch-card">
-						<div class="row flex-grow">
-							<div class="stretch-card">
-							
-							</div>
-						</div>
-					</div>
-				</div> <!-- row -->
 			</div>
-
-			<!-- partial:partials/_footer.html -->
-			<?php include 'footer.php';?>
-			<!-- partial -->
-
 		</div>
 	</div>
 
@@ -101,5 +104,3 @@ License: You must have a valid license purchased only from above link or https:/
 	<script src="assets/js/datepicker.js"></script>
 	<!-- end custom js for this page -->
 </body>
-
-</html>
