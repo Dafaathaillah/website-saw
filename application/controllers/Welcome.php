@@ -24,6 +24,6 @@ class Welcome extends CI_Controller {
 		// $this->load->view('layouts/navbar');
 		// $this->load->view('layouts/sidebar');
 		// $this->load->view('layouts/footer');
-		$this->load->view('landing_page/index');
+		$this->load->view('landingPage/mainLanding');
 	}
 }

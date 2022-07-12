@@ -47,6 +47,7 @@ header {
     background: #212332;
     color: #a2b2bb;
     padding: 15px 0;
+    border-bottom: .5px solid #313347;
     z-index: 10;
 }
 
@@ -84,8 +85,7 @@ header {
 
 .navbar {
     padding: 25px 0;
-    background: #ffffff !important;
-    border-bottom: .1px solid #eeeeef;
+    background: #212332 !important;
 }
 
 /* Navbar Brand */
@@ -104,7 +104,7 @@ header {
 /* Nav Link */
 .navbar .navbar-nav .nav-item .nav-link {
     font-size: 16px;
-    color: #7f8083;
+    color: #ffffff;
     font-weight: 500;
     padding: 0;
     transition: all .3s ease-in-out;
@@ -198,7 +198,7 @@ header {
 .slider .slider-content h1 {
     font-size: 60px;
     font-weight: 700;
-    color: #424457;
+    color: #ffffff;
     margin: 0;
     padding: 0;
     
@@ -207,7 +207,7 @@ header {
 .slider .slider-content p {
     font-size: 16px;
     line-height: 26px;
-    color: #6b6c71;
+    color: #cfd1e3;
     font-weight: 500;
     padding: 0;
     margin: 0;
@@ -229,7 +229,6 @@ header {
     margin: 0 10px;
     position: relative;
     text-decoration: none;
-    box-shadow: 2px 2px 20px -1px rgba(167,179,184,0.5);
     transition: all .5s ease-in-out;
     display: inline-block;
 }
@@ -250,7 +249,6 @@ header {
     margin: 0 10px;
     text-decoration: none;
     position: relative;
-    box-shadow: 2px 2px 20px -1px rgba(167,179,184,0.5);
     transition: all .5s ease-in-out;
     display: inline-block;
 }
@@ -271,6 +269,7 @@ header {
 --------------------------------------------------*/
 .about-us {
     padding: 130px 0;
+    background-color: #212332;
 }
 
 .about-us .about-us-content .heading {
@@ -282,20 +281,20 @@ header {
 .about-us .about-us-content .heading h2 {
     font-size: 30px;
     font-weight: 700;
-    color: #424457;
+    color: #ffffff;
     text-transform: uppercase;
 }
 
 .about-us .about-us-content .heading .sub-heading {
     font-size: 18px;
     font-weight: 400;
-    color: #9292a3;
+    color: #ffffff;
 }
 
 .about-us .about-us-content p:last-of-type {
     font-size: 18px;
     font-weight: 300;
-    color: #8d8c8c;
+    color: #cfd1e3;
     line-height: 28px;
     margin-bottom: 40px;
 }
@@ -311,7 +310,6 @@ header {
     margin-right: 10px;
     position: relative;
     text-decoration: none;
-    box-shadow: 2px 2px 20px -1px rgba(167,179,184,0.5);
     transition: all .5s ease-in-out;
     display: inline-block;
 }
@@ -332,7 +330,6 @@ header {
     margin-left: 10px;
     text-decoration: none;
     position: relative;
-    box-shadow: 2px 2px 20px -1px rgba(167,179,184,0.5);
     transition: all .5s ease-in-out;
     display: inline-block;
 }
@@ -353,7 +350,7 @@ header {
 --------------------------------------------------*/
 
 .our-services {
-    background: #ebf1f5;
+    background: #2b2e41;
     background-size: cover;
     padding: 130px 0 90px 0;
 }
@@ -367,20 +364,20 @@ header {
 .our-services .heading h2 {
     font-size: 30px;
     font-weight: 700;
-    color: #424457;
+    color: #ffffff;
     text-transform: uppercase;
 }
 
 .our-services .heading .sub-heading {
     font-size: 18px;
     font-weight: 400;
-    color: #9292a3;
+    color: #ffffff;
 }
 
 .our-services .box h3 {
     font-size: 20px;
     font-weight: 400;
-    color: #424457;
+    color: #ffffff;
     display: inline-block;
     line-height: 28px;
     vertical-align: middle;
@@ -396,10 +393,10 @@ header {
 }
 
 .our-services .box p {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 300;
     line-height: 26px;
-    color: #747474;
+    color: #cfd1e3;
     margin-top: 10px;
     margin-bottom: 30px;
 }
@@ -433,6 +430,7 @@ header {
 
 .portfolio {
     padding: 130px 0 95px 0;
+    background-color: #212332;
 }
 
 .portfolio .heading {
@@ -444,14 +442,14 @@ header {
 .portfolio .heading h2 {
     font-size: 30px;
     font-weight: 700;
-    color: #424457;
+    color: #ffffff;
     text-transform: uppercase;
 }
 
 .portfolio .heading .sub-heading {
     font-size: 18px;
     font-weight: 400;
-    color: #9292a3;
+    color: #ffffff;
 }
 
 .portfolio .button-group {
@@ -464,7 +462,7 @@ header {
     font-size: 15px;
     font-weight: 500;
     margin-right: 20px;
-    color: #7b7b8a;
+    color: #cfd1e3;
     text-transform: uppercase;
     cursor: pointer;
 }
@@ -518,7 +516,7 @@ header {
 --------------------------------------------------*/
 
 .some-facts {
-    background: #eff4f6;
+    background: #2b2e41;
     background-size: cover;
     padding: 130px 0;
 }
@@ -535,7 +533,7 @@ header {
 .some-facts .items h3 .counter {
     font-size: 30px;
     font-weight: 700;
-    color: #424457;
+    color: #ffffff;
 }
 
 .some-facts .items .line {
@@ -550,7 +548,7 @@ header {
     font-weight: 400;
     margin: 0;
     padding: 0;
-    color: #787983;
+    color: #ffffff;
 }
 
 /*--------------------------------------------------
@@ -572,7 +570,7 @@ header {
 .testimonials h2 {
     font-size: 30px;
     font-weight: 500;
-    color: #494a59;
+    color: #ffffff;
 }
 
 /* Image */
@@ -587,14 +585,14 @@ header {
 
 .testimonials .carousel-inner .carousel-item h3 {
     font-size: 20px;
-    color: #5b5c68;
+    color: #ffffff;
     font-weight: 500;
 }
 
 .testimonials .carousel-inner .carousel-item h4 {
     font-size: 14px;
     font-weight: 300;
-    color: #94959b;
+    color: #cfd1e3;
     margin-bottom: 20px;
 }
 
@@ -602,7 +600,7 @@ header {
     font-size: 16px;
     line-height: 26px;
     font-weight: 300;
-    color: #8d8c8c;
+    color: #cfd1e3;
 }
 
 .testimonials .carousel-indicators {
@@ -641,7 +639,7 @@ header {
 [9. Start Our Team]
 --------------------------------------------------*/
 .our-team {
-    background: #eff4f6;
+    background: #2b2e41;
     background-size: cover;
     padding: 130px 0;
 }
@@ -655,21 +653,20 @@ header {
 .our-team .heading h2 {
     font-size: 30px;
     font-weight: 700;
-    color: #424457;
+    color: #ffffff;
     text-transform: uppercase;
 }
 
 .our-team .heading .sub-heading {
     font-size: 18px;
     font-weight: 400;
-    color: #9292a3;
+    color: #ffffff;
 }
 
 .our-team .box .content {
     width: 100%;
     height: 100%;
     position: relative;
-    box-shadow: 2px 2px 20px -1px rgba(167,179,184,0.5);
 }
 
 .our-team .box .content img {
@@ -749,17 +746,18 @@ header {
 .our-price .heading h2 {
     font-size: 30px;
     font-weight: 700;
-    color: #424457;
+    color: #ffffff;
     text-transform: uppercase;
 }
 
 .our-price .heading .sub-heading {
     font-size: 18px;
     font-weight: 400;
-    color: #9292a3;
+    color: #ffffff;
 }
 
 .our-price .table-content {
+    background-color: #ffffff;
     border: 1px solid #dadee4;
     border-radius: 5px;
     height: auto;
@@ -840,7 +838,7 @@ a.active-price {
 --------------------------------------------------*/
 
 .our-blog {
-    background: #eff4f6;
+    background: #313347;
     background-size: cover;
     padding: 130px 0;
 }
@@ -854,14 +852,14 @@ a.active-price {
 .our-blog .heading h2 {
     font-size: 30px;
     font-weight: 700;
-    color: #424457;
+    color: #ffffff;
     text-transform: uppercase;
 }
 
 .our-blog .heading .sub-heading {
     font-size: 18px;
     font-weight: 400;
-    color: #9292a3;
+    color: #ffffff;
 }
 
 .our-blog .post {
@@ -934,7 +932,7 @@ a.active-price {
 [12. Start Contact Us]
 --------------------------------------------------*/
 .contact-us {
-    background: #173b4a;
+    background: #212332;
     background-size: cover;
     padding: 130px 0;
 }
@@ -1008,12 +1006,13 @@ a.active-price {
 --------------------------------------------------*/
 .footer .social {
     padding: 60px 0;
+    background: #2b2e41;
 }
 
 .footer .social .icons {
     margin-top: 30px;
     font-size: 18px;
-    color: #5f8a90;
+    color: #d9eaec;
 }
 
 .footer .social .icons span {
