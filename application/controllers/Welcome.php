@@ -18,17 +18,20 @@ class Welcome extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/userguide3/general/urls.html
 	 */
+
+	protected $data = array();
+
 	public function index()
 	{
 		// Layouts
-		// $this->load->view('layouts/main');
+		$this->load->view('layouts/main');
 		// $this->load->view('layouts/navbar');
 		// $this->load->view('layouts/sidebar');
 		// $this->load->view('layouts/footer');
 
 		// Data Kriteria
-		$this->load->view('dataKriteria/createDataKriteria');
-		$this->load->view('dataKriteria/dataKriteria');
+		// $this->load->view('dataKriteria/createDataKriteria');
+		// $this->load->view('dataKriteria/dataKriteria');
 
 		// Landing Page
 		// $this->load->view('landing_page/index');
