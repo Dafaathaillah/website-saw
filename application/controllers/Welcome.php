@@ -20,15 +20,18 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
+		// Layouts
 		// $this->load->view('layouts/main');
 		// $this->load->view('layouts/navbar');
 		// $this->load->view('layouts/sidebar');
 		// $this->load->view('layouts/footer');
-<<<<<<< HEAD
+
+		// Data Kriteria
 		$this->load->view('dataKriteria/createDataKriteria');
-		// $this->load->view('dataKriteria/dataKriteria');
-=======
-		$this->load->view('landing_page/index');
->>>>>>> 6bdded32b6759b65847d30bd9ad6a5a31b2cad86
+		$this->load->view('dataKriteria/dataKriteria');
+
+		// Landing Page
+		// $this->load->view('landing_page/index');
+
 	}
 }

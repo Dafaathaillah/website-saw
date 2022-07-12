@@ -43,11 +43,10 @@ License: You must have a valid license purchased only from above link or https:/
 								<thead>
 									<tr>
 										<th>Name</th>
-										<th>Position</th>
-										<th>Office</th>
-										<th>Age</th>
-										<th>Start date</th>
-										<th>Salary</th>
+										<th>Score</th>
+										<th>Status</th>
+										<th>Bobot</th>
+										<th>Action</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -57,7 +56,6 @@ License: You must have a valid license purchased only from above link or https:/
 										<td>Edinburgh</td>
 										<td>61</td>
 										<td>2011/04/25</td>
-										<td>$320,800</td>
 									</tr>
 									<tr>
 										<td>Garrett Winters</td>
@@ -65,7 +63,6 @@ License: You must have a valid license purchased only from above link or https:/
 										<td>Tokyo</td>
 										<td>63</td>
 										<td>2011/07/25</td>
-										<td>$170,750</td>
 									</tr>
 									<tr>
 										<td>Ashton Cox</td>
@@ -73,7 +70,6 @@ License: You must have a valid license purchased only from above link or https:/
 										<td>San Francisco</td>
 										<td>66</td>
 										<td>2009/01/12</td>
-										<td>$86,000</td>
 									</tr>
 								</tbody>
 							</table>
