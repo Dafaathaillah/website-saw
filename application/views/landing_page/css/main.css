@@ -1,0 +1,1270 @@
+/* ----------------------------------
+
+Name: main.css
+Version: 1.0
+
+-------------------------------------
+
+Table of contents
+        
+    01. Top Header
+    02. Navbar
+    03. Slider
+    04. About Us
+    05. Our Services
+    06. Portfolio
+    07. Some Facts
+    08. Testimonials
+    09. Our Team
+    10. Pricing
+    11. Our Blog
+    12. Contact Us
+    13. Footer
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Dosis', sans-serif;
+    background: #fbfaff;
+    height: 5000px;
+}
+
+
+
+/*--------------------------------------------------
+[1. Start Top Header]
+--------------------------------------------------*/
+header {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+.top-header {
+    background: #212332;
+    color: #a2b2bb;
+    padding: 15px 0;
+    z-index: 10;
+}
+
+.top-header p {
+    font-size: 15px;
+    font-weight: 400;
+    margin: 0;
+}
+
+/* Left Links */
+.top-header .links a {
+    color: #a2b2bb;
+    text-decoration: none;
+    font-size: 15px;
+    transition: all .5s ease-in-out;
+}
+
+.top-header .links a span {
+    margin-left: 20px;
+}
+
+.top-header .links a:hover {
+    color: #13b1c5;
+}
+
+/*--------------------------------------------------
+[1. End Top Header]
+--------------------------------------------------*/
+
+
+
+/*--------------------------------------------------
+[2. Start Navbar]
+--------------------------------------------------*/
+
+.navbar {
+    padding: 25px 0;
+    background: #ffffff !important;
+    border-bottom: .1px solid #eeeeef;
+}
+
+/* Navbar Brand */
+.navbar a.navbar-brand {
+    padding: 0;
+    margin: 0;
+    line-height: 0;
+}
+
+/* Nav Item */
+.navbar .navbar-nav .nav-item {
+    padding: 0;
+    margin-left: 40px;
+}
+
+/* Nav Link */
+.navbar .navbar-nav .nav-item .nav-link {
+    font-size: 16px;
+    color: #7f8083;
+    font-weight: 500;
+    padding: 0;
+    transition: all .3s ease-in-out;
+}
+
+/* Nva Link Under line */
+.navbar .navbar-nav .nav-item .nav-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #13b1c5;
+    transition: width .4s;
+}
+
+
+/* Nva Link Under line on Hover */
+.navbar .navbar-nav .nav-item .nav-link:hover::after {
+    width: 100%;
+    transform: width .4s;
+}
+
+.navbar .navbar-nav .nav-item .nav-link:hover {
+    color: #13b1c5;
+}
+
+.navbar .navbar-nav .activated .nav-link::after {
+    width: 100%;
+    transform: width .4s;
+}
+
+.navbar .navbar-nav .activated .nav-link {
+    color: #13b1c5;
+}
+
+.navbar .navbar-nav .dropdown .dropdown-menu {
+    margin-top: 25px;
+    background: #212332;
+}
+
+.navbar .navbar-nav .dropdown span {
+    font-size: 10px;
+    margin-left: 3px;
+}
+
+.navbar .navbar-nav .dropdown .dropdown-menu a {
+    font-size: 16px;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.navbar .navbar-nav .dropdown .dropdown-menu a:hover {
+    background: #13b1c5;
+}
+
+/*--------------------------------------------------
+[2. End Navbar]
+--------------------------------------------------*/
+
+
+
+/*--------------------------------------------------
+[3. Start Slider]
+--------------------------------------------------*/
+
+.slider {
+    background: url('../img/bg/slider-bg.png') center center no-repeat;
+    background-size: cover;
+    height:100vh;
+    position: relative;
+}
+
+/* Slider Content */
+.slider .slider-content {
+    position: absolute;
+    width: 100%;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%,-45%)
+    
+}
+.slider .slider-content h2 {
+    font-size: 25px;
+    font-weight: 600;
+    color: #13b1c5;
+    padding: 0;
+    margin: 0;
+
+}
+
+.slider .slider-content h1 {
+    font-size: 60px;
+    font-weight: 700;
+    color: #424457;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.slider .slider-content p {
+    font-size: 16px;
+    line-height: 26px;
+    color: #6b6c71;
+    font-weight: 500;
+    padding: 0;
+    margin: 0;
+}
+
+/* Buttons */
+.slider .slider-content .buttons {
+    margin-top: 40px;
+    display: block;
+}
+
+.slider .slider-content .buttons a.btn-1 {
+    background: #13b1c5;
+    color: #ffffff;
+    padding: 15px 55px;
+    border-radius: 35px;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0 10px;
+    position: relative;
+    text-decoration: none;
+    box-shadow: 2px 2px 20px -1px rgba(167,179,184,0.5);
+    transition: all .5s ease-in-out;
+    display: inline-block;
+}
+
+.slider .slider-content .buttons a.btn-1:hover {
+    background: #ffffff;
+    color: #212332;
+}
+
+
+.slider .slider-content .buttons a.btn-2 {
+    background: #ffffff;
+    color: #212332;
+    padding: 15px 50px;
+    border-radius: 35px;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0 10px;
+    text-decoration: none;
+    position: relative;
+    box-shadow: 2px 2px 20px -1px rgba(167,179,184,0.5);
+    transition: all .5s ease-in-out;
+    display: inline-block;
+}
+
+.slider .slider-content .buttons a.btn-2:hover {
+    background: #13b1c5;
+    color: #ffffff;
+}
+
+/*--------------------------------------------------
+[3. End Slider]
+--------------------------------------------------*/
+
+
+
+/*--------------------------------------------------
+[4. Start About us]
+--------------------------------------------------*/
+.about-us {
+    padding: 130px 0;
+}
+
+.about-us .about-us-content .heading {
+    border-left: 2px solid #13b1c5;
+    padding-left: 20px;
+    margin-bottom: 40px;
+}
+
+.about-us .about-us-content .heading h2 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #424457;
+    text-transform: uppercase;
+}
+
+.about-us .about-us-content .heading .sub-heading {
+    font-size: 18px;
+    font-weight: 400;
+    color: #9292a3;
+}
+
+.about-us .about-us-content p:last-of-type {
+    font-size: 18px;
+    font-weight: 300;
+    color: #8d8c8c;
+    line-height: 28px;
+    margin-bottom: 40px;
+}
+
+
+.about-us .about-us-content .buttons a.btn-1 {
+    background: #13b1c5;
+    color: #ffffff;
+    padding: 15px 55px;
+    border-radius: 35px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-right: 10px;
+    position: relative;
+    text-decoration: none;
+    box-shadow: 2px 2px 20px -1px rgba(167,179,184,0.5);
+    transition: all .5s ease-in-out;
+    display: inline-block;
+}
+
+.about-us .about-us-content .buttons a.btn-1:hover {
+    background: #ffffff;
+    color: #212332;
+}
+
+
+.about-us .about-us-content .buttons a.btn-2 {
+    background: #ffffff;
+    color: #212332;
+    padding: 15px 55px;
+    border-radius: 35px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-left: 10px;
+    text-decoration: none;
+    position: relative;
+    box-shadow: 2px 2px 20px -1px rgba(167,179,184,0.5);
+    transition: all .5s ease-in-out;
+    display: inline-block;
+}
+
+.about-us .about-us-content .buttons a.btn-2:hover {
+    background: #13b1c5;
+    color: #ffffff;
+}
+
+/*--------------------------------------------------
+[4. End About us]
+--------------------------------------------------*/
+
+
+
+/*--------------------------------------------------
+[5. Start Our Services]
+--------------------------------------------------*/
+
+.our-services {
+    background: #ebf1f5;
+    background-size: cover;
+    padding: 130px 0 90px 0;
+}
+
+.our-services .heading {
+    border-left: 2px solid #13b1c5;
+    padding-left: 20px;
+    margin-bottom: 40px;
+}
+
+.our-services .heading h2 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #424457;
+    text-transform: uppercase;
+}
+
+.our-services .heading .sub-heading {
+    font-size: 18px;
+    font-weight: 400;
+    color: #9292a3;
+}
+
+.our-services .box h3 {
+    font-size: 20px;
+    font-weight: 400;
+    color: #424457;
+    display: inline-block;
+    line-height: 28px;
+    vertical-align: middle;
+    margin-top: 10px;
+}
+
+.our-services .box h3  span {
+    font-size: 30px;
+    color: #565683;
+    margin-right: 15px;
+    line-height: 28px;
+    vertical-align: middle;
+}
+
+.our-services .box p {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 26px;
+    color: #747474;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+/* Icons Color */
+.our-services .box h3 .icon-2 {
+    color: #80a0e2;
+}
+.our-services .box h3 .icon-3 {
+    color: #a68bd2;
+}
+.our-services .box h3 .icon-4 {
+    color: #f6c34c;
+}
+.our-services .box h3 .icon-5 {
+    color: #ef8881;
+}
+.our-services .box h3 .icon-6 {
+    color: #90d8a0;
+}
+
+/*--------------------------------------------------
+[5. End Our Services]
+--------------------------------------------------*/
+
+
+
+/*--------------------------------------------------
+[6. Start Portfolio]
+--------------------------------------------------*/
+
+.portfolio {
+    padding: 130px 0 95px 0;
+}
+
+.portfolio .heading {
+    border-left: 2px solid #13b1c5;
+    padding-left: 20px;
+    margin-bottom: 40px;
+}
+
+.portfolio .heading h2 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #424457;
+    text-transform: uppercase;
+}
+
+.portfolio .heading .sub-heading {
+    font-size: 18px;
+    font-weight: 400;
+    color: #9292a3;
+}
+
+.portfolio .button-group {
+    margin-bottom: 30px;
+}
+
+.portfolio .button-group button {
+    border: 0;
+    background: transparent;
+    font-size: 15px;
+    font-weight: 500;
+    margin-right: 20px;
+    color: #7b7b8a;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.portfolio .single-portfolio-item {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.portfolio .single-portfolio-item .overlay{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 0;
+    height: 100%;
+    background: #054047;
+    color: #ffffff;
+    opacity: 0;
+    transition: all .3s ease-in-out;
+}
+
+.portfolio .single-portfolio-item .overlay a {
+    font-size: 20px;
+    position: absolute;
+    text-decoration: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: #ffffff;
+    transition: all .3s ease-in-out;
+    
+}
+
+.portfolio .single-portfolio-item .overlay a:hover {
+    font-size: 25px;
+}
+
+.portfolio .single-portfolio-item:hover .overlay {
+    width: 100%;
+    opacity: .9;
+}
+
+/*--------------------------------------------------
+[6. End Portfolio]
+--------------------------------------------------*/
+
+
+
+/*--------------------------------------------------
+[7. Start Some Facts]
+--------------------------------------------------*/
+
+.some-facts {
+    background: #eff4f6;
+    background-size: cover;
+    padding: 130px 0;
+}
+
+.some-facts .items span {
+    font-size: 40px;
+    color: #13b1c5;
+}
+
+.some-facts .items h3 {
+    margin: 10px 0;
+}
+
+.some-facts .items h3 .counter {
+    font-size: 30px;
+    font-weight: 700;
+    color: #424457;
+}
+
+.some-facts .items .line {
+    width: 20px;
+    height: 2px;
+    background: #13b1c5;
+    margin: 8px;
+}
+
+.some-facts .items h4 {
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    color: #787983;
+}
+
+/*--------------------------------------------------
+[7. End Some Facts]
+--------------------------------------------------*/
+
+
+
+/*--------------------------------------------------
+[8. Start Testimonials]
+--------------------------------------------------*/
+
+.testimonials {
+    background: url('../img/bg/testimonials-bg.png') center center no-repeat;
+    background-size: cover;
+    padding: 130px 0 170px 0;
+}
+
+.testimonials h2 {
+    font-size: 30px;
+    font-weight: 500;
+    color: #494a59;
+}
+
+/* Image */
+.testimonials .carousel-inner .carousel-item img {
+    width: 100px;
+    height: 100px;
+    border: 2px solid #13b1c5;
+    border-radius: 100%;
+    padding: 5px;
+    margin: 50px 0 15px;
+}
+
+.testimonials .carousel-inner .carousel-item h3 {
+    font-size: 20px;
+    color: #5b5c68;
+    font-weight: 500;
+}
+
+.testimonials .carousel-inner .carousel-item h4 {
+    font-size: 14px;
+    font-weight: 300;
+    color: #94959b;
+    margin-bottom: 20px;
+}
+
+.testimonials .carousel-inner .carousel-item p {
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 300;
+    color: #8d8c8c;
+}
+
+.testimonials .carousel-indicators {
+    bottom: -40px;
+}
+
+.testimonials .carousel-indicators li {
+    background-color: #d3d2d4;
+    border-radius: 30px;
+    height: 4px;
+    width: 40px;
+}
+
+
+.testimonials .carousel-indicators .active {
+    background-color: #13b1c5;
+}
+
+.testimonials .icon {
+  height: 40px;
+  width: 40px;
+  background-size: 100%, 100%;
+  border-radius: 50%;
+  font-size: 30px;
+  background-image: none;
+  color: #13b1c5
+}
+
+/*--------------------------------------------------
+[8. End Testimonials]
+--------------------------------------------------*/
+
+
+
+/*--------------------------------------------------
+[9. Start Our Team]
+--------------------------------------------------*/
+.our-team {
+    background: #eff4f6;
+    background-size: cover;
+    padding: 130px 0;
+}
+
+.our-team .heading {
+    border-left: 2px solid #13b1c5;
+    padding-left: 20px;
+    margin-bottom: 40px;
+}
+
+.our-team .heading h2 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #424457;
+    text-transform: uppercase;
+}
+
+.our-team .heading .sub-heading {
+    font-size: 18px;
+    font-weight: 400;
+    color: #9292a3;
+}
+
+.our-team .box .content {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    box-shadow: 2px 2px 20px -1px rgba(167,179,184,0.5);
+}
+
+.our-team .box .content img {
+    width: 100%;
+    height: 100%;
+}
+
+.our-team .box .content .info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: #054047;
+    opacity: 0;
+    transition: all .4s ease-in-out;
+}
+
+.our-team .box:hover .info {
+    height: 100%;
+    opacity: .95;
+}
+
+.our-team .box .content .info .details {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.our-team .box .content .info .details h3 {
+    font-size: 20px;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+.our-team .box .content .info .details p {
+    font-size: 14px;
+    font-weight: 400;
+    color: #13b1c5;
+    margin-bottom: 40px;
+}
+
+.our-team .box .content .info .details a {
+    font-size: 14px;
+    color: #ffffff;
+    padding: 7px;
+    text-decoration: none;
+    transition: all .3s ease-in-out;
+}
+
+.our-team .box .content .info .details a:hover {
+    color: #13b1c5;
+}
+
+/*--------------------------------------------------
+[9. End Our Team]
+--------------------------------------------------*/
+
+
+
+/*--------------------------------------------------
+[10. Start Pricing]
+--------------------------------------------------*/
+.our-price {
+    background: url('../img/bg/testimonials-bg.png') center center no-repeat;
+    background-size: cover;
+    padding: 130px 0;
+}
+
+.our-price .heading {
+    border-left: 2px solid #13b1c5;
+    padding-left: 20px;
+    margin-bottom: 40px;
+}
+
+.our-price .heading h2 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #424457;
+    text-transform: uppercase;
+}
+
+.our-price .heading .sub-heading {
+    font-size: 18px;
+    font-weight: 400;
+    color: #9292a3;
+}
+
+.our-price .table-content {
+    border: 1px solid #dadee4;
+    border-radius: 5px;
+    height: auto;
+    max-height: 700px
+}
+
+.our-price .table-content .header {
+    background: #f5f6fb;
+    width: 100%;
+    border-bottom: 1px solid #dadee4;
+}
+
+.our-price .table-content .header h3 {
+    padding: 25px;
+    margin: 0;
+    color: #6c6b6b;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.our-price .table-content .price h4 {
+    font-size: 50px;
+    font-weight: 700;
+    color: #323d47;
+    padding: 0;
+    margin-top: 40px;
+    position: relative;
+}
+
+.our-price .table-content .price h4 span {
+    position: absolute;
+    font-size: 15px;
+    top: -4px;
+}
+
+.our-price .table-content .line {
+    width: 40px;
+    height: 2px;
+    background: #13b1c5;
+    margin: 8px;
+}
+
+.our-price .table-content ul {
+    list-style: none;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.our-price .table-content ul li {
+    font-size: 16px;
+    color: #868e96;
+    margin-bottom: 5px;
+}
+
+.our-price .table-content a {
+    background: #13b1c5;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 10px 50px;
+    border-radius: 35px;
+    margin-bottom: 40px;
+}
+
+a.active-price {
+    background: #3fba91;
+
+}
+
+/*--------------------------------------------------
+[10. End Pricing]
+--------------------------------------------------*/
+
+
+/*--------------------------------------------------
+[11. Start Our Blog]
+--------------------------------------------------*/
+
+.our-blog {
+    background: #eff4f6;
+    background-size: cover;
+    padding: 130px 0;
+}
+
+.our-blog .heading {
+    border-left: 2px solid #13b1c5;
+    padding-left: 20px;
+    margin-bottom: 40px;
+}
+
+.our-blog .heading h2 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #424457;
+    text-transform: uppercase;
+}
+
+.our-blog .heading .sub-heading {
+    font-size: 18px;
+    font-weight: 400;
+    color: #9292a3;
+}
+
+.our-blog .post {
+    padding: 18px;
+    border-radius: 5px;
+    background: #ffffff;
+    position: relative;
+    box-shadow: 2px 2px 20px -1px rgba(167,179,184,0.3);
+}
+
+.our-blog .post img {
+    width: 100%;
+}
+
+.our-blog .post h3 {
+    font-size: 18px;
+    color: #49495b;
+    font-weight: 600;
+    padding: 30px 0 3px 0;
+}
+
+.our-blog .post h4 {
+    font-size: 13px;
+    font-weight: 400;
+    color: #777788;
+}
+
+.our-blog .post h4 span {
+    color: #13b1c5;
+}
+
+.our-blog .post p {
+    font-size: 16px;
+    color: #8e8ea0;
+    line-height: 23px;
+    margin: 20px 0;
+    padding-bottom: 20px;
+}
+
+.our-blog .post .read-more {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    margin-bottom: 10px;
+}
+
+.our-blog .post .read-more a {
+    height: 10px;
+    width: 20px;
+    background: #13b1c5;
+    padding: 12px 16px;
+    color: #ffffff;
+    font-size: 16px;
+    border-radius: 40px;
+    text-decoration: none;
+    box-shadow: 2px 2px 20px -1px rgba(167,179,184,0.5);
+    transition: all .4s ease-in-out;
+}
+
+.our-blog .post .read-more a:hover {
+    background: #054047;
+}
+
+/*--------------------------------------------------
+[11. End Our Blog]
+--------------------------------------------------*/
+
+
+/*--------------------------------------------------
+[12. Start Contact Us]
+--------------------------------------------------*/
+.contact-us {
+    background: #173b4a;
+    background-size: cover;
+    padding: 130px 0;
+}
+
+.contact-us .heading {
+    border-left: 2px solid #13b1c5;
+    padding-left: 20px;
+    margin-bottom: 40px;
+}
+
+.contact-us .heading h2 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.contact-us .heading .sub-heading {
+    font-size: 18px;
+    font-weight: 400;
+    color: #c5e3e7;
+}
+
+.contact-us .form-control {
+    background: transparent;
+    color: #ffffff !important;
+    padding: 25px;
+    border: 1px solid #6192a5;
+    font-size: 15px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+.contact-us .form-control::placeholder {
+    color: #6192a5;
+}
+
+.contact-us .btn {
+    padding: 15px;
+    border-radius: 15px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #ffffff;
+    background: #13b1c5;
+}
+
+
+/* Info */
+.contact-us .info {
+    margin-left: 30px;
+}
+.contact-us .info span {
+    color: #13b1c5;
+    font-size: 26px;
+}
+.contact-us .info p {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 5px 0 30px 0;
+}
+
+/*--------------------------------------------------
+[12. End Contact Us]
+--------------------------------------------------*/
+
+
+
+/*--------------------------------------------------
+[13. Start Footer]
+--------------------------------------------------*/
+.footer .social {
+    padding: 60px 0;
+}
+
+.footer .social .icons {
+    margin-top: 30px;
+    font-size: 18px;
+    color: #5f8a90;
+}
+
+.footer .social .icons span {
+    padding: 0 7px;
+}
+
+.footer .bottom-footer {
+    background: #212332;
+    padding: 20px;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.footer .bottom-footer p {
+    margin: 0;
+    padding: 0;
+}
+
+/*--------------------------------------------------
+[13. End Footer]
+--------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===================================
+    Media Query
+====================================== */
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) { 
+
+    /*Top-Header*/
+    .top-header {
+        display: none;
+    }
+
+    /*Navbar*/
+    .navbar {
+        padding: 30px;
+    }
+    .navbar .navbar-nav .nav-item {
+        margin-left: 0;
+        margin-top: 30px;
+        text-align: center;
+    }
+    .navbar .navbar-nav .nav-item .nav-link::after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 2px;
+        background: #13b1c5;
+        transition: width .4s;
+    }
+    
+    
+    /* Nva Link Under line on Hover */
+    .navbar .navbar-nav .nav-item .nav-link:hover::after {
+        width: 0;
+        transform: width .4s;
+    }
+
+
+    /* Slider */
+    .slider {
+        height: 100vh;
+        position: relative;
+    }
+    .slider .slider-content h1 {
+        font-size: 40px;
+        font-weight: 700;
+        color: #424457;
+        margin: 0;
+        padding: 0;
+        
+    }
+
+    .slider .slider-content .buttons a.btn-1{
+        margin-bottom: 20px;
+    }
+
+    /* About Us */
+    .about-us .about-us-content .buttons a.btn-2 {
+        margin-bottom: 40px;
+        margin-top: 20px;
+        margin-left: 0;
+    }
+    /* About Us */
+    .about-us .about-us-content .buttons a.btn-2 {
+        margin-top: 20px;
+        margin-left: 0;
+    }
+
+    /* Some Facts */
+    .some-facts .items {
+       margin: 30px 0; 
+    }
+
+    /* Our Team */
+    .our-team .box {
+        margin: 15px 0;
+    }
+
+    /* Our Team */
+    .our-price .table-content {
+        margin-bottom: 30px;
+    }
+
+    /* Our Blog */
+    .our-blog .post {
+        margin-left: 0 !important;
+        margin-bottom: 30px;
+    }
+
+    /* Info */
+    .contact-us .info {
+        margin-top: 50px;
+        text-align: center;
+    }
+    
+    
+ }
+
+
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+
+    /* Top-Header */
+    .top-header {
+        display: none;
+    }
+
+    /*Navbar*/
+    .navbar {
+        padding: 30px 30px;
+    }
+    .navbar .navbar-nav .nav-item {
+        margin-left: 0;
+        margin-top: 30px;
+        text-align: center;
+    }
+    .navbar .navbar-nav .nav-item .nav-link::after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 2px;
+        background: #13b1c5;
+        transition: width .4s;
+    }
+    
+    
+    /* Nva Link Under line on Hover */
+    .navbar .navbar-nav .nav-item .nav-link:hover::after {
+        width: 0;
+    }
+
+    /* About us */
+    .about-us .about-img {
+        margin-top: 40px;
+    }
+
+    
+    /* Some Facts */
+    .some-facts .items {
+        margin: 30px 0; 
+     }
+ 
+     /* Our Team */
+     .our-team .box {
+         margin: 15px 0;
+     }
+ 
+     /* Our Team */
+     .our-price .table-content {
+         margin-bottom: 30px;
+     }
+ 
+     /* Our Blog */
+     .our-blog .post {
+         margin-bottom: 30px;
+     }
+ 
+     /* Info */
+     .contact-us .info {
+         margin-top: 50px;
+         text-align: center;
+     }
+}
+
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+    
+    /*Navbar*/
+    .navbar {
+        padding: 30px 30px;
+    }
+    .navbar .navbar-nav .nav-item {
+        margin-left: 0;
+        margin-top: 30px;
+        text-align: center;
+    }
+    .navbar .navbar-nav .nav-item .nav-link::after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 2px;
+        background: #13b1c5;
+        transition: width .4s;
+    }
+    
+    
+    /* Nva Link Under line on Hover */
+    .navbar .navbar-nav .nav-item .nav-link:hover::after {
+        width: 0;
+        transform: width .4s;
+    }
+
+    /* Some Facts */
+    .some-facts .items {
+        margin: 30px 0; 
+     }
+
+     /* Our Team */
+     .our-team .box .content .info .details a {
+        font-size: 13px;
+        color: #ffffff;
+        padding: 5px;
+        text-decoration: none;
+        transition: all .3s ease-in-out;
+    }
+
+    /* Our Blog */
+    .our-blog .post {
+        margin-bottom: 30px;
+    }
+
+}
+
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {}

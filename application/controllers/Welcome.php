@@ -24,7 +24,11 @@ class Welcome extends CI_Controller {
 		// $this->load->view('layouts/navbar');
 		// $this->load->view('layouts/sidebar');
 		// $this->load->view('layouts/footer');
+<<<<<<< HEAD
 		$this->load->view('dataKriteria/createDataKriteria');
 		// $this->load->view('dataKriteria/dataKriteria');
+=======
+		$this->load->view('landing_page/index');
+>>>>>>> 6bdded32b6759b65847d30bd9ad6a5a31b2cad86
 	}
 }
