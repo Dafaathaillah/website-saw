@@ -26,5 +26,7 @@ class Welcome extends CI_Controller {
 		// Layouts
 		$this->load->view('layouts/main');
 		// $this->load->view('landingPage/mainLanding');
+		// $this->load->view('auth/login');
+		// $this->load->view('auth/register');
 	}
 }
