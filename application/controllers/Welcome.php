@@ -28,9 +28,7 @@ class Welcome extends CI_Controller {
 		// $this->load->view('layouts/navbar');
 		// $this->load->view('layouts/sidebar');
 		// $this->load->view('layouts/footer');
-<<<<<<< HEAD
-		$this->load->view('landingPage/mainLanding');
-=======
+		// $this->load->view('landingPage/mainLanding');
 
 		// Data Kriteria
 		// $this->load->view('dataKriteria/createDataKriteria');
@@ -39,6 +37,5 @@ class Welcome extends CI_Controller {
 		// Landing Page
 		// $this->load->view('landing_page/index');
 
->>>>>>> 772032b92d625157bf9c32b1fa7c80673abef77d
 	}
 }
