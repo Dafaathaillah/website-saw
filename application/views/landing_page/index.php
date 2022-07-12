@@ -16,13 +16,13 @@
             name="keywords"
             content="creative, modern, clean, bootstrap responsive, html5, css3, portfolio, blog, agency, templates, multipurpose, one page, corporate, start-up, studio, branding, designer, freelancer, carousel, parallax, photography, personal"/>
         <!-- favicon -->
-        <link rel="shortcut icon" href="img/favicon.ico"/>
+        <link rel="shortcut icon" href="../landing_page/img/favicon.ico">
         <!-- animation -->
-        <link rel="stylesheet" href="css/plugins/animate.css"/>
+        <link rel="stylesheet" href="../landing_page/css/plugins/animate.css"/>
         <!-- Animated Headlines -->
-        <link rel="stylesheet" href="css/plugins/animated-headlines.css">
+        <link rel="stylesheet" href="../landing_page/css/plugins/animated-headlines.css">
         <!-- bootstrap -->
-        <link rel="stylesheet" href="css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="../landing_page/css/main.css"/>
         <!-- font-awesome icon -->
         <link
             href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -32,9 +32,9 @@
             href="https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800"
             rel="stylesheet">
         <!-- magnific popup -->
-        <link rel="stylesheet" href="css/plugins/magnific-popup.css"/>
+        <link rel="stylesheet" href="../landing_page/css/plugins/magnific-popup.css"/>
         <!-- Main Style -->
-        <link rel="stylesheet" href="css/main.css"/>
+        <link rel="stylesheet" href="../landing_page/css/main.css"/>
     </head>
 
     <body>
@@ -84,7 +84,6 @@
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="#">Home Light</a>
-                                    <a class="dropdown-item" href="dark/index.html">Home Dark</a>
                                 </div>
                             </li>
                             <!-- Drop Down-->
@@ -507,80 +506,6 @@
         </section>
         <!-- ======== End Our Team ======== -->
 
-        <!-- ======== Start Our Price ======== -->
-        <section class="our-price" id="price">
-            <div class="container">
-                <div class="heading">
-                    <h2>Pricing</h2>
-                    <p class="sub-heading">Choose your perfect plan</p>
-                </div>
-                <div class="row">
-                    <!-- Table-1 -->
-                    <div class="col-md-4 text-center">
-                        <div class="table-content">
-                            <div class="header">
-                                <h3>Single</h3>
-                            </div>
-                            <div class="price">
-                                <h4>Free</h4>
-                            </div>
-                            <div class="line mx-auto"></div>
-                            <ul>
-                                <li>30 days free trial</li>
-                                <li>Basic support</li>
-                                <li>1 GB attachment</li>
-                                <li>Basic support</li>
-                                <li>1 GB attachment</li>
-                            </ul>
-                            <a href="#0" class="btn">Get Started</a>
-                        </div>
-                    </div>
-                    <!-- Table-2 -->
-                    <div class="col-md-4 text-center">
-                        <div class="table-content activate">
-                            <div class="header">
-                                <h3>Single</h3>
-                            </div>
-                            <div class="price">
-                                <h4>
-                                    <span>$</span>45</h4>
-                            </div>
-                            <div class="line mx-auto"></div>
-                            <ul>
-                                <li>30 days free trial</li>
-                                <li>Basic support</li>
-                                <li>1 GB attachment</li>
-                                <li>Basic support</li>
-                                <li>1 GB attachment</li>
-                            </ul>
-                            <a href="#0" class="btn .active-price">Get Started</a>
-                        </div>
-                    </div>
-                    <!-- Table-3 -->
-                    <div class="col-md-4 text-center">
-                        <div class="table-content">
-                            <div class="header">
-                                <h3>Single</h3>
-                            </div>
-                            <div class="price">
-                                <h4>
-                                    <span>$</span>65</h4>
-                            </div>
-                            <div class="line mx-auto"></div>
-                            <ul>
-                                <li>30 days free trial</li>
-                                <li>Basic support</li>
-                                <li>1 GB attachment</li>
-                                <li>Basic support</li>
-                                <li>1 GB attachment</li>
-                            </ul>
-                            <a href="#0" class="btn">Get Started</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- ======== End Our Price ======== -->
 
         <!-- ======== Start Our Blog ======== -->
         <section class="our-blog" id="blog">
