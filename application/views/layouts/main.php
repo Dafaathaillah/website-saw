@@ -47,7 +47,7 @@ License: You must have a valid license purchased only from above link or https:/
 
 				<div class="d-flex justify-content-between align-items-center flex-wrap grid-margin">
 					<div>
-						<h4 class="mb-3 mb-md-0">Welcome to Data Kriteria</h4>
+						<h4 class="mb-3 mb-md-0">Welcome To Data Kriteria</h4>
 					</div>
 					<div class="d-flex align-items-center flex-wrap text-nowrap">
 						<div class="input-group date datepicker dashboard-date mr-2 mb-2 mb-md-0 d-md-none d-xl-flex"
@@ -67,9 +67,6 @@ License: You must have a valid license purchased only from above link or https:/
 					<div class="col-lg-5 col-xl-4 grid-margin grid-margin-xl-0 stretch-card">
 						<div class="card">
 							<div class="card-body">
-								<div class="d-flex justify-content-between align-items-baseline mb-2">
-									<h6 class="card-title mb-0">Inbox</h6>
-								</div>
 								<?php $this->load->view("dataKriteria/createDataKriteria.php") ?>
 							</div>
 						</div>
@@ -77,9 +74,6 @@ License: You must have a valid license purchased only from above link or https:/
 					<div class="col-lg-7 col-xl-8 stretch-card">
 						<div class="card">
 							<div class="card-body">
-								<div class="d-flex justify-content-between align-items-baseline mb-2">
-									<h6 class="card-title mb-0">Projects</h6>
-								</div>
 								<?php $this->load->view("dataKriteria/dataKriteria.php") ?>
 							</div>
 						</div>

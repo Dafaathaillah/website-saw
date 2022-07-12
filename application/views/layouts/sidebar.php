@@ -44,6 +44,18 @@ License: You must have a valid license purchased only from above link or https:/
 				</li>
 				<li class="nav-item">
 					<a href="pages/apps/calendar.html" class="nav-link">
+						<i class="link-icon" data-feather="edit-3"></i>
+						<span class="link-title">Data</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a href="pages/apps/calendar.html" class="nav-link">
+						<i class="link-icon" data-feather="code"></i>
+						<span class="link-title">Topik</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a href="pages/apps/calendar.html" class="nav-link">
 						<i class="link-icon" data-feather="pie-chart"></i>
 						<span class="link-title">Hasil</span>
 					</a>
