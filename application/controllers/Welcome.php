@@ -19,13 +19,19 @@ class Welcome extends CI_Controller {
 	 * @see https://codeigniter.com/userguide3/general/urls.html
 	 */
 
-	protected $data = array();
+	public function __construct()
+    {
+        parent::__construct();
+        $this->load->model('criteria_model','criteria');
+    }
 
 	public function index()
 	{
 		// Layouts
-		// $this->load->view('layouts/main');
-		$this->load->view('landingPage/mainLanding');
+		$data = array();
+		$data['criterias'] = $this->criteria->getCriteria();
+		$this->load->view('layouts/main', $data);
+		// $this->load->view('landingPage/mainLanding');
 		// $this->load->view('auth/login');
 		// $this->load->view('auth/register');
 	}

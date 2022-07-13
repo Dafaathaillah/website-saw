@@ -13,7 +13,7 @@ License: You must have a valid license purchased only from above link or https:/
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>NobleUI Responsive Bootstrap 4 Dashboard Template</title>
+	<title>Website SPK | SAW</title>
 	<!-- core:css -->
 	<link rel="stylesheet" href="assets/assets/core/core.css">
 	<!-- endinject -->
@@ -37,23 +37,35 @@ License: You must have a valid license purchased only from above link or https:/
 			<div class="col-md-12 grid-margin stretch-card">
 				<div class="card">
 					<div class="card-body">
-						<h6 class="card-title">Data Table</h6>
+						<h6 class="card-title">Data Kriteria</h6>
 						<div class="table-responsive">
 							<table id="dataTableExample" class="table">
 								<thead>
 									<tr>
+										<th>No</th>
 										<th>Name</th>
 										<th>Status</th>							
-										<!-- <th>Action</th> -->
+										<th>Action</th>
 									</tr>
 								</thead>
 								<tbody>
 								<?php
-								if($criterias) {
+								if($criterias) {												
 									foreach ($criterias as $criteria) { ?>
-										<tr>											
+										<tr>
+											<td><?= $criteria->id ?></td>										
 											<td><?= $criteria->name ?></td>
 											<td><?= $criteria->sts ?></td>											
+											<td class="text-center">
+											<div class="row">
+												<a href="#" class="nav-link">
+													<i class="link-icon" data-feather="edit"></i>
+												</a>
+												<a href="#" class="nav-link">
+													<i class="link-icon" data-feather="trash-2"></i>
+												</a>
+											</div>
+										</td>
 											<!-- <td><a href="">Edit</a></td>
 											<td><a class="delete-criteria" href="#" data-id="<?= base_url('criteria/delete/'.$criteria->id) ?>" data-toggle="modal" data-target="#deleteCriteriaModal">Delete</a></td> -->
 										</tr>

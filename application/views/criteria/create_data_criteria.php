@@ -13,7 +13,7 @@ License: You must have a valid license purchased only from above link or https:/
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>NobleUI Responsive Bootstrap 4 Dashboard Template</title>
+	<title>Website SPK | SAW</title>
 	<!-- core:css -->
 	<link rel="stylesheet" href="assets/assets/core/core.css">
 	<!-- endinject -->
@@ -43,7 +43,7 @@ License: You must have a valid license purchased only from above link or https:/
 					<form class="cmxform" id="form_criteria" method="post" enctype="multipart/form-data" action="<?=site_url($action_form)?>">
 						<fieldset>
 							<div class="form-group">
-								<label for="name">Name</label>
+								<label for="name">Nama</label>
 								<input id="name" class="form-control" name="name" type="text">
 							</div>
 							<div class="form-group">
