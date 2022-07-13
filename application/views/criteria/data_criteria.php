@@ -65,7 +65,7 @@ License: You must have a valid license purchased only from above link or https:/
 													<i class="link-icon" data-feather="trash-2"></i>
 												</a>
 											</div>
-										</td>
+											</td>
 											<!-- <td><a href="">Edit</a></td>
 											<td><a class="delete-criteria" href="#" data-id="<?= base_url('criteria/delete/'.$criteria->id) ?>" data-toggle="modal" data-target="#deleteCriteriaModal">Delete</a></td> -->
 										</tr>

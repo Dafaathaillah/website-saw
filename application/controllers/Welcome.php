@@ -22,15 +22,17 @@ class Welcome extends CI_Controller {
 	public function __construct()
     {
         parent::__construct();
-        $this->load->model('criteria_model','criteria');
+        $this->load->model('data_model','data_alternatif');
     }
 
 	public function index()
 	{
 		// Layouts
 		$data = array();
-		$data['criterias'] = $this->criteria->getCriteria();
-		$this->load->view('layouts/main', $data);
+		// $data['criterias'] = $this->criteria->getCriteria();
+		// $this->load->view('layouts/main', $data);
+		$data['data_alternatifs'] = $this->data_alternatif->getData();
+		$this->load->view('dataAlternatif/main_data_alternatif', $data);
 		// $this->load->view('landingPage/mainLanding');
 		// $this->load->view('auth/login');
 		// $this->load->view('auth/register');
