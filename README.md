@@ -2,7 +2,7 @@
 
 Rancangan ERD Sementara
 
-![ASW drawio (2)](https://user-images.githubusercontent.com/62891893/178216067-a7c4643c-a2a8-4a73-b4af-87cc6b5e7e62.png)
+![Screenshot_302](https://user-images.githubusercontent.com/62891893/178653871-adbbb6d0-3d16-450b-bc6b-f95545dbf86c.png)
 
 Rancangan Desain Sementara
 ![Desktop 1](https://user-images.githubusercontent.com/57293211/178400450-d16b2951-159f-4f05-82d0-b58732041f04.png)
