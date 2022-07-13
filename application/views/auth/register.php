@@ -88,8 +88,8 @@ License: You must have a valid license purchased only from above link or https:/
 						</div>
 					</div>
 				</div>
-
 			</div>
+			<?php $this->load->view("layouts/footer.php") ?>
 		</div>
 	</div>
 
