@@ -37,25 +37,22 @@ License: You must have a valid license purchased only from above link or https:/
 			<div class="card">
 				<div class="card-body">
 					<h5 class="card-title">Input Data Kriteria</h5>
-					<form class="cmxform" id="signupForm" method="get" action="#">
+					<?php
+					$action_form = '/criteria/save/';
+					?>
+					<form class="cmxform" id="form_criteria" method="post" enctype="multipart/form-data" action="<?=site_url($action_form)?>">
 						<fieldset>
 							<div class="form-group">
 								<label for="name">Name</label>
 								<input id="name" class="form-control" name="name" type="text">
 							</div>
 							<div class="form-group">
-								<label for="score">Score</label>
-								<input id="score" class="form-control" name="score" type="score">
-							</div>
-							<div class="form-group">
-								<label for="status">Status</label>
-								<input id="status" class="form-control" name="status" type="status">
-							</div>
-							<div class="form-group">
-								<label for="bobot">Bobot</label>
-								<input id="bobot" class="form-control" name="bobot"
-									type="bobot">
-							</div>
+								<label for="score">Status</label>
+								<select class="form-control" id="sts" name="sts">
+									<option value="Cost">Cost</option>
+									<option value="Benefit">Benefit</option>
+								</select>
+							</div>						
 							<input class="btn btn-primary" type="submit" value="Submit">
                             <button type="button" class="btn btn-warning">Cancel</button>
 						</fieldset>
