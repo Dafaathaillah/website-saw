@@ -30,29 +30,63 @@ License: You must have a valid license purchased only from above link or https:/
 	<link rel="shortcut icon" href="assets/images/favicon.png" />
 </head>
 
-
 <body>
-	<div class="container">
-		<div class="col-lg-12 mt-3 stretch-card">
-			<div class="card">
-				<div class="card-body">
-					<h5 class="card-title">Input Data Alternatif</h5>
-					<form class="cmxform" id="signupForm" method="get" action="#">
-						<fieldset>
-							<div class="form-group">
-								<label for="name">Name</label>
-								<input id="name" class="form-control" name="name" type="text">
-							</div>
-							<input class="btn btn-primary" type="submit" value="Submit">
-                            <button type="button" class="btn btn-warning">Cancel</button>
-						</fieldset>
-					</form>
+	<div class="main-wrapper">
+
+		<!-- partial:partials/_sidebar.html -->
+		<?php $this->load->view("layouts/sidebar.php") ?>
+		<!-- partial -->
+
+		<div class="page-wrapper">
+
+			<!-- partial:partials/_navbar.html -->
+			<?php $this->load->view("layouts/navbar.php") ?>
+			<!-- partial -->
+
+			<div class="page-content">
+
+				<div class="d-flex justify-content-between align-items-center flex-wrap grid-margin">
+					<div>
+						<h4 class="mb-3 mb-md-0">Welcome To Data Alternatif</h4>
+					</div>
+					<div class="d-flex align-items-center flex-wrap text-nowrap">
+						<div class="input-group date datepicker dashboard-date mr-2 mb-2 mb-md-0 d-md-none d-xl-flex"
+							id="dashboardDate">
+							<span class="input-group-addon bg-transparent"><i data-feather="calendar"
+									class=" text-primary"></i></span>
+							<input type="text" class="form-control">
+						</div>
+						<button type="button" class="btn btn-primary btn-icon-text mb-2 mb-md-0">
+							<i class="btn-icon-prepend" data-feather="download-cloud"></i>
+							Download Report
+						</button>
+					</div>
 				</div>
+
+				<div class="row">
+					<div class="col-lg-5 col-xl-4 grid-margin grid-margin-xl-0 stretch-card">
+						<div class="card">
+							<div class="card-body">
+								<?php $this->load->view("dataAlternatif/create_data_alternatif.php") ?>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-7 col-xl-8 stretch-card">
+						<div class="card">
+							<div class="card-body">
+								<?php $this->load->view("dataAlternatif/data_alternatif.php") ?>
+							</div>
+						</div>
+					</div>
+				</div> <!-- row -->
 			</div>
+
+			<!-- partial:partials/_footer.html -->
+			<?php $this->load->view("layouts/footer.php") ?>
+			<!-- partial -->
+
 		</div>
 	</div>
-
-
 
 	<!-- core:js -->
 	<script src="assets/assets/core/core.js"></script>
@@ -74,3 +108,5 @@ License: You must have a valid license purchased only from above link or https:/
 	<script src="assets/js/datepicker.js"></script>
 	<!-- end custom js for this page -->
 </body>
+
+</html>

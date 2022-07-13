@@ -47,45 +47,26 @@ License: You must have a valid license purchased only from above link or https:/
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td>Tiger Nixon</td>
-										<td>
-											<div class="row">
-												<a href="#" class="nav-link">
-													<i class="link-icon" data-feather="edit"></i>
-												</a>
-												<a href="#" class="nav-link">
-													<i class="link-icon" data-feather="trash-2"></i>
-												</a>
-											</div>
-										</td>
-									</tr>
-									<tr>
-										<td>Garrett Winters</td>
-										<td class="text-center">
-											<div class="row">
-												<a href="#" class="nav-link">
-													<i class="link-icon" data-feather="edit"></i>
-												</a>
-												<a href="#" class="nav-link">
-													<i class="link-icon" data-feather="trash-2"></i>
-												</a>
-											</div>
-										</td>
-									</tr>
-									<tr>
-										<td>Ashton Cox</td>
-										<td>
-											<div class="row">
-												<a href="#" class="nav-link">
-													<i class="link-icon" data-feather="edit"></i>
-												</a>
-												<a href="#" class="nav-link">
-													<i class="link-icon" data-feather="trash-2"></i>
-												</a>
-											</div>
-										</td>
-									</tr>
+								<?php
+								if($data_alternatifs) {
+									foreach ($data_alternatifs as $data_alternatif) { ?>
+										<tr>											
+											<td><?= $data_alternatif->name ?></td>																																
+											<td class="text-center">
+												<div class="row">
+													<a href="#" class="nav-link">
+														<i class="link-icon" data-feather="edit"></i>
+													</a>
+													<a href="#" class="nav-link">
+														<i class="link-icon" data-feather="trash-2"></i>
+													</a>
+												</div>
+											</td>
+										</tr>
+									<?php }
+								} else { ?>
+									<td class="text-center" colspan="6">Tidak ada kriteria!!</td>
+								<?php } ?>
 								</tbody>
 							</table>
 						</div>
