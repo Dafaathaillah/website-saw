@@ -66,7 +66,7 @@
                                 <a class="nav-link" href="#about">About</a>
                             </li>
 							<li class="nav-item">
-                                <a class="nav-link" href="views/auth/login.php">Login</a>
+                                <a class="nav-link" href="#">Login</a>
                             </li>
                         </ul>
                     </div>
@@ -97,7 +97,7 @@
 			</p>
 
 			<div class="buttons">
-				<a href="#0" class="btn-1">Get Started</a>
+				<a href="#" class="btn-1">Get Started</a>
 
 			</div>
 
