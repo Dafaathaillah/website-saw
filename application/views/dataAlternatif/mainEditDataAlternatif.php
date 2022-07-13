@@ -67,7 +67,7 @@ License: You must have a valid license purchased only from above link or https:/
 					<div class="col-lg-5 col-xl-4 grid-margin grid-margin-xl-0 stretch-card">
 						<div class="card">
 							<div class="card-body">
-								<?php $this->load->view("dataKriteria/EditDataAlternatif.php") ?>
+								<?php $this->load->view("dataKriteria/editDataAlternatif.php") ?>
 							</div>
 						</div>
 					</div>
