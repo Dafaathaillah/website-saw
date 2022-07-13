@@ -32,6 +32,18 @@ License: You must have a valid license purchased only from above link or https:/
 				</li>
 				<li class="nav-item">
 					<a href="#" class="nav-link">
+						<i class="link-icon" data-feather="code"></i>
+						<span class="link-title">Topik</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a href="#" class="nav-link">
+						<i class="link-icon" data-feather="archive"></i>
+						<span class="link-title">Data</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a href="#" class="nav-link">
 						<i class="link-icon" data-feather="book"></i>
 						<span class="link-title">Data Kriteria</span>
 					</a>
@@ -45,13 +57,7 @@ License: You must have a valid license purchased only from above link or https:/
 				<li class="nav-item">
 					<a href="#" class="nav-link">
 						<i class="link-icon" data-feather="edit-3"></i>
-						<span class="link-title">Data</span>
-					</a>
-				</li>
-				<li class="nav-item">
-					<a href="#" class="nav-link">
-						<i class="link-icon" data-feather="code"></i>
-						<span class="link-title">Topik</span>
+						<span class="link-title">Perhitungan</span>
 					</a>
 				</li>
 				<li class="nav-item">

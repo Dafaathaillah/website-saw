@@ -34,13 +34,13 @@ License: You must have a valid license purchased only from above link or https:/
 	<div class="main-wrapper">
 
 		<!-- partial:partials/_sidebar.html -->
-		<?php include 'sidebar.php';?>
+		<?php $this->load->view("layouts/sidebar.php") ?>
 		<!-- partial -->
 
 		<div class="page-wrapper">
 
 			<!-- partial:partials/_navbar.html -->
-			<?php include 'navbar.php';?>
+			<?php $this->load->view("layouts/navbar.php") ?>
 			<!-- partial -->
 
 			<div class="page-content">
@@ -82,7 +82,7 @@ License: You must have a valid license purchased only from above link or https:/
 			</div>
 
 			<!-- partial:partials/_footer.html -->
-			<?php include 'footer.php';?>
+			<?php $this->load->view("layouts/footer.php") ?>
 			<!-- partial -->
 
 		</div>
