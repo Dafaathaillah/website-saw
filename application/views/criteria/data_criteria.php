@@ -37,25 +37,26 @@ License: You must have a valid license purchased only from above link or https:/
 			<div class="col-md-12 grid-margin stretch-card">
 				<div class="card">
 					<div class="card-body">
-						<h6 class="card-title">Tabel Data Kriteria</h6>
+						<h6 class="card-title">Data Kriteria</h6>
 						<div class="table-responsive">
 							<table id="dataTableExample" class="table">
 								<thead>
 									<tr>
+										<th>No</th>
 										<th>Name</th>
-										<th>Score</th>
-										<th>Status</th>
-										<th>Bobot</th>
+										<th>Status</th>							
 										<th>Action</th>
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td>Tiger Nixon</td>
-										<td>System Architect</td>
-										<td>Edinburgh</td>
-										<td>61</td>
-										<td>
+								<?php
+								if($criterias) {												
+									foreach ($criterias as $criteria) { ?>
+										<tr>
+											<td><?= $criteria->id ?></td>										
+											<td><?= $criteria->name ?></td>
+											<td><?= $criteria->sts ?></td>											
+											<td class="text-center">
 											<div class="row">
 												<a href="#" class="nav-link">
 													<i class="link-icon" data-feather="edit"></i>
@@ -64,40 +65,14 @@ License: You must have a valid license purchased only from above link or https:/
 													<i class="link-icon" data-feather="trash-2"></i>
 												</a>
 											</div>
-										</td>
-									</tr>
-									<tr>
-										<td>Garrett Winters</td>
-										<td>Accountant</td>
-										<td>Tokyo</td>
-										<td>63</td>
-										<td class="text-center">
-											<div class="row">
-												<a href="#" class="nav-link">
-													<i class="link-icon" data-feather="edit"></i>
-												</a>
-												<a href="#" class="nav-link">
-													<i class="link-icon" data-feather="trash-2"></i>
-												</a>
-											</div>
-										</td>
-									</tr>
-									<tr>
-										<td>Ashton Cox</td>
-										<td>Junior Technical Author</td>
-										<td>San Francisco</td>
-										<td>66</td>
-										<td>
-											<div class="row">
-												<a href="#" class="nav-link">
-													<i class="link-icon" data-feather="edit"></i>
-												</a>
-												<a href="#" class="nav-link">
-													<i class="link-icon" data-feather="trash-2"></i>
-												</a>
-											</div>
-										</td>
-									</tr>
+											</td>
+											<!-- <td><a href="">Edit</a></td>
+											<td><a class="delete-criteria" href="#" data-id="<?= base_url('criteria/delete/'.$criteria->id) ?>" data-toggle="modal" data-target="#deleteCriteriaModal">Delete</a></td> -->
+										</tr>
+									<?php }
+								} else { ?>
+									<td class="text-center" colspan="6">Tidak ada kriteria!!</td>
+								<?php } ?>
 								</tbody>
 							</table>
 						</div>
