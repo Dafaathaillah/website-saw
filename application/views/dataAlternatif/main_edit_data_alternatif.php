@@ -67,11 +67,7 @@ License: You must have a valid license purchased only from above link or https:/
 					<div class="col-lg-5 col-xl-4 grid-margin grid-margin-xl-0 stretch-card">
 						<div class="card">
 							<div class="card-body">
-<<<<<<< HEAD:application/views/dataAlternatif/main_edit_data_alternatif.php
 								<?php $this->load->view("dataKriteria/edit_data_alternatif.php") ?>
-=======
-								<?php $this->load->view("dataKriteria/editDataAlternatif.php") ?>
->>>>>>> db1b883cb79d2cd916b8ebff2bb667acde110068:application/views/dataAlternatif/mainEditDataAlternatif.php
 							</div>
 						</div>
 					</div>
