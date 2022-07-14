@@ -50,10 +50,11 @@ License: You must have a valid license purchased only from above link or https:/
 								</thead>
 								<tbody>
 								<?php
-								if($criterias) {												
+								if($criterias) {			
+									$no = 0;									
 									foreach ($criterias as $criteria) { ?>
 										<tr>
-											<td><?= $criteria->id ?></td>										
+											<td><?= ++$no ?></td>										
 											<td><?= $criteria->name ?></td>
 											<td><?= $criteria->sts ?></td>											
 											<td class="text-center">

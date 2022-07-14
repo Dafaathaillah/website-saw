@@ -42,6 +42,7 @@ License: You must have a valid license purchased only from above link or https:/
 							<table id="dataTableExample" class="table">
 								<thead>
 									<tr>
+										<th>No</th>
 										<th>Topik</th>
 										<th>Action</th>
 									</tr>
@@ -49,8 +50,10 @@ License: You must have a valid license purchased only from above link or https:/
 								<tbody>
 								<?php
 								if($topics) {
+									$no = 0;
 									foreach ($topics as $topic) { ?>
-										<tr>											
+										<tr>
+											<td><?= ++$no ?></td>											
 											<td><?= $topic->name ?></td>	
 											<td class="text-center">
 											<div class="row">
