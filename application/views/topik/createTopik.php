@@ -37,7 +37,10 @@ License: You must have a valid license purchased only from above link or https:/
 			<div class="card">
 				<div class="card-body">
 					<h5 class="card-title">Input Topik</h5>
-					<form class="cmxform" id="signupForm" method="get" action="#">
+					<?php
+					$action_form = '/topic/save/';
+					?>
+					<form class="cmxform" id="form_topik" method="post" enctype="multipart/form-data" action="<?=site_url($action_form)?>">
 						<fieldset>
 							<div class="form-group">
 								<label for="name">Nama Topik</label>

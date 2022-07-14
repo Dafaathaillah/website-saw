@@ -1,28 +1,28 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Criteria extends CI_Controller {
+class Topic extends CI_Controller {
 
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('criteria_model','criteria');
+        $this->load->model('topic_model','topic');
     }
 
     public function index()
     {
         $data = array();
-        $data['criterias'] = $this->criteria->getCriteria();
-        $this->load->view('criteria/data_criteria', $data);
+        $data['Topics'] = $this->topic->getTopic();
+        $this->load->view('topik/topik', $data);
     }
 
-    public function form($criteria_id = null)
+    public function form($topic_id = null)
     {
         $data = array();
-        if($criteria_id){
-            $data['criteria'] = $this->criteria->getCriteriaById($criteria_id);
+        if($topic_id){
+            $data['topic'] = $this->topic->getTopicById($topic_id);
         }
-        $this->load->view('criteria/create_data_criteria', $data);
+        $this->load->view('topik/createTopik', $data);
     }
 
     public function save($id = null)
@@ -30,37 +30,36 @@ class Criteria extends CI_Controller {
         $form_data = array
         (
             // 'id' => $id,
-            'name' => $this->input->post('name'),
-            'sts' => $this->input->post('sts')            
+            'name' => $this->input->post('name')                      
         );
         if(!$id){
-            $send_form = $this->criteria->createCriteria($form_data);
+            $send_form = $this->topic->createTopic($form_data);
         } else {
-            $send_form = $this->criteria->updateCriteria($form_data);
+            $send_form = $this->topic->updateTopic($form_data);
         }
 
         if($send_form){
             $this->session->set_flashdata('message', array('success','Data berhasil ditambahkan!'));
-            redirect('http://localhost/web-saw/');
+            redirect('http://localhost/website-saw/');
         }
         else
         {
             $this->session->set_flashdata('message', array('danger','Ops! Dados incorretos!'));
-            redirect('criteria/form');
+            redirect('topic/form');
         }
     }
 
     public function delete($id)
     {
-        $delete = $this->criteria->deleteCriteria($id);
+        $delete = $this->topic->deleteTopic($id);
         if($delete){
             $this->session->set_flashdata('message', array('success','Data berhasil dihapuskan!'));
-            redirect('criteria');
+            redirect('topic');
         }
         else
         {
             $this->session->set_flashdata('message', array('danger','Ops! Produk tidak ditemukan!'));
-            redirect('criteria');
+            redirect('topic');
         }
     }
 }
