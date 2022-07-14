@@ -28,13 +28,13 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 		// Layouts
-		$data = array();
+		// $data = array();
 		// $data['criterias'] = $this->criteria->getCriteria();
 		// $this->load->view('layouts/main', $data);
-		$data['data_alternatifs'] = $this->data_alternatif->getData();
-		$this->load->view('dataAlternatif/main_data_alternatif', $data);
+		// $data['data_alternatifs'] = $this->data_alternatif->getData();
+		// $this->load->view('dataAlternatif/main_data_alternatif', $data);
 		// // Layouts
-		$this->load->view('layouts/main');
+		// $this->load->view('layouts/main');
 		// $this->load->view('landingPage/mainLanding');
 		// $this->load->view('auth/login');
 		// $this->load->view('auth/register');
@@ -44,6 +44,6 @@ class Welcome extends CI_Controller {
 		// $this->load->view('subKriteria/mainEditSubKriteria');
 		// $this->load->view('hasil/mainTableHasil');
 		// $this->load->view('topik/mainEditTopik');
-		
+		$this->load->view('perhitungan/mainPerhitungan');
 	}
 }
