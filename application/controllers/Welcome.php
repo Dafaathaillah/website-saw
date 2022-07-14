@@ -41,7 +41,7 @@ class Welcome extends CI_Controller {
 		// $this->load->view('auth/register');
 		// $this->load->view('dataKriteria/mainEditDataKriteria');
 		// $this->load->view('dataAlternatif/mainDataAlternatif');
-		// $this->load->view('subKriteria/mainSubKriteria');
+		$this->load->view('subKriteria/mainSubKriteria');
 		// $this->load->view('subKriteria/mainEditSubKriteria');
 		// $this->load->view('hasil/mainTableHasil');
 		// $this->load->view('topik/mainEditTopik');

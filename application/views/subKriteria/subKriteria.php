@@ -42,6 +42,7 @@ License: You must have a valid license purchased only from above link or https:/
 							<table id="dataTableExample" class="table">
 								<thead>
 									<tr>
+										<th>Kriteria</th>
 										<th>Deskripsi</th>
 										<th>Score</th>
 										<th>Action</th>
