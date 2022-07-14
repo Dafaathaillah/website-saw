@@ -36,7 +36,7 @@ License: You must have a valid license purchased only from above link or https:/
 		<div class="col-lg-12 mt-3 stretch-card">
 			<div class="card">
 				<div class="card-body">
-					<h5 class="card-title">Hasil Perhitungan</h5>
+					<h5 class="card-title">Pilih Hasil</h5>
 					<form class="cmxform" id="signupForm" method="get" action="#">
 						<fieldset>
 							<div class="form-group">
