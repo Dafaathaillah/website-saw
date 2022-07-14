@@ -22,14 +22,15 @@ class Welcome extends CI_Controller {
 	public function __construct()
     {
         parent::__construct();
-        $this->load->model('data_model','data_alternatif');
+        $this->load->model('topic_model','topic');
     }
 
 	public function index()
 	{
 		// Layouts
-		// $data = array();
-		// $data['criterias'] = $this->criteria->getCriteria();
+		$data = array();
+		$data['topics'] = $this->topic->getTopic();
+		$this->load->view('topik/mainTopik', $data);
 		// $this->load->view('layouts/main', $data);
 		// $data['data_alternatifs'] = $this->data_alternatif->getData();
 		// $this->load->view('dataAlternatif/main_data_alternatif', $data);
@@ -44,6 +45,6 @@ class Welcome extends CI_Controller {
 		// $this->load->view('subKriteria/mainEditSubKriteria');
 		// $this->load->view('hasil/mainTableHasil');
 		// $this->load->view('topik/mainEditTopik');
-		$this->load->view('perhitungan/mainPerhitungan');
+		// $this->load->view('perhitungan/mainPerhitungan');
 	}
 }
