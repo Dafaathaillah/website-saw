@@ -37,8 +37,21 @@ License: You must have a valid license purchased only from above link or https:/
 			<div class="card">
 				<div class="card-body">
 					<h5 class="card-title">Input Sub Kriteria</h5>
-					<form class="cmxform" id="signupForm" method="get" action="#">
+					<?php
+					$action_form = '/sub_kriteria/save/';
+					?>
+					<form class="cmxform" id="signupForm" method="post" action="<?=site_url($action_form)?>">
 						<fieldset>
+						<div class="form-group">
+								<label for="exampleFormControlSelect1">Kriteria</label>
+								<select class="form-control" id="exampleFormControlSelect1">
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+								</select>
+							</div>
 							<div class="form-group">
 								<label for="name">Deskripsi</label>
 								<input id="name" class="form-control" name="name" type="text">
