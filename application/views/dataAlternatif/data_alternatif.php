@@ -43,14 +43,17 @@ License: You must have a valid license purchased only from above link or https:/
 								<thead>
 									<tr>
 										<th>Name</th>
+										<th>Name</th>
 										<th>Action</th>
 									</tr>
 								</thead>
 								<tbody>
 								<?php
 								if($data_alternatifs) {
+									$no = 0;
 									foreach ($data_alternatifs as $data_alternatif) { ?>
-										<tr>											
+										<tr>
+											<td><?= ++$no ?></td>											
 											<td><?= $data_alternatif->name ?></td>																																
 											<td class="text-center">
 												<div class="row">

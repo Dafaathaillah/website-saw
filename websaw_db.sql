@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 14, 2022 at 04:17 AM
+-- Generation Time: Jul 14, 2022 at 08:37 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -36,19 +36,6 @@ CREATE TABLE `admin` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `bobot_criteria`
---
-
-CREATE TABLE `bobot_criteria` (
-  `id` int(11) NOT NULL,
-  `topic_id` int(11) DEFAULT NULL,
-  `criteria_id` int(11) DEFAULT NULL,
-  `bobot` float DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `calculate`
 --
 
@@ -70,6 +57,7 @@ CREATE TABLE `criteria` (
   `id` int(11) NOT NULL,
   `name` varchar(255) DEFAULT NULL,
   `sts` enum('Cost','Benefit') DEFAULT NULL,
+  `bobot` float DEFAULT NULL,
   `cond` int(10) DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -77,10 +65,12 @@ CREATE TABLE `criteria` (
 -- Dumping data for table `criteria`
 --
 
-INSERT INTO `criteria` (`id`, `name`, `sts`, `cond`) VALUES
-(1, 'sindy', 'Cost', 1),
-(2, 'ibrahim', 'Benefit', 1),
-(3, 'sil', 'Cost', 1);
+INSERT INTO `criteria` (`id`, `name`, `sts`, `bobot`, `cond`) VALUES
+(1, 'sindy', 'Cost', NULL, 1),
+(2, 'ibrahim', 'Benefit', NULL, 1),
+(3, 'sil', 'Cost', NULL, 1),
+(4, 'Membaca buku', NULL, NULL, 1),
+(5, 'Membaca buku', NULL, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -130,16 +120,17 @@ CREATE TABLE `sub_kriteria` (
   `id` int(11) NOT NULL,
   `criteria_id` int(11) DEFAULT NULL,
   `score` float DEFAULT NULL,
-  `description` varchar(255) DEFAULT NULL
+  `description` varchar(255) DEFAULT NULL,
+  `cond` int(11) DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `sub_kriteria`
 --
 
-INSERT INTO `sub_kriteria` (`id`, `criteria_id`, `score`, `description`) VALUES
-(1, 1, 3, 'ini ini in'),
-(2, 3, 6, 'kjlasdkjlkjladsgjkldgs');
+INSERT INTO `sub_kriteria` (`id`, `criteria_id`, `score`, `description`, `cond`) VALUES
+(1, 1, 3, 'ini ini in', NULL),
+(2, 3, 6, 'kjlasdkjlkjladsgjkldgs', NULL);
 
 -- --------------------------------------------------------
 
@@ -149,8 +140,19 @@ INSERT INTO `sub_kriteria` (`id`, `criteria_id`, `score`, `description`) VALUES
 
 CREATE TABLE `topic` (
   `id` int(11) NOT NULL,
-  `name` varchar(255) DEFAULT NULL
+  `name` varchar(255) DEFAULT NULL,
+  `cond` int(11) DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `topic`
+--
+
+INSERT INTO `topic` (`id`, `name`, `cond`) VALUES
+(1, 'ibrahim', 1),
+(2, 'ibrahim', 1),
+(3, 'Membaca buku', 1),
+(4, 'Menentukan Paket terbaik', 1);
 
 --
 -- Indexes for dumped tables
@@ -161,14 +163,6 @@ CREATE TABLE `topic` (
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `bobot_criteria`
---
-ALTER TABLE `bobot_criteria`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `topic_id` (`topic_id`),
-  ADD KEY `criteria_id` (`criteria_id`);
 
 --
 -- Indexes for table `calculate`
@@ -224,12 +218,6 @@ ALTER TABLE `admin`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `bobot_criteria`
---
-ALTER TABLE `bobot_criteria`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `calculate`
 --
 ALTER TABLE `calculate`
@@ -239,7 +227,7 @@ ALTER TABLE `calculate`
 -- AUTO_INCREMENT for table `criteria`
 --
 ALTER TABLE `criteria`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `data_alternatif`
@@ -263,18 +251,11 @@ ALTER TABLE `sub_kriteria`
 -- AUTO_INCREMENT for table `topic`
 --
 ALTER TABLE `topic`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables
 --
-
---
--- Constraints for table `bobot_criteria`
---
-ALTER TABLE `bobot_criteria`
-  ADD CONSTRAINT `bobot_criteria_ibfk_1` FOREIGN KEY (`topic_id`) REFERENCES `topic` (`id`),
-  ADD CONSTRAINT `bobot_criteria_ibfk_2` FOREIGN KEY (`criteria_id`) REFERENCES `criteria` (`id`);
 
 --
 -- Constraints for table `calculate`
