@@ -38,8 +38,8 @@ License: You must have a valid license purchased only from above link or https:/
 				</li>
 				<li class="nav-item">
 					<a href="#" class="nav-link">
-						<i class="link-icon" data-feather="archive"></i>
-						<span class="link-title">Data</span>
+						<i class="link-icon" data-feather="minus-square"></i>
+						<span class="link-title">Sub Kriteria</span>
 					</a>
 				</li>
 				<li class="nav-item">

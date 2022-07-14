@@ -33,8 +33,17 @@ class Welcome extends CI_Controller {
 		// $this->load->view('layouts/main', $data);
 		$data['data_alternatifs'] = $this->data_alternatif->getData();
 		$this->load->view('dataAlternatif/main_data_alternatif', $data);
+		// // Layouts
+		$this->load->view('layouts/main');
 		// $this->load->view('landingPage/mainLanding');
 		// $this->load->view('auth/login');
 		// $this->load->view('auth/register');
+		// $this->load->view('dataKriteria/mainEditDataKriteria');
+		// $this->load->view('dataAlternatif/mainDataAlternatif');
+		// $this->load->view('subKriteria/mainSubKriteria');
+		// $this->load->view('subKriteria/mainEditSubKriteria');
+		// $this->load->view('hasil/mainTableHasil');
+		// $this->load->view('topik/mainEditTopik');
+		
 	}
 }
