@@ -1,47 +1,55 @@
 <?php
-class Sub_criteria_model extends CI_Model {
+class sub_criteria_model extends CI_Model {
 
-    public function getProducts(){
+    public function getSub(){
         $this->db->order_by('id');
-        $this->db->where('status', 1);
-        $query = $this->db->get('product');
+        $this->db->where('cond', 1);
+        $query = $this->db->get('sub_kriteria');        
+        // $this->db->select('criteria.name, sub_kriteria.score, sub_kriteria.description');
+        // $this->db->from('sub_kriteria');
+        // $this->db->join('sub_kriteria a', 'a.criteria_id = criteria.id');
+        // $this->db->join('criteria c', 'a.criteria_id = c.id');        
+        // $this->db->order_by('c.id');
+        // $this->db->where('a.criteria_id', $id);
+        // $this->db->where('c.cond', 1);
+        // $query = $this->db->get('sub_kriteria');
+        return $query->result();        
+    }
+
+    public function getSubsByOrderId($id){    
+        $this->db->join('sub_kriteria', 'sub_kriteria.criteria_id = criteria.id');
+        $this->db->join('criteria', 'sub_kriteria.criteria_id = criteria.id');
+        $this->db->select('criteria.name, sub_kriteria.score, sub_kriteria.description');
+        $this->db->order_by('sub_kriteria.id');
+        $this->db->where('sub_kriteria.criteria_id', $id);
+        $this->db->where('criteria.cond', 1);
+        $query = $this->db->get('sub_kriteria');
         return $query->result();
     }
 
-    public function getProductsByOrderId($id){
-        $this->db->join('product_order', 'product_order.product_id = product.id');
-        $this->db->join('order', 'product_order.order_id = order.id');
-        $this->db->select('product.nome, product.sku, product.preco, product_order.product_qtd');
-        $this->db->order_by('product.id');
-        $this->db->where('product_order.order_id', $id);
-        $this->db->where('order.status', 1);
-        $query = $this->db->get('product');
-        return $query->result();
-    }
-
-    public function getProductById($id){
+    public function getSubById($id){
         $this->db->where('id', $id);
-        $this->db->where('status', 1);
-        $query = $this->db->get('product');
+        $this->db->where('cond', 1);
+        $query = $this->db->get('sub_kriteria');
         return $query->result();
     }
 
-    public function createProduct($form_data){
-        $this->db->insert('product', $form_data);
+    public function createSub($form_data){
+        $this->db->insert('sub_kriteria', $form_data);
         return ($this->db->affected_rows() != 1) ? false : true;
     }
 
-    public function updateProduct($form_data){
+    public function updateSub($form_data){
         $this->db->where('id', $form_data['id']);
-        $this->db->update('product', $form_data);
+        $this->db->update('sub_kriteria', $form_data);
         return ($this->db->affected_rows() != 1) ? false : true;
     }
 
-    public function deleteProduct($id){
-        $this->db->set('status', 0);
+    public function deleteSub($id){
+        $this->db->set('cond', 0);
         $this->db->where('id', $id);
-        $this->db->where('status', 1);
-        $this->db->update('product');
+        $this->db->where('cond', 1);
+        $this->db->update('sub_kriteria');
         return ($this->db->affected_rows() != 1) ? false : true;
     }
 }
