@@ -40,7 +40,7 @@ class Data extends CI_Controller {
 
         if($send_form){
             $this->session->set_flashdata('message', array('success','Data berhasil ditambahkan!'));
-            redirect('http://localhost/web-saw/');
+            redirect('http://localhost/website-saw/');
         }
         else
         {

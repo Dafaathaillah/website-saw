@@ -13,22 +13,24 @@ class Sub_criteria extends CI_Controller {
     {
         $data = array();
         $data['sub_criterias'] = $this->sub_criteria->getSub();
-        $this->load->view('subCriteria/subKriteria', $data);
+        $this->load->view('subKriteria/subKriteria', $data);
     }
 
     public function form($sub_id = null)
     {
         $data = array();
         if($sub_id){
-            $data['sub_criteria'] = $this->sub_criteria->getSubById($sub_id);
+            // $data['sub_criteria'] = $this->sub_criteria->getSubById($sub_id);        
+            $data['sub_criteria'] = $this->sub_criteria->getSubsByCriteriaId();            
         }
-        $this->load->view('subCriteria/createSubKriteria', $data);
+        $this->load->view('subKriteria/createSubKriteria', $data);
     }
 
     public function view($id = null){
         $data = array();
-        $data['sub_criterias'] = $this->sub_criteria->getSubsByOrderId($id);                            
-        $this->load->view('order/order_form_view', $data);
+        // $data['sub_criterias'] = $this->sub_criteria->getSub($id);  
+        $data['sub_criteria'] = $this->sub_criteria->getSubsByCriteriaId();
+        $this->load->view('subKriteria/subKriteria', $data);
     }
 
 
@@ -36,8 +38,8 @@ class Sub_criteria extends CI_Controller {
     {
         $form_data = array
         (
-            'id' => $id,
-            'name' => $this->input->post('name'),
+            // 'id' => $id,
+            'criteria_id' => $this->input->post('name'),
             'score' => $this->input->post('score'),
             'description' => $this->input->post('description')            
         );
@@ -48,7 +50,7 @@ class Sub_criteria extends CI_Controller {
         }
         if($send_form){
             $this->session->set_flashdata('mensagem', array('success','Produto salvo com sucesso!'));
-            redirect('sub_criteria');
+            redirect('http://localhost/website-saw/');
         }
         else
         {

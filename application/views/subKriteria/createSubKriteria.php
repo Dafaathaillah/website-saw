@@ -38,27 +38,30 @@ License: You must have a valid license purchased only from above link or https:/
 				<div class="card-body">
 					<h5 class="card-title">Input Sub Kriteria</h5>
 					<?php
-					$action_form = '/sub_kriteria/save/';
+					$action_form = '/sub_criteria/save/';
 					?>
 					<form class="cmxform" id="signupForm" method="post" action="<?=site_url($action_form)?>">
 						<fieldset>
 						<div class="form-group">
 								<label for="exampleFormControlSelect1">Kriteria</label>
-								<select class="form-control" id="exampleFormControlSelect1">
-									<option>1</option>
-									<option>2</option>
-									<option>3</option>
-									<option>4</option>
-									<option>5</option>
+								<select class="form-control" id="name" name="name">
+								<option value="#" disabled>Pilih Kriteria</option>
+								<?php
+								if($sub_criterias) {																					
+									foreach ($sub_criterias as $sub_criteria) { ?>									
+									<option value="<?= $sub_criteria->id_criteria ?>"><?= $sub_criteria->name ?></option>	
+									<?php }
+								} else { ?>									
+								<?php } ?>									
 								</select>
 							</div>
 							<div class="form-group">
-								<label for="name">Deskripsi</label>
-								<input id="name" class="form-control" name="name" type="text">
+								<label for="description">Deskripsi</label>
+								<input id="description" class="form-control" name="description" type="text">
 							</div>
 							<div class="form-group">
-								<label for="name">Score</label>
-								<input id="name" class="form-control" name="name" type="text">
+								<label for="score">Score</label>
+								<input id="score" class="form-control" name="score" type="text">
 							</div>
 							<input class="btn btn-primary" type="submit" value="Submit">
                             <button type="button" class="btn btn-warning">Cancel</button>

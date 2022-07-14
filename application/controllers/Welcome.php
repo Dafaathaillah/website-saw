@@ -22,15 +22,16 @@ class Welcome extends CI_Controller {
 	public function __construct()
     {
         parent::__construct();
-        $this->load->model('topic_model','topic');
+        $this->load->model('sub_criteria_model','sub_criteria');
     }
 
 	public function index()
 	{
 		// Layouts
 		$data = array();
-		$data['topics'] = $this->topic->getTopic();
-		$this->load->view('topik/mainTopik', $data);
+		// $data['sub_criterias'] = $this->sub_criteria->getSub();
+		$data['sub_criterias'] = $this->sub_criteria->getSubsByCriteriaId();
+		$this->load->view('subKriteria/mainSubKriteria', $data);
 		// $this->load->view('layouts/main', $data);
 		// $data['data_alternatifs'] = $this->data_alternatif->getData();
 		// $this->load->view('dataAlternatif/main_data_alternatif', $data);
@@ -41,7 +42,7 @@ class Welcome extends CI_Controller {
 		// $this->load->view('auth/register');
 		// $this->load->view('dataKriteria/mainEditDataKriteria');
 		// $this->load->view('dataAlternatif/mainDataAlternatif');
-		$this->load->view('subKriteria/mainSubKriteria');
+		// $this->load->view('subKriteria/mainSubKriteria');
 		// $this->load->view('subKriteria/mainEditSubKriteria');
 		// $this->load->view('hasil/mainTableHasil');
 		// $this->load->view('topik/mainEditTopik');

@@ -42,55 +42,40 @@ License: You must have a valid license purchased only from above link or https:/
 							<table id="dataTableExample" class="table">
 								<thead>
 									<tr>
-										<th>Kriteria</th>
-										<th>Deskripsi</th>
+										<th>No</th>										
+										<th>Name</th>
 										<th>Score</th>
+										<th>Deskripsi</th>
 										<th>Action</th>
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td>Tiger Nixon</td>
-										<td>100</td>
-										<td>
-											<div class="row">
-												<a href="#" class="nav-link">
-													<i class="link-icon" data-feather="edit"></i>
-												</a>
-												<a href="#" class="nav-link">
-													<i class="link-icon" data-feather="trash-2"></i>
-												</a>
-											</div>
-										</td>
-									</tr>
-									<tr>
-										<td>Garrett Winters</td>
-										<td>100</td>
-										<td class="text-center">
-											<div class="row">
-												<a href="#" class="nav-link">
-													<i class="link-icon" data-feather="edit"></i>
-												</a>
-												<a href="#" class="nav-link">
-													<i class="link-icon" data-feather="trash-2"></i>
-												</a>
-											</div>
-										</td>
-									</tr>
-									<tr>
-										<td>Ashton Cox</td>
-										<td>100</td>
-										<td>
-											<div class="row">
-												<a href="#" class="nav-link">
-													<i class="link-icon" data-feather="edit"></i>
-												</a>
-												<a href="#" class="nav-link">
-													<i class="link-icon" data-feather="trash-2"></i>
-												</a>
-											</div>
-										</td>
-									</tr>
+									<?php
+									if($sub_criterias) {			
+										$no = 0;									
+										foreach ($sub_criterias as $sub_criteria) { ?>
+											<tr>
+												<td><?= ++$no ?></td>																					
+												<td><?= $sub_criteria->name ?></td>	
+												<td><?= $sub_criteria->score ?></td>											
+												<td><?= $sub_criteria->description ?></td>
+												<td class="text-center">
+												<div class="row">
+													<a href="#" class="nav-link">
+														<i class="link-icon" data-feather="edit"></i>
+													</a>
+													<a href="#" class="nav-link">
+														<i class="link-icon" data-feather="trash-2"></i>
+													</a>
+												</div>
+												</td>
+												<!-- <td><a href="">Edit</a></td>
+												<td><a class="delete-criteria" href="#" data-id="<?= base_url('criteria/delete/'.$criteria->id) ?>" data-toggle="modal" data-target="#deleteCriteriaModal">Delete</a></td> -->
+											</tr>
+										<?php }
+									} else { ?>
+										<td class="text-center" colspan="6">Tidak ada Sub Kriteria!!</td>
+									<?php } ?>
 								</tbody>
 							</table>
 						</div>
