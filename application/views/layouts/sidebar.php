@@ -25,43 +25,43 @@ License: You must have a valid license purchased only from above link or https:/
 			<ul class="nav">
 				<li class="nav-item nav-category">SIDEBAR</li>
 				<li class="nav-item">
-					<a href="dashboard-one.html" class="nav-link">
+					<a href="<?php base_url() ?> Dashboard" class="nav-link">
 						<i class="link-icon" data-feather="box"></i>
 						<span class="link-title">Dashboard</span>
 					</a>
 				</li>
 				<li class="nav-item">
-					<a href="#" class="nav-link">
+					<a href="<?php base_url() ?> Topic" class="nav-link">
 						<i class="link-icon" data-feather="code"></i>
 						<span class="link-title">Topik</span>
 					</a>
 				</li>
 				<li class="nav-item">
-					<a href="#" class="nav-link">
-						<i class="link-icon" data-feather="minus-square"></i>
-						<span class="link-title">Sub Kriteria</span>
-					</a>
-				</li>
-				<li class="nav-item">
-					<a href="#" class="nav-link">
+					<a href="<?php base_url() ?> Criteria" class="nav-link">
 						<i class="link-icon" data-feather="book"></i>
 						<span class="link-title">Data Kriteria</span>
 					</a>
 				</li>
 				<li class="nav-item">
-					<a href="#" class="nav-link">
+					<a href="<?php base_url() ?> Sub_criteria" class="nav-link">
+						<i class="link-icon" data-feather="minus-square"></i>
+						<span class="link-title">Sub Kriteria</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a href="<?php base_url() ?> Data" class="nav-link">
 						<i class="link-icon" data-feather="book-open"></i>
 						<span class="link-title">Data Alternatif</span>
 					</a>
 				</li>
 				<li class="nav-item">
-					<a href="#" class="nav-link">
+					<a href="<?php base_url() ?> Calculate" class="nav-link">
 						<i class="link-icon" data-feather="edit-3"></i>
 						<span class="link-title">Perhitungan</span>
 					</a>
 				</li>
 				<li class="nav-item">
-					<a href="#" class="nav-link">
+					<a href="<?php base_url() ?> Navbar" class="nav-link">
 						<i class="link-icon" data-feather="pie-chart"></i>
 						<span class="link-title">Hasil</span>
 					</a>
