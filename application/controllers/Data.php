@@ -13,7 +13,7 @@ class Data extends CI_Controller {
     {
         $data = array();
         $data['data_alternatifs'] = $this->data_alternatif->getData();
-        $this->load->view('dataAlternatif/main_data_alternatif', $data);
+        $this->load->view('dataAlternatif/mainDataAlternatif', $data);
     }
 
     public function form($data_id = null)
