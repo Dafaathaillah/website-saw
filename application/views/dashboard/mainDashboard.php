@@ -47,7 +47,7 @@ License: You must have a valid license purchased only from above link or https:/
 
 				<div class="d-flex justify-content-between align-items-center flex-wrap grid-margin">
 					<div>
-						<h4 class="mb-3 mb-md-0">Welcome To Page Hasil</h4>
+						<h4 class="mb-3 mb-md-0">Welcome To Data Alternatif</h4>
 					</div>
 					<div class="d-flex align-items-center flex-wrap text-nowrap">
 						<div class="input-group date datepicker dashboard-date mr-2 mb-2 mb-md-0 d-md-none d-xl-flex"
@@ -63,22 +63,15 @@ License: You must have a valid license purchased only from above link or https:/
 					</div>
 				</div>
 
-				<div class="row">
-					<div class="col-lg-5 col-xl-4 grid-margin grid-margin-xl-0 stretch-card">
-						<div class="card">
-							<div class="card-body">
-								<?php $this->load->view("hasil/pilihHasil.php") ?>
-							</div>
-						</div>
-					</div>
+				<!-- <div class="row">
 					<div class="col-lg-7 col-xl-8 stretch-card">
 						<div class="card">
 							<div class="card-body">
-								<?php $this->load->view("hasil/tableHasil.php") ?>
 							</div>
 						</div>
 					</div>
-				</div> <!-- row -->
+				</div> row -->
+                <?php $this->load->view("hasil/tableHasil") ?>
 			</div>
 
 			<!-- partial:partials/_footer.html -->

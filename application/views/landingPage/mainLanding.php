@@ -66,7 +66,7 @@
                                 <a class="nav-link" href="#about">About</a>
                             </li>
 							<li class="nav-item">
-                                <a class="nav-link" href="#">Login</a>
+                                <a class="nav-link" href="<?php base_url() ?> login">Login</a>
                             </li>
                         </ul>
                     </div>
@@ -97,8 +97,7 @@
 			</p>
 
 			<div class="buttons">
-				<a href="#" class="btn-1">Get Started</a>
-
+				<a href="<?php base_url() ?> login" class="btn-1">Get Started</a>
 			</div>
 
 		</div>
@@ -121,8 +120,8 @@
                                 marketing automation, get up to speed with one of our nifty guides: What is
                                 Marketing Automation?</p>
                             <div class="buttons">
-                                <a href="#0" class="btn-1">Login</a>
-                                <a href="#0" class="btn-2">Start Now</a>
+                                <a href="<?php base_url() ?> login" class="btn-1">Login</a>
+                                <a href="<?php base_url() ?> login" class="btn-2">Start Now</a>
                             </div>
                         </div>
                     </div>

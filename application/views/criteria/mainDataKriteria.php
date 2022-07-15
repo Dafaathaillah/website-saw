@@ -15,17 +15,17 @@ License: You must have a valid license purchased only from above link or https:/
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>NobleUI Responsive Bootstrap 4 Dashboard Template</title>
 	<!-- core:css -->
-	<link rel="stylesheet" href="assets/assets/core/core.css">
+	<link rel="stylesheet" href="<?php echo base_url();?>assets/assets/core/core.css">
 	<!-- endinject -->
 	<!-- plugin css for this page -->
-	<link rel="stylesheet" href="assets/assets/bootstrap-datepicker/bootstrap-datepicker.min.css">
+	<link rel="stylesheet" href="<?php echo base_url();?>assets/assets/bootstrap-datepicker/bootstrap-datepicker.min.css">
 	<!-- end plugin css for this page -->
 	<!-- inject:css -->
-	<link rel="stylesheet" href="assets/fonts/feather-font/css/iconfont.css">
-	<link rel="stylesheet" href="assets/assets/flag-icon-css/css/flag-icon.min.css">
+	<link rel="stylesheet" href="<?php echo base_url();?>assets/fonts/feather-font/css/iconfont.css">
+	<link rel="stylesheet" href="<?php echo base_url();?>assets/assets/flag-icon-css/css/flag-icon.min.css">
 	<!-- endinject -->
 	<!-- Layout styles -->
-	<link rel="stylesheet" href="assets/css/demo_1/style.css">
+	<link rel="stylesheet" href="<?php echo base_url();?>assets/css/demo_1/style.css">
 	<!-- End layout styles -->
 	<link rel="shortcut icon" href="assets/images/favicon.png" />
 </head>
@@ -67,14 +67,14 @@ License: You must have a valid license purchased only from above link or https:/
 					<div class="col-lg-5 col-xl-4 grid-margin grid-margin-xl-0 stretch-card">
 						<div class="card">
 							<div class="card-body">
-								<?php $this->load->view("dataKriteria/createDataKriteria.php") ?>
+								<?php $this->load->view("criteria/create_data_criteria.php") ?>
 							</div>
 						</div>
 					</div>
 					<div class="col-lg-7 col-xl-8 stretch-card">
 						<div class="card">
 							<div class="card-body">
-								<?php $this->load->view("dataKriteria/dataKriteria.php") ?>
+								<?php $this->load->view("criteria/data_criteria.php") ?>
 							</div>
 						</div>
 					</div>
@@ -89,23 +89,23 @@ License: You must have a valid license purchased only from above link or https:/
 	</div>
 
 	<!-- core:js -->
-	<script src="assets/assets/core/core.js"></script>
+	<script src="<?php echo base_url();?>assets/assets/core/core.js"></script>
 	<!-- endinject -->
 	<!-- plugin js for this page -->
-	<script src="assets/assets/chartjs/Chart.min.js"></script>
-	<script src="assets/assets/jquery.flot/jquery.flot.js"></script>
-	<script src="assets/assets/jquery.flot/jquery.flot.resize.js"></script>
-	<script src="assets/assets/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
-	<script src="assets/assets/apexcharts/apexcharts.min.js"></script>
-	<script src="assets/assets/progressbar.js/progressbar.min.js"></script>
+	<script src="<?php echo base_url();?>assets/assets/chartjs/Chart.min.js"></script>
+	<script src="<?php echo base_url();?>assets/assets/jquery.flot/jquery.flot.js"></script>
+	<script src="<?php echo base_url();?>assets/assets/jquery.flot/jquery.flot.resize.js"></script>
+	<script src="<?php echo base_url();?>assets/assets/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+	<script src="<?php echo base_url();?>assets/assets/apexcharts/apexcharts.min.js"></script>
+	<script src="<?php echo base_url();?>assets/assets/progressbar.js/progressbar.min.js"></script>
 	<!-- end plugin js for this page -->
 	<!-- inject:js -->
-	<script src="assets/assets/feather-icons/feather.min.js"></script>
-	<script src="assets/js/template.js"></script>
+	<script src="<?php echo base_url();?>assets/assets/feather-icons/feather.min.js"></script>
+	<script src="<?php echo base_url();?>assets/js/template.js"></script>
 	<!-- endinject -->
 	<!-- custom js for this page -->
-	<script src="assets/js/dashboard.js"></script>
-	<script src="assets/js/datepicker.js"></script>
+	<script src="<?php echo base_url();?>assets/js/dashboard.js"></script>
+	<script src="<?php echo base_url();?>assets/js/datepicker.js"></script>
 	<!-- end custom js for this page -->
 </body>
 
