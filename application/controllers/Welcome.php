@@ -28,10 +28,14 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 		// Layouts
-		$data = array();
-		// $data['sub_criterias'] = $this->sub_criteria->getSub();
-		$data['sub_criterias'] = $this->sub_criteria->getSubsByCriteriaId();
-		$this->load->view('subKriteria/mainSubKriteria', $data);
+		
+		// For sub criteria section
+		$data = array();		
+		$data['sub_criterias'] = $this->sub_criteria->getSubsByCriteriaId(); //for data table
+		$data['criterias'] = $this->sub_criteria->getCriteria(); // for form input
+		$this->load->view('subKriteria/mainSubKriteria', $data); // load view
+
+
 		// $this->load->view('layouts/main', $data);
 		// $data['data_alternatifs'] = $this->data_alternatif->getData();
 		// $this->load->view('dataAlternatif/main_data_alternatif', $data);

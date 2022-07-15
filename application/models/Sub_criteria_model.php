@@ -16,8 +16,8 @@ class sub_criteria_model extends CI_Model {
         return $query->result();
     }
 
-    public function getCriteriaById($id){    
-        $this->db->where('id', $id);
+    public function getCriteria(){
+        $this->db->order_by('id');
         $this->db->where('cond', 1);
         $query = $this->db->get('criteria');
         return $query->result();

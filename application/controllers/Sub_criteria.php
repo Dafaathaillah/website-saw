@@ -7,12 +7,14 @@ class Sub_criteria extends CI_Controller {
     {
         parent::__construct();
         $this->load->model('sub_criteria_model','sub_criteria');
+        $this->load->model('criteria_model','criteria');
     }
 
     public function index()
     {
         $data = array();
-        $data['sub_criterias'] = $this->sub_criteria->getSub();
+        // $data['sub_criterias'] = $this->sub_criteria->getSub();
+        // $data['sub_criterias'] = $this->sub_criteria->getCriteriaById($sub_id);
         $this->load->view('subKriteria/subKriteria', $data);
     }
 
@@ -20,8 +22,8 @@ class Sub_criteria extends CI_Controller {
     {
         $data = array();
         if($sub_id){
-            // $data['sub_criteria'] = $this->sub_criteria->getSubById($sub_id);        
-            $data['sub_criteria'] = $this->sub_criteria->getSubsByCriteriaId();            
+            // $data['sub_criterias'] = $this->sub_criteria->getCriteria();        
+            // $data['sub_criteria'] = $this->sub_criteria->getSubsByCriteriaId();            
         }
         $this->load->view('subKriteria/createSubKriteria', $data);
     }

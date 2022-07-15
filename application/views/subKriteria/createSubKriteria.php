@@ -47,9 +47,9 @@ License: You must have a valid license purchased only from above link or https:/
 								<select class="form-control" id="name" name="name">
 								<option value="#" disabled>Pilih Kriteria</option>
 								<?php
-								if($sub_criterias) {																					
-									foreach ($sub_criterias as $sub_criteria) { ?>									
-									<option value="<?= $sub_criteria->id_criteria ?>"><?= $sub_criteria->name ?></option>	
+								if($criterias) {																					
+									foreach ($criterias as $criteria) { ?>									
+									<option value="<?= $criteria->id ?>"><?= $criteria->name ?></option>	
 									<?php }
 								} else { ?>									
 								<?php } ?>									
