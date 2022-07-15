@@ -42,37 +42,26 @@ License: You must have a valid license purchased only from above link or https:/
 							<table id="dataTableExample" class="table">
 								<thead>
 									<tr>
-										<th>Alternatif</th>
-										<th>Kriteria</th>
-										<th>Sub Kriteria</th>
-                                        <th>Judul</th>
+										<th>Topik</th>
+										<th>Data Alternatif</th>
+										<th>Action</th>                                        
 									</tr>
 								</theadData>
 								<tbody>
 									<tr>
 										<td>Tiger Nixon</td>
 										<td>System Architect</td>
-										<td>Edinburgh</td>
-                                        <td>Edinburgh</td>
-									</tr>
-									<tr>
-										<td>Garrett Winters</td>
-										<td>Accountant</td>
-										<td>Tokyo</td>
-                                        <td>Edinburgh</td>
-									</tr>
-									<tr>
-										<td>Ashton Cox</td>
-										<td>Junior Technical Author</td>
-										<td>San Francisco</td>
-                                        <td>Edinburgh</td>
-									</tr>
-                                    <tr>
-										<td>Ashton Cox</td>
-										<td>Junior Technical Author</td>
-										<td>San Francisco</td>
-                                        <td>Edinburgh</td>
-									</tr>
+										<td class="text-center">
+											<div class="row">
+												<a href="#" class="nav-link">
+													<i class="link-icon" data-feather="edit"></i>
+												</a>
+												<a href="#" class="nav-link">
+													<i class="link-icon" data-feather="trash-2"></i>
+												</a>
+											</div>
+										</td>
+									</tr>									
 								</tbody>
 							</table>
 						</div>

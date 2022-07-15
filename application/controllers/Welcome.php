@@ -22,7 +22,13 @@ class Welcome extends CI_Controller {
 	public function __construct()
     {
         parent::__construct();
-        $this->load->model('sub_criteria_model','sub_criteria');
+
+		// model for sub_criteria
+        // $this->load->model('sub_criteria_model','sub_criteria');
+		// $this->load->model('sub_criteria_model','sub_criteria');
+
+		//model for calculate
+		$this->load->model('calculate_model','calculate');
     }
 
 	public function index()
@@ -30,12 +36,18 @@ class Welcome extends CI_Controller {
 		// Layouts
 		
 		// For sub criteria section
+		// $data = array();		
+		// $data['sub_criterias'] = $this->sub_criteria->getSubsByCriteriaId(); //for data table
+		// $data['criterias'] = $this->sub_criteria->getCriteria(); // for form input
+		// $this->load->view('subKriteria/mainSubKriteria', $data); // load view
+
+		// For Calculate Section
 		$data = array();		
-		$data['sub_criterias'] = $this->sub_criteria->getSubsByCriteriaId(); //for data table
-		$data['criterias'] = $this->sub_criteria->getCriteria(); // for form input
-		$this->load->view('subKriteria/mainSubKriteria', $data); // load view
-
-
+		$data['topic'] = $this->calculate->getTopic();
+		$data['data_alternatif'] = $this->calculate->getData();
+		$data['criterias'] = $this->calculate->getCriteria(); // for form input
+		$data['sub_criterias'] = $this->calculate->getSubsByCriteriaId(); 		
+		$this->load->view('perhitungan/mainPerhitungan', $data);
 		// $this->load->view('layouts/main', $data);
 		// $data['data_alternatifs'] = $this->data_alternatif->getData();
 		// $this->load->view('dataAlternatif/main_data_alternatif', $data);
@@ -49,7 +61,6 @@ class Welcome extends CI_Controller {
 		// $this->load->view('subKriteria/mainSubKriteria');
 		// $this->load->view('subKriteria/mainEditSubKriteria');
 		// $this->load->view('hasil/mainTableHasil');
-		// $this->load->view('topik/mainEditTopik');
-		// $this->load->view('perhitungan/mainPerhitungan');
+		// $this->load->view('topik/mainEditTopik');		
 	}
 }

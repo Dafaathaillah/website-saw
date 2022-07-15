@@ -36,43 +36,54 @@ License: You must have a valid license purchased only from above link or https:/
 		<div class="col-lg-12 mt-3 stretch-card">
 			<div class="card">
 				<div class="card-body">
-					<h5 class="card-title">Pilih Data</h5>
+					<h5 class="card-title">Perhitungan</h5>
 					<form class="cmxform" id="signupForm" method="get" action="#">
 						<fieldset>
 							<div class="form-group">
-								<label for="exampleFormControlSelect1">Alternatif</label>
-								<select class="form-control" id="exampleFormControlSelect1">
-									<option>1</option>
-									<option>2</option>
-									<option>3</option>
-									<option>4</option>
-									<option>5</option>
+								<label for="exampleFormControlSelect1">Topik</label>
+								<select class="form-control" id="topic" name="topic">
+								<option value="#" disabled>Pilih Topik</option>
+								<?php
+								if($topic) {																					
+									foreach ($topic as $topics) { ?>									
+									<option value="<?= $topics->id ?>"><?= $topics->name ?></option>	
+									<?php }
+								} else { ?>									
+								<?php } ?>									
 								</select>
-							</div>
-                            <div class="form-group">
-								<label for="exampleFormControlSelect1">Kriteria</label>
-								<select class="form-control" id="exampleFormControlSelect1">
-									<option>1</option>
-									<option>2</option>
-									<option>3</option>
-									<option>4</option>
-									<option>5</option>
+							</div> 
+							<div class="form-group">
+								<label for="exampleFormControlSelect1">Data Alternatif</label>
+								<select class="form-control" id="data_alternatif" name="data_alternatif">
+								<option value="#" disabled>Pilih Data Alternatif</option>
+								<?php
+								if($data_alternatif) {																					
+									foreach ($data_alternatif as $data_alternatifs) { ?>									
+									<option value="<?= $data_alternatifs->id ?>"><?= $data_alternatifs->name ?></option>	
+									<?php }
+								} else { ?>									
+								<?php } ?>									
 								</select>
-							</div>
-                            <div class="form-group">
-								<label for="exampleFormControlSelect1">Sub Kriteria</label>
-								<select class="form-control" id="exampleFormControlSelect1">
-									<option>1</option>
-									<option>2</option>
-									<option>3</option>
-									<option>4</option>
-									<option>5</option>
-								</select>
-							</div>
-                            <div class="form-group">
-								<label for="name">Judul</label>
-								<input id="name" class="form-control" name="name" type="text">
-							</div>
+							</div>     																	
+							<?php
+							if($criterias) {																					
+								foreach ($criterias as $criteria) { ?>	
+								<div class="form-group">		
+									<label for="exampleFormControlSelect1"><?= $criteria->name ?></label>
+									<select class="form-control" id="name" name="name">
+									<option value="#" disabled>Pilih Sub Kriteria</option>						
+									<?php									
+									foreach ($sub_criterias as $sub_criteria) { 
+										if($criteria->id == $sub_criteria->sub_criteria_id){?>									
+										<option value="<?= $sub_criteria->sub_criteria_id ?>"><?= $sub_criteria->description ?></option>	
+										<?php 
+										}
+									}
+									?>	
+									</select>
+								</div>   
+								<?php }
+							}?>																										
 							<input class="btn btn-primary" type="submit" value="Choose">
 							<button type="button" class="btn btn-warning">Cancel</button>
 						</fieldset>

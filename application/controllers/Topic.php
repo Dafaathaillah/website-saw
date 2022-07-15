@@ -13,7 +13,7 @@ class Topic extends CI_Controller {
     {
         $data = array();
         $data['Topics'] = $this->topic->getTopic();
-        $this->load->view('topik/topik', $data);
+        $this->load->view('topik/mainTopik', $data);
     }
 
     public function form($topic_id = null)

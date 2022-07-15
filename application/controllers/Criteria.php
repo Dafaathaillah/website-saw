@@ -13,7 +13,7 @@ class Criteria extends CI_Controller {
     {
         $data = array();
         $data['criterias'] = $this->criteria->getCriteria();
-        $this->load->view('criteria/data_criteria', $data);
+        $this->load->view('criteria/mainDataKriteria', $data);
     }
 
     public function form($criteria_id = null)

@@ -1,13 +1,14 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Sub_criteria extends CI_Controller {
+class Calculate extends CI_Controller {
 
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('sub_criteria_model','sub_criteria');
-        $this->load->model('criteria_model','criteria');
+        // $this->load->model('sub_criteria_model','sub_criteria');
+        $this->load->model('calculate_model','calculate');
+        // $this->load->model('criteria_model','criteria');
     }
 
     public function index()
@@ -15,24 +16,24 @@ class Sub_criteria extends CI_Controller {
         $data = array();
         // $data['sub_criterias'] = $this->sub_criteria->getSub();
         // $data['sub_criterias'] = $this->sub_criteria->getCriteriaById($sub_id);
-        $this->load->view('subKriteria/mainSubKriteria', $data);
+        $this->load->view('perhitungan/mainPerhitungan', $data);
     }
 
-    public function form($sub_id = null)
+    public function form($calculate_id = null)
     {
         $data = array();
-        if($sub_id){
+        if($calculate_id){
             // $data['sub_criterias'] = $this->sub_criteria->getCriteria();        
             // $data['sub_criteria'] = $this->sub_criteria->getSubsByCriteriaId();            
         }
-        $this->load->view('subKriteria/createSubKriteria', $data);
+        $this->load->view('perhitungan/createSubKriteria', $data);
     }
 
     public function view($id = null){
         $data = array();
         // $data['sub_criterias'] = $this->sub_criteria->getSub($id);  
-        $data['sub_criteria'] = $this->sub_criteria->getSubsByCriteriaId();
-        $this->load->view('subKriteria/mainSubKriteria', $data);
+        $data['sub_criteria'] = $this->calculate->getSubsByCriteriaId();
+        $this->load->view('perhitungan/mainSubKriteria', $data);
     }
 
 
@@ -41,14 +42,15 @@ class Sub_criteria extends CI_Controller {
         $form_data = array
         (
             // 'id' => $id,
-            'criteria_id' => $this->input->post('name'),
-            'score' => $this->input->post('score'),
-            'description' => $this->input->post('description')            
+            'topic_id' => $this->input->post('topic_id'),
+            'data_alternatif_id' => $this->input->post('data_alternatif_id'),
+            'criteria_id' => $this->input->post('criteria_id'),
+            'sub_criteria_id' => $this->input->post('sub_criteria_id')                        
         );
         if(!$id){
-            $send_form = $this->sub_criteria->createSub($form_data);
+            $send_form = $this->calculate->createSub($form_data);
         } else {
-            $send_form = $this->sub_criteria->updateSub($form_data);   
+            $send_form = $this->calculate->updateSub($form_data);   
         }
         if($send_form){
             $this->session->set_flashdata('mensagem', array('success','Produto salvo com sucesso!'));
@@ -57,21 +59,21 @@ class Sub_criteria extends CI_Controller {
         else
         {
             $this->session->set_flashdata('mensagem', array('danger','Ops! Dados incorretos!'));
-            redirect('sub_criteria/form');
+            redirect('calculate/form');
         }
     }
 
     public function delete($id)
     {
-        $delete = $this->sub_criteria->deleteSub($id);
+        $delete = $this->calculate->deleteSub($id);
         if($delete){
             $this->session->set_flashdata('mensagem', array('success','Produto deletado com sucesso!'));
-            redirect('sub_criteria');
+            redirect('calculate');
         }
         else
         {
             $this->session->set_flashdata('mensagem', array('danger','Ops! Produto não encontrado!'));
-            redirect('sub_criteria');
+            redirect('calculate');
         }
     }
 }

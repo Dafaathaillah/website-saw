@@ -1,5 +1,5 @@
 <?php
-class sub_criteria_model extends CI_Model {
+class Sub_criteria_model extends CI_Model {
 
     public function getSub(){
         $this->db->order_by('id');

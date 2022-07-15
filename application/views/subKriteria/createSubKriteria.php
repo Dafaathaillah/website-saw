@@ -42,7 +42,7 @@ License: You must have a valid license purchased only from above link or https:/
 					?>
 					<form class="cmxform" id="signupForm" method="post" action="<?=site_url($action_form)?>">
 						<fieldset>
-						<div class="form-group">
+							<div class="form-group">
 								<label for="exampleFormControlSelect1">Kriteria</label>
 								<select class="form-control" id="name" name="name">
 								<option value="#" disabled>Pilih Kriteria</option>
