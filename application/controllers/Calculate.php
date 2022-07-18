@@ -12,10 +12,15 @@ class Calculate extends CI_Controller {
     }
 
     public function index()
-    {
-        $data = array();
+    {        
         // $data['sub_criterias'] = $this->sub_criteria->getSub();
         // $data['sub_criterias'] = $this->sub_criteria->getCriteriaById($sub_id);
+        $data = array();		
+		$data['topic'] = $this->calculate->getTopic();
+		$data['data_alternatif'] = $this->calculate->getData();
+		$data['criterias'] = $this->calculate->getCriteria(); // for form input
+		$data['sub_criterias'] = $this->calculate->getSubsByCriteriaId(); 		
+		$data['subs'] = $this->calculate->getSubs(); 
         $this->load->view('perhitungan/mainPerhitungan', $data);
     }
 

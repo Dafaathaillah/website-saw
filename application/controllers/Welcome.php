@@ -47,6 +47,7 @@ class Welcome extends CI_Controller {
 		$data['data_alternatif'] = $this->calculate->getData();
 		$data['criterias'] = $this->calculate->getCriteria(); // for form input
 		$data['sub_criterias'] = $this->calculate->getSubsByCriteriaId(); 		
+		$data['subs'] = $this->calculate->getSubs(); 	
 		$this->load->view('perhitungan/mainPerhitungan', $data);
 		// $this->load->view('layouts/main', $data);
 		// $data['data_alternatifs'] = $this->data_alternatif->getData();

@@ -18,9 +18,10 @@ class Calculate_model extends CI_Model {
     }    
 
     public function getCriteria(){
-        $this->db->order_by('id');
-        $this->db->where('cond', 1);
-        $query = $this->db->get('criteria');
+        $this->db->select('*');
+        $this->db->from('criteria');
+        $this->db->join('sub_kriteria', 'sub_kriteria.id = criteria.id');                                
+        $query = $this->db->get();
         return $query->result();
     }
 
@@ -29,6 +30,13 @@ class Calculate_model extends CI_Model {
         $this->db->order_by('id');
         $this->db->where('cond', 1);
         $query = $this->db->get('data_alternatif');
+        return $query->result();
+    }
+
+    public function getSubs(){
+        $this->db->order_by('id');
+        $this->db->where('cond', 1);
+        $query = $this->db->get('sub_kriteria');                                         
         return $query->result();
     }
 

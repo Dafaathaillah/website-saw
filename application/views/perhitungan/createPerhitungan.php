@@ -37,11 +37,14 @@ License: You must have a valid license purchased only from above link or https:/
 			<div class="card">
 				<div class="card-body">
 					<h5 class="card-title">Perhitungan</h5>
-					<form class="cmxform" id="signupForm" method="get" action="#">
+					<?php
+					$action_form = '/calculate/save/';
+					?>
+					<form class="cmxform" id="form_calculate" method="post" enctype="multipart/form-data" action="<?=site_url($action_form)?>">
 						<fieldset>
 							<div class="form-group">
 								<label for="exampleFormControlSelect1">Topik</label>
-								<select class="form-control" id="topic" name="topic">
+								<select class="form-control" id="topic_id" name="topic_id">
 								<option value="#" disabled>Pilih Topik</option>
 								<?php
 								if($topic) {																					
@@ -54,7 +57,7 @@ License: You must have a valid license purchased only from above link or https:/
 							</div> 
 							<div class="form-group">
 								<label for="exampleFormControlSelect1">Data Alternatif</label>
-								<select class="form-control" id="data_alternatif" name="data_alternatif">
+								<select class="form-control" id="data_alternatif_id" name="data_alternatif_id">
 								<option value="#" disabled>Pilih Data Alternatif</option>
 								<?php
 								if($data_alternatif) {																					
@@ -69,13 +72,13 @@ License: You must have a valid license purchased only from above link or https:/
 							if($criterias) {																					
 								foreach ($criterias as $criteria) { ?>	
 								<div class="form-group">		
-									<label for="exampleFormControlSelect1"><?= $criteria->name ?></label>
-									<select class="form-control" id="name" name="name">
+									<label for="exampleFormControlSelect1" id="criteria_id" name="criteria_id"><?= $criteria->name ?></label>
+									<select class="form-control" id="sub_criteria_id" name="sub_criteria_id">
 									<option value="#" disabled>Pilih Sub Kriteria</option>						
 									<?php									
-									foreach ($sub_criterias as $sub_criteria) { 
-										if($criteria->id == $sub_criteria->sub_criteria_id){?>									
-										<option value="<?= $sub_criteria->sub_criteria_id ?>"><?= $sub_criteria->description ?></option>	
+									foreach ($subs as $sub) { 
+										if($sub->criteria_id == $criteria->id){?>									
+										<option value="<?= $sub->id ?>"><?= $sub->description ?></option>	
 										<?php 
 										}
 									}
@@ -83,7 +86,11 @@ License: You must have a valid license purchased only from above link or https:/
 									</select>
 								</div>   
 								<?php }
-							}?>																										
+							}?>			
+							<!-- 'topic_id' => $this->input->post('topic_id'),
+            'data_alternatif_id' => $this->input->post('data_alternatif_id'),
+            'criteria_id' => $this->input->post('criteria_id'),
+            'sub_criteria_id' => $this->input->post('sub_criteria_id')  																							 -->
 							<input class="btn btn-primary" type="submit" value="Choose">
 							<button type="button" class="btn btn-warning">Cancel</button>
 						</fieldset>
