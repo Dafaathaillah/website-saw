@@ -11,11 +11,24 @@ class Sub_criteria extends CI_Controller {
     }
 
     public function index()
-    {
-        $data = array();
+    {   
+        $data = array();     
         // $data['sub_criterias'] = $this->sub_criteria->getSub();
         $data['criterias'] = $this->sub_criteria->getCriteria();
         $data['sub_criterias'] = $this->sub_criteria->getSubsByCriteriaId();
+        
+        // $config['base_url'] = site_url('subKriteria/index');
+        // $config['total_rows'] = $this->db->count_all('sub_kriteria');
+        // $config['per_page'] = 5;
+        // $config['uri_segment'] = 3;
+        // $choice = $config["total_rows"] / $config['per_page'];
+        // $config["num_links"] = floor($choice);
+
+        // $this->pagination->initialize($config);
+        // $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+        // // $data['sub_criterias'] = $this->sub_criteria->getSub($id);  
+        // $data['sub_criteria'] = $this->sub_criteria->getSubsByCriteriaId($config['per_page'], $data['page']);
+        // $data['pagination'] = $this->pagination->create_links();
         $this->load->view('subKriteria/mainSubKriteria', $data);
     }
 
@@ -23,16 +36,14 @@ class Sub_criteria extends CI_Controller {
     {
         $data = array();
         if($sub_id){
-            // $data['sub_criterias'] = $this->sub_criteria->getCriteria();        
+            // $data['criterias'] = $this->sub_criteria->getCriteria();        
             // $data['sub_criteria'] = $this->sub_criteria->getSubsByCriteriaId();            
         }
         $this->load->view('subKriteria/createSubKriteria', $data);
     }
 
-    public function view($id = null){
-        $data = array();
-        // $data['sub_criterias'] = $this->sub_criteria->getSub($id);  
-        $data['sub_criteria'] = $this->sub_criteria->getSubsByCriteriaId();
+    public function view($id = null){       
+        // $data['sub_criteria'] = $this->sub_criteria->getSubsByCriteriaId();
         $this->load->view('subKriteria/mainSubKriteria', $data);
     }
 
