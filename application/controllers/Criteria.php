@@ -31,7 +31,8 @@ class Criteria extends CI_Controller {
         (
             // 'id' => $id,
             'name' => $this->input->post('name'),
-            'sts' => $this->input->post('sts')            
+            'sts' => $this->input->post('sts'),                        
+            'bobot' => $this->input->post('bobot')
         );
         if(!$id){
             $send_form = $this->criteria->createCriteria($form_data);

@@ -44,6 +44,7 @@ License: You must have a valid license purchased only from above link or https:/
 									<tr>
 										<th>No</th>
 										<th>Name</th>
+										<th>Bobot</th>
 										<th>Status</th>							
 										<th>Action</th>
 									</tr>
@@ -56,6 +57,7 @@ License: You must have a valid license purchased only from above link or https:/
 										<tr>
 											<td><?= ++$no ?></td>										
 											<td><?= $criteria->name ?></td>
+											<td><?= $criteria->bobot ?></td>
 											<td><?= $criteria->sts ?></td>											
 											<td class="text-center">
 											<div class="row">

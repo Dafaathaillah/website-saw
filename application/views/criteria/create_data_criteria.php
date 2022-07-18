@@ -49,8 +49,14 @@ License: You must have a valid license purchased only from above link or https:/
 							<div class="form-group">
 								<label for="score">Status</label>
 								<select class="form-control" id="sts" name="sts">
+									<option value="#" disabled>Pilih Status</option>
 									<option value="Cost">Cost</option>
 									<option value="Benefit">Benefit</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<label for="score">Bobot</label>
+								<input id="bobot" class="form-control" name="bobot" type="text">
 								</select>
 							</div>						
 							<input class="btn btn-primary" type="submit" value="Submit">
