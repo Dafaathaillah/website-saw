@@ -42,26 +42,36 @@ License: You must have a valid license purchased only from above link or https:/
 							<table id="dataTableExample" class="table">
 								<thead>
 									<tr>
+										<th>No</th>
 										<th>Topik</th>
 										<th>Data Alternatif</th>
 										<th>Action</th>                                        
 									</tr>
 								</theadData>
 								<tbody>
-									<tr>
-										<td>Tiger Nixon</td>
-										<td>System Architect</td>
-										<td class="text-center">
-											<div class="row">
-												<a href="#" class="nav-link">
-													<i class="link-icon" data-feather="edit"></i>
-												</a>
-												<a href="#" class="nav-link">
-													<i class="link-icon" data-feather="trash-2"></i>
-												</a>
-											</div>
-										</td>
-									</tr>									
+									<?php
+									if($results) {
+										$no = 0;
+										foreach ($results as $result) { ?>
+											<tr>
+												<td><?= ++$no ?></td>											
+												<td><?= $result->topic ?></td>																																
+												<td><?= $result->name ?></td>						
+												<td class="text-center">
+													<div class="row">
+														<a href="#" class="nav-link">
+															<i class="link-icon" data-feather="edit"></i>
+														</a>
+														<a href="#" class="nav-link">
+															<i class="link-icon" data-feather="trash-2"></i>
+														</a>
+													</div>
+												</td>
+											</tr>
+										<?php }
+									} else { ?>
+										<td class="text-center" colspan="6">Tidak ada hasil perhitungan!!</td>
+									<?php } ?>								
 								</tbody>
 							</table>
 						</div>

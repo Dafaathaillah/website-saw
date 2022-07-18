@@ -25,6 +25,14 @@ class Calculate_model extends CI_Model {
         return $query->result();
     }
 
+    public function getResult(){
+        $this->db->select('result.id AS result_id, topic.name AS topic, data_alternatif.name, result.hasil');
+        $this->db->from('result');
+        $this->db->join('topic', 'topic.id = result.topic_id');                        
+        $this->db->join('data_alternatif', 'data_alternatif.id = result.data_alternatif_id');
+        $query = $this->db->get();
+        return $query->result();
+    }
 
     public function getData(){
         $this->db->order_by('id');

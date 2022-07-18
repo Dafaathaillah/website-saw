@@ -21,6 +21,7 @@ class Calculate extends CI_Controller {
 		$data['criterias'] = $this->calculate->getCriteria(); // for form input
 		$data['sub_criterias'] = $this->calculate->getSubsByCriteriaId(); 		
 		$data['subs'] = $this->calculate->getSubs(); 
+        $data['results'] = $this->calculate->getResult(); 
         $this->load->view('perhitungan/mainPerhitungan', $data);
     }
 
