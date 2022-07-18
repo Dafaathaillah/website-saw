@@ -12,7 +12,7 @@ class Topic extends CI_Controller {
     public function index()
     {
         $data = array();
-        $data['Topics'] = $this->topic->getTopic();
+        $data['topics'] = $this->topic->getTopic();
         $this->load->view('topik/mainTopik', $data);
     }
 
