@@ -61,7 +61,22 @@ class Topic extends CI_Controller
 
 	public function edit($id)
 	{
-		$topic = $this->db->where(['id' => $id])->get('topic')->row();
-		$this->load->view('topik/editTopik', ['topic' => $topic]);
+		$data['topik'] = $this->topic->get($id);
+		$this->load->view('topik/mainEditTopik');
+		$this->load->view('topik/editTopik', $data);
+	}
+
+	public function update($id)
+	{
+		$this->form_validation->set_rules('name', 'Name', 'required');
+
+		if (!$this->form_validation->run()) {
+			$this->session->set_flashdata('errors', validation_errors());
+			redirect(base_url('topik/editTopik/' . $id));
+		} else {
+			$this->topic->update($id);
+			$this->session->set_flashdata('success', "Updated Successfully!");
+			redirect(base_url('topic'));
+		}
 	}
 }
