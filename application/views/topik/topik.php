@@ -50,10 +50,9 @@ License: You must have a valid license purchased only from above link or https:/
 								<tbody>
 								<?php
 								if($topics) {
-									$no = 0;
 									foreach ($topics as $topic) { ?>
 										<tr>
-											<td><?= ++$no ?></td>											
+											<td><?= $page++ +1 ?></td>											
 											<td><?= $topic->name ?></td>	
 											<td class="text-center">
 											<div class="row">
@@ -72,6 +71,11 @@ License: You must have a valid license purchased only from above link or https:/
 								<?php } ?>
 								</tbody>
 							</table>
+							<div class="row">
+								<div class="col">
+									<?php echo $pagination; ?>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>

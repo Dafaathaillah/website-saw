@@ -2,11 +2,11 @@
 class Topic_model extends CI_Model
 {
 
-	public function getTopic()
+	public function getTopic($limit, $start)
 	{
 		$this->db->order_by('id');
 		$this->db->where('cond', 1);
-		$query = $this->db->get('topic');
+		$query = $this->db->get('topic', $limit, $start);
 		return $query->result();
 	}
 
