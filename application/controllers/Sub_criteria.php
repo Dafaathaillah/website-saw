@@ -64,7 +64,7 @@ class Sub_criteria extends CI_Controller {
         }
         if($send_form){
             $this->session->set_flashdata('mensagem', array('success','Produto salvo com sucesso!'));
-            redirect('http://localhost/website-saw/');
+            redirect(base_url('Sub_criteria'));
         }
         else
         {
