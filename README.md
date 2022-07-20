@@ -1,8 +1,8 @@
 # Website-saw
 
-Rancangan ERD Sementara
+Rancangan ERD
 
-![Screenshot_302](https://user-images.githubusercontent.com/62891893/178653871-adbbb6d0-3d16-450b-bc6b-f95545dbf86c.png)
+![Screenshot_305](https://user-images.githubusercontent.com/62891893/179928695-686eb578-c7f2-4a16-aba8-293cc158b556.png)
 
 Rancangan Desain Sementara
 ![Desktop 1](https://user-images.githubusercontent.com/57293211/178400450-d16b2951-159f-4f05-82d0-b58732041f04.png)

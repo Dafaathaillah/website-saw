@@ -57,7 +57,7 @@ License: You must have a valid license purchased only from above link or https:/
 											<td><?= $topic->name ?></td>	
 											<td class="text-center">
 											<div class="row">
-												<a href="#" class="nav-link">
+												<a href="<?php echo base_url('Topic/edit/'.$topic->id) ?>" class="nav-link">
 													<i class="link-icon" data-feather="edit"></i>
 												</a>
 												<a href="#" class="nav-link">
