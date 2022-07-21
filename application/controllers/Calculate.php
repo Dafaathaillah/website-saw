@@ -8,7 +8,7 @@ class Calculate extends CI_Controller {
         parent::__construct();
         // $this->load->model('sub_criteria_model','sub_criteria');
         $this->load->model('calculate_model','calculate');
-        // $this->load->model('criteria_model','criteria');
+        $this->load->model('criteria_model','criteria');
     }
 
     public function index()
@@ -32,7 +32,7 @@ class Calculate extends CI_Controller {
             // $data['sub_criterias'] = $this->sub_criteria->getCriteria();        
             // $data['sub_criteria'] = $this->sub_criteria->getSubsByCriteriaId();            
         }
-        $this->load->view('perhitungan/createSubKriteria', $data);
+        redirect(base_url('calculate'));
     }
 
     public function view($id = null){
@@ -42,30 +42,47 @@ class Calculate extends CI_Controller {
         $this->load->view('perhitungan/mainSubKriteria', $data);
     }
 
+    public function calculate(){
+        
+        $data = array();
+        $data['calculates'] = $this->calculate->getCalculateByAllId();        
+        
+        foreach ($calculates as $calulate) {
+            $data_alternatif[] = $data_alternatif['criteria'];
+        }
+
+    }
 
     public function save($id = null)
-    {
-        $form_data = array
-        (
-            // 'id' => $id,
-            'topic_id' => $this->input->post('topic_id'),
-            'data_alternatif_id' => $this->input->post('data_alternatif_id'),
-            'criteria_id' => $this->input->post('criteria_id'),
-            'sub_criteria_id' => $this->input->post('sub_criteria_id')                        
-        );
-        if(!$id){
-            $send_form = $this->calculate->createSub($form_data);
+    {                
+        $data  = array();
+        $data['criteria'] = $this->calculate->getCriteria();            
+
+        if(!$id){           
+            foreach ($data['criteria'] as $key => $value) {
+                $form_data = array
+                (
+                    // 'topic_id' => $topic,
+                    // 'data_alternatif_id' => $data_alternatif,
+                    // 'criteria' => $key['criteria_id'],
+                        'topic_id' => $this->input->post('topic_id'),
+                        'data_alternatif_id' => $this->input->post('data_alternatif_id'),                        
+                        'criteria_id' => $_POST['criteria_id'][$key],
+                        'sub_kriteria_id' => $_POST['sub_kriteria_id'][$key],
+                );
+                $send_form = $this->calculate->createCalculate($form_data);            
+        }
         } else {
-            $send_form = $this->calculate->updateSub($form_data);   
+            $send_form = $this->calculate->updateCalculate($form_data);   
         }
         if($send_form){
             $this->session->set_flashdata('mensagem', array('success','Produto salvo com sucesso!'));
-            redirect('http://localhost/website-saw/');
+            redirect(base_url('calculate'));
         }
         else
         {
             $this->session->set_flashdata('mensagem', array('danger','Ops! Dados incorretos!'));
-            redirect('calculate/form');
+            redirect(base_url('calculate/form'));
         }
     }
 

@@ -18,10 +18,9 @@ class Calculate_model extends CI_Model {
     }    
 
     public function getCriteria(){
-        $this->db->select('*');
-        $this->db->from('criteria');
-        $this->db->join('sub_kriteria', 'sub_kriteria.id = criteria.id');                                
-        $query = $this->db->get();
+        $this->db->order_by('id');
+        $this->db->where('cond', 1);
+        $query = $this->db->get('criteria');
         return $query->result();
     }
 

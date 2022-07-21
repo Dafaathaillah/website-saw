@@ -72,8 +72,9 @@ License: You must have a valid license purchased only from above link or https:/
 							if($criterias) {																					
 								foreach ($criterias as $criteria) { ?>	
 								<div class="form-group">		
-									<label for="exampleFormControlSelect1" id="criteria_id" name="criteria_id"><?= $criteria->name ?></label>
-									<select class="form-control" id="sub_criteria_id" name="sub_criteria_id">
+									<label for="exampleFormControlSelect1"><?= $criteria->name ?></label>
+									<input type='hidden' value="<?= $criteria->id ?>" id='criteria_id[]' name='criteria_id[]'>
+									<select class="form-control" id="sub_kriteria_id[]" name="sub_kriteria_id[]">
 									<option value="#" disabled>Pilih Sub Kriteria</option>						
 									<?php									
 									foreach ($subs as $sub) { 
@@ -86,11 +87,7 @@ License: You must have a valid license purchased only from above link or https:/
 									</select>
 								</div>   
 								<?php }
-							}?>			
-							<!-- 'topic_id' => $this->input->post('topic_id'),
-            'data_alternatif_id' => $this->input->post('data_alternatif_id'),
-            'criteria_id' => $this->input->post('criteria_id'),
-            'sub_criteria_id' => $this->input->post('sub_criteria_id')  																							 -->
+							}?>										
 							<input class="btn btn-primary" type="submit" value="Choose">
 							<button type="button" class="btn btn-warning">Cancel</button>
 						</fieldset>
