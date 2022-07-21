@@ -40,7 +40,7 @@ class Topic extends CI_Controller
 
 		if ($send_form) {
 			$this->session->set_flashdata('message', array('success', 'Data berhasil ditambahkan!'));
-			redirect('http://localhost/website-saw/');
+			redirect('topic');
 		} else {
 			$this->session->set_flashdata('message', array('danger', 'Ops! Dados incorretos!'));
 			redirect('topic/form');
@@ -49,14 +49,8 @@ class Topic extends CI_Controller
 
 	public function delete($id)
 	{
-		$delete = $this->topic->deleteTopic($id);
-		if ($delete) {
-			$this->session->set_flashdata('message', array('success', 'Data berhasil dihapuskan!'));
-			redirect('topic');
-		} else {
-			$this->session->set_flashdata('message', array('danger', 'Ops! Produk tidak ditemukan!'));
-			redirect('topic');
-		}
+		$this->topic->deleteTopic($id);
+		redirect('topic');
 	}
 
 	public function edit($id)
