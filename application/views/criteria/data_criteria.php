@@ -64,7 +64,7 @@ License: You must have a valid license purchased only from above link or https:/
 												<a href="#" class="nav-link">
 													<i class="link-icon" data-feather="edit"></i>
 												</a>
-												<a href="#" class="nav-link">
+												<a href="<?php echo base_url() ?>Criteria/delete/<?php echo $criteria->id?>" class="nav-link">
 													<i class="link-icon" data-feather="trash-2"></i>
 												</a>
 											</div>
