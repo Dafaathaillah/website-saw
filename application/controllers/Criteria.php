@@ -53,15 +53,7 @@ class Criteria extends CI_Controller {
 
     public function delete($id)
     {
-        $delete = $this->criteria->deleteCriteria($id);
-        if($delete){
-            $this->session->set_flashdata('message', array('success','Data berhasil dihapuskan!'));
-            redirect('criteria');
-        }
-        else
-        {
-            $this->session->set_flashdata('message', array('danger','Ops! Produk tidak ditemukan!'));
-            redirect('criteria');
-        }
+        $this->criteria->deleteCriteria($id);
+        redirect('criteria');
     }
 }
