@@ -60,12 +60,12 @@ License: You must have a valid license purchased only from above link or https:/
 						<span class="link-title">Perhitungan</span>
 					</a>
 				</li>
-				<li class="nav-item">
-					<a href="<?php base_url() ?> Hasil" class="nav-link">
-						<i class="link-icon" data-feather="pie-chart"></i>
-						<span class="link-title">Hasil</span>
-					</a>
-				</li>
+					<!-- <li class="nav-item">
+						<a href="<?php base_url() ?> Hasil" class="nav-link">
+							<i class="link-icon" data-feather="pie-chart"></i>
+							<span class="link-title">Hasil</span>
+						</a>
+					</li> -->
 			</ul>
 		</div>
 	</nav>
