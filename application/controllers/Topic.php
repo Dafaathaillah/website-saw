@@ -91,7 +91,7 @@ class Topic extends CI_Controller
 	public function delete($id)
 	{
 		$this->topic->deleteTopic($id);
-		redirect('topic');
+		redirect('Topik');
 	}
 
 	public function edit($id)
