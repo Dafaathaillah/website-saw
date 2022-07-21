@@ -37,7 +37,7 @@ License: You must have a valid license purchased only from above link or https:/
 			<div class="col-md-12 grid-margin stretch-card">
 				<div class="card">
 					<div class="card-body">
-						<h6 class="card-title">Tabel Hasil Perhitungan</h6>
+						<h6 class="card-title">Tabel Perhitungan</h6>
 						<div class="table-responsive">
 							<table id="dataTableExample" class="table">
 								<thead>
@@ -50,13 +50,13 @@ License: You must have a valid license purchased only from above link or https:/
 								</theadData>
 								<tbody>
 									<?php
-									if($results) {
+									if($calculates) {
 										$no = 0;
-										foreach ($results as $result) { ?>
+										foreach ($calculates as $calculate) { ?>
 											<tr>
 												<td><?= ++$no ?></td>											
-												<td><?= $result->topic ?></td>																																
-												<td><?= $result->name ?></td>						
+												<td><?= $calculate->topic ?></td>																																
+												<td><?= $calculate->data_alternatif ?></td>						
 												<td class="text-center">
 													<div class="row">
 														<a href="#" class="nav-link">

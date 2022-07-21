@@ -22,6 +22,7 @@ class Calculate extends CI_Controller {
 		$data['sub_criterias'] = $this->calculate->getSubsByCriteriaId(); 		
 		$data['subs'] = $this->calculate->getSubs(); 
         $data['results'] = $this->calculate->getResult(); 
+        $data['calculates'] = $this->calculate->getCalculate();
         $this->load->view('perhitungan/mainPerhitungan', $data);
     }
 
@@ -38,7 +39,7 @@ class Calculate extends CI_Controller {
     public function view($id = null){
         $data = array();
         // $data['sub_criterias'] = $this->sub_criteria->getSub($id);  
-        $data['sub_criteria'] = $this->calculate->getSubsByCriteriaId();
+        $data['sub_criteria'] = $this->calculate->getSubsByCriteriaId();        
         $this->load->view('perhitungan/mainSubKriteria', $data);
     }
 

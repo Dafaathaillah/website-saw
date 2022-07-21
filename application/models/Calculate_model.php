@@ -2,10 +2,14 @@
 class Calculate_model extends CI_Model {
 
     public function getCalculate(){
-        $this->db->order_by('id');
-        $this->db->where('cond', 1);
-        $query = $this->db->get('calculate');                
-        return $query->result();        
+        $this->db->select('topic.name AS topic, data_alternatif.name AS data_alternatif');
+        $this->db->from('calculate');
+        $this->db->join('topic', 'topic.id = calculate.topic_id');                        
+        $this->db->join('data_alternatif', 'data_alternatif.id = calculate.data_alternatif_id');
+        $this->db->group_by('data_alternatif'); 
+        $this->db->order_by('topic', 'asc');
+        $query = $this->db->get();
+        return $query->result();     
     }
 
     public function getCalculateByTopicIdDataId(){    
