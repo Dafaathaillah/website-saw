@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Sub_criteria extends CI_Controller {
+class Subcriteria extends CI_Controller {
 
     public function __construct()
     {
@@ -43,7 +43,7 @@ class Sub_criteria extends CI_Controller {
     }
 
     public function view($id = null){       
-        // $data['sub_criteria'] = $this->sub_criteria->getSubsByCriteriaId();
+        $data['sub_criteria'] = $this->sub_criteria->getSubsByCriteriaId();
         $this->load->view('subKriteria/mainSubKriteria', $data);
     }
 
@@ -64,26 +64,18 @@ class Sub_criteria extends CI_Controller {
         }
         if($send_form){
             $this->session->set_flashdata('mensagem', array('success','Produto salvo com sucesso!'));
-            redirect(base_url('Sub_criteria'));
+            redirect(base_url('subcriteria'));
         }
         else
         {
             $this->session->set_flashdata('mensagem', array('danger','Ops! Dados incorretos!'));
-            redirect('sub_criteria/form');
+            redirect('subcriteria/form');
         }
     }
 
     public function delete($id)
     {
-        $delete = $this->sub_criteria->deleteSub($id);
-        if($delete){
-            $this->session->set_flashdata('mensagem', array('success','Produto deletado com sucesso!'));
-            redirect('sub_criteria');
-        }
-        else
-        {
-            $this->session->set_flashdata('mensagem', array('danger','Ops! Produto não encontrado!'));
-            redirect('sub_criteria');
-        }
+        $this->sub_criteria->deleteSub($id);
+        redirect('subcriteria');
     }
 }
