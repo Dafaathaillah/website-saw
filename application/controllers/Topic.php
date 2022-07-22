@@ -13,10 +13,10 @@ class Topic extends CI_Controller
 	public function index()
 	{
 		$this->load->library('pagination');
-		$config['base_url'] = site_url('Topic/index');
+		$config['base_url'] = site_url('Topic');
 		$config['total_rows'] = $this->db->count_all('topic');
 		$config['per_page'] = 3;
-		$config['uri_segment'] = 3;
+		$config['uri_segment'] = 2;
 
 
 		$choice = $config["total_rows"] / $config['per_page'];
@@ -35,7 +35,7 @@ class Topic extends CI_Controller
         $config['next_link'] = 'Next';
         $config['prev_link'] = 'Prev';
 
-		$config['full_tag_open'] = '<div class="pagination"><nav><ul class="pagination pagination-rounded">';
+		$config['full_tag_open'] = '<div class="pagination justify-content-end"><nav><ul class="pagination justify-content-end">';
 		$config['full_tag_close'] = '</ul></nav></div>';
 
 		$config['num_tag_open'] = '<li class="page-item"><span class="page-link">';
@@ -61,7 +61,7 @@ class Topic extends CI_Controller
 		$this->pagination->initialize($config);
 
 		$data = array();
-		$data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+		$data['page'] = ($this->uri->segment(2)) ? $this->uri->segment(2) : 0;
 		$data['topics'] = $this->topic->getTopic($config["per_page"], $data['page']);
 
 		$data['pagination'] = $this->pagination->create_links();
