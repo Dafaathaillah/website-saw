@@ -54,12 +54,12 @@ class Data extends CI_Controller {
         $delete = $this->data_alternatif->deleteData($id);
         if($delete){
             $this->session->set_flashdata('message', array('success','Data berhasil dihapuskan!'));
-            redirect('data_alternatif');
+            redirect('data');
         }
         else
         {
             $this->session->set_flashdata('message', array('danger','Ops! Produk tidak ditemukan!'));
-            redirect('data_alternatif');
+            redirect('data');
         }
     }
 }
