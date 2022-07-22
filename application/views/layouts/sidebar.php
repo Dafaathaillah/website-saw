@@ -43,7 +43,7 @@ License: You must have a valid license purchased only from above link or https:/
 					</a>
 				</li>
 				<li class="nav-item">
-					<a href="<?php base_url() ?> Sub_criteria" class="nav-link">
+					<a href="<?php base_url() ?> Subcriteria" class="nav-link">
 						<i class="link-icon" data-feather="minus-square"></i>
 						<span class="link-title">Sub Kriteria</span>
 					</a>
