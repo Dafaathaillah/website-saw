@@ -36,7 +36,7 @@
 		<!-- Star Navbar-->
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container">
-                    <a class="navbar-brand" href="#"><img src="assets/assets1/img/brex-logo.png" alt="brex-logo"></a>
+                    <!-- <a class="navbar-brand" href="#"><img src="assets/assets1/img/brex-logo.png" alt="brex-logo"></a>
                     <button
                         class="navbar-toggler"
                         type="button"
@@ -45,7 +45,7 @@
                         aria-controls="navbarNav"
                         aria-expanded="false"
                         aria-label="Toggle navigation">
-                    </button>
+                    </button> -->
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav ml-auto" id="menu">
                             <!-- Drop Down-->
@@ -105,7 +105,7 @@
 	<!-- ======== End Slider ======== -->
 
 	<!-- ======== Start About Us ======== -->
-	<section class="about-us" id="about">
+	<!-- <section class="about-us" id="about">
             <div class="container">
                 <div class="row">
                     <div class="col-md-7 col-lg-6">
@@ -131,7 +131,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
         <!-- ======== End About Us ======== -->
 
 		

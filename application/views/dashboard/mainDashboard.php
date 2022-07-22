@@ -47,7 +47,7 @@ License: You must have a valid license purchased only from above link or https:/
 
 				<div class="d-flex justify-content-between align-items-center flex-wrap grid-margin">
 					<div>
-						<h4 class="mb-3 mb-md-0">Welcome To Data Alternatif</h4>
+						<h4 class="mb-3 mb-md-0">Dashboard</h4>
 					</div>
 					<div class="d-flex align-items-center flex-wrap text-nowrap">
 						<div class="input-group date datepicker dashboard-date mr-2 mb-2 mb-md-0 d-md-none d-xl-flex"
