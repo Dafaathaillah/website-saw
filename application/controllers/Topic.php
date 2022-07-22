@@ -8,14 +8,15 @@ class Topic extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('topic_model', 'topic');
+		$this->load->library('form_validation');
 	}
 
 	public function index()
 	{
 		$this->load->library('pagination');
-		$config['base_url'] = site_url('Topic');
+		$config['base_url'] = site_url('Topic/index');
 		$config['total_rows'] = $this->db->count_all('topic');
-		$config['per_page'] = 3;
+		$config['per_page'] = 6;
 		$config['uri_segment'] = 2;
 
 
@@ -26,15 +27,6 @@ class Topic extends CI_Controller
 		$config['last_link'] = 'Last';
 		$config['next_link'] = 'Next';
 		$config['prev_link'] = 'Prev';
-
-		$choice = $config["total_rows"] / $config['per_page'];
-        $config["num_links"] = floor($choice);
-
-        $config['first_link'] = 'First';
-        $config['last_link'] = 'Last';
-        $config['next_link'] = 'Next';
-        $config['prev_link'] = 'Prev';
-
 		$config['full_tag_open'] = '<div class="pagination justify-content-end"><nav><ul class="pagination justify-content-end">';
 		$config['full_tag_close'] = '</ul></nav></div>';
 
@@ -67,14 +59,14 @@ class Topic extends CI_Controller
 		$data['pagination'] = $this->pagination->create_links();
 		$this->load->view('topik/mainTopik', $data);
 	}
-
+	
 	public function form($topic_id = null)
 	{
 		$data = array();
 		if ($topic_id) {
 			$data['topic'] = $this->topic->getTopicById($topic_id);
 		}
-		$this->load->view('topik/createTopik', $data);
+		$this->load->view('topik/mainEditTopik', $data);
 	}
 
 	public function save($id = null)
@@ -98,17 +90,27 @@ class Topic extends CI_Controller
 		}
 	}
 
+	public function edit($id = null){
+		if(!isset($id)) redirect('topic');
+
+		$topic = $this->topic_model;
+		$validation = $this->form_validation;
+		$validation->set_rules($topic->rules());
+		
+		if ($validation->run()){
+			$topic->update();
+			$this->session->set_flashdata('succes', 'Berhasil Disimpan');
+		}
+
+		$data["topic"] = $topic->getTopicById($id);
+		if (!$data["topic"]) show_404();
+		 $this->load->view("topik/mainEditTopik", $data);
+	}
+
 	public function delete($id)
 	{
 		$this->topic->deleteTopic($id);
 		redirect('topic');
-	}
-
-	public function edit($id)
-	{
-		$data['topik'] = $this->topic->get($id);
-		$this->load->view('topik/mainEditTopik');
-		$this->load->view('topik/editTopik', $data);
 	}
 
 	public function update($id)
