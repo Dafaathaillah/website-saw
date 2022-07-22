@@ -13,7 +13,7 @@ License: You must have a valid license purchased only from above link or https:/
 	<nav class="sidebar">
 		<div class="sidebar-header">
 			<a href="#" class="sidebar-brand">
-				Noble<span>UI</span>
+				SAW<span>web</span>
 			</a>
 			<div class="sidebar-toggler not-active">
 				<span></span>
