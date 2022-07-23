@@ -59,7 +59,7 @@ License: You must have a valid license purchased only from above link or https:/
 						</div>
 						<a href="<?php echo base_url('Topic/excel') ?>"><button type="button" class="btn btn-primary btn-icon-text mb-2 mb-md-0">
 							<i class="btn-icon-prepend" data-feather="download-cloud"></i>
-							Download Report
+							Export to Excell
 						</button></a>
 					</div>
 				</div>

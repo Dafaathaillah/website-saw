@@ -128,8 +128,7 @@ class Topic extends CI_Controller
 	}
 
 	public function excel(){
-		$data = array();
-		$data['topics'] = $this->topic->getTopic();
+		$data['topics'] = $this->topic->getAllTopic();
 
 		require(APPPATH. 'PHPExcel-1.8/Classes/PHPExcel.php');
 		require(APPPATH. 'PHPExcel-1.8/Classes/PHPExcel/Writer/Excel2007.php');
