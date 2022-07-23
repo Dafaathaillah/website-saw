@@ -126,4 +126,44 @@ class Topic extends CI_Controller
 			redirect(base_url('topic'));
 		}
 	}
+
+	public function excel(){
+		$data = array();
+		$data['topics'] = $this->topic->getTopic();
+
+		require(APPPATH. 'PHPExcel-1.8/Classes/PHPExcel.php');
+		require(APPPATH. 'PHPExcel-1.8/Classes/PHPExcel/Writer/Excel2007.php');
+
+		$object = new PHPExcel();
+		$object->getProperties()->setCreator("Dafa Maul Hafis");
+		$object->getProperties()->getLastModifiedBy("Dafa Maul Hafis");
+		$object->getProperties()->setTitle("Perhitungan SPK metode SAW");
+
+		$object->setActiveSheetIndex(0);
+
+		$object->getActiveSheet()->setCellValue('A1', 'NO');
+		$object->getActiveSheet()->setCellValue('B1', 'NAME of TOPIC');
+
+		$baris = 2;
+		$no = 1;
+
+		foreach($data['topics'] as $tpc){
+			$object->getActiveSheet()->setCellValue('A'.$baris, $no++);
+			$object->getActiveSheet()->setCellValue('A'.$baris, $tpc->name);
+
+			$baris++;
+		}
+		$filename="Hasil Perhitungan SPK metode SAW".'.xlsx';
+
+		$object->getActiveSheet()->setTitle("Perhitungan SPK metode SAW");
+
+		header('Content-Type: application/vnd.openxmlformat-officedocument.spreadsheetml.sheet');
+		header('Content-Disposition: attachment;filename= "'.$filename. '"');
+		header('Cache-Control: max-age=0');
+
+		$writer=PHPExcel_IOFactory::createWriter($object, 'Excel2007');
+		$writer->save('php://output');
+
+		exit;
+	}
 }

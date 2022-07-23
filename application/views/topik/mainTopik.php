@@ -23,6 +23,7 @@ License: You must have a valid license purchased only from above link or https:/
 	<!-- inject:css -->
 	<link rel="stylesheet" href="<?php echo base_url();?>assets/fonts/feather-font/css/iconfont.css">
 	<link rel="stylesheet" href="<?php echo base_url();?>assets/assets/flag-icon-css/css/flag-icon.min.css">
+	<link rel="stylesheet" href="<?php echo base_url() ?>assets/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
 	<!-- endinject -->
 	<!-- Layout styles -->
 	<link rel="stylesheet" href="<?php echo base_url();?>assets/css/demo_1/style.css">
@@ -56,10 +57,10 @@ License: You must have a valid license purchased only from above link or https:/
 									class=" text-primary"></i></span>
 							<input type="text" class="form-control">
 						</div>
-						<button type="button" class="btn btn-primary btn-icon-text mb-2 mb-md-0">
+						<a href="<?php echo base_url('Topic/excel') ?>"><button type="button" class="btn btn-primary btn-icon-text mb-2 mb-md-0">
 							<i class="btn-icon-prepend" data-feather="download-cloud"></i>
 							Download Report
-						</button>
+						</button></a>
 					</div>
 				</div>
 
@@ -102,6 +103,8 @@ License: You must have a valid license purchased only from above link or https:/
 	<!-- inject:js -->
 	<script src="<?php echo base_url();?>assets/assets/feather-icons/feather.min.js"></script>
 	<script src="<?php echo base_url();?>assets/js/template.js"></script>
+	<script src="<?php echo base_url() ?>assets/vendors/datatables.net/jquery.dataTables.js"></script>
+	<script src="<?php echo base_url() ?>assets/vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
 	<!-- endinject -->
 	<!-- custom js for this page -->
 	<script src="<?php echo base_url();?>assets/js/dashboard.js"></script>
