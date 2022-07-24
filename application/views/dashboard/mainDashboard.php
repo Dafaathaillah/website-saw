@@ -71,7 +71,7 @@ License: You must have a valid license purchased only from above link or https:/
 						</div>
 					</div>
 				</div> row -->
-                <?php $this->load->view("hasil/tableHasil") ?>
+                <?php $this->load->view("dashboard/tableHasil") ?>
 			</div>
 
 			<!-- partial:partials/_footer.html -->
