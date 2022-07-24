@@ -83,17 +83,43 @@ class Result_model extends CI_Model
         return $query->result();
     }
 
-    public function getBobot()
+    public function getBobot($id)
     {
-        $this->db->select('calculate.criteria_id, criteria.bobot');
+        $this->db->select('calculate.criteria_id, criteria.bobot, criteria.sts');
         $this->db->from('calculate');        
         $this->db->join('criteria', 'criteria.id=calculate.criteria_id');                
         // $this->db->where('calculate.criteria.id', $criteria_id);
+        $this->db->where('calculate.topic_id', $id);
+        $this->db->group_by('criteria_id');
         $query = $this->db->get();
         return $query->result();
     }
     
-    
+    public function getMax($id)
+    {
+        $this->db->select('calculate.id AS calculate_id, calculate.topic_id AS topic, calculate.data_alternatif_id AS alternatif_id, MAX(sub_kriteria.score) AS max_score');
+        $this->db->from('calculate');
+        $this->db->join('sub_kriteria', 'sub_kriteria.id=calculate.sub_kriteria_id');        
+        // $this->db->where('calculate.sub_kriteria_id', $sub_id);
+        $this->db->where('calculate.topic_id', $id);
+        // $this->db->group_by('calculate_id');
+        // $this->db->where('data_id', $id2);
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    public function getMin($id)
+    {
+        $this->db->select('calculate.id AS calculate_id, calculate.topic_id AS topic, calculate.data_alternatif_id AS alternatif_id, MIN(sub_kriteria.score) AS min_score');
+        $this->db->from('calculate');
+        $this->db->join('sub_kriteria', 'sub_kriteria.id=calculate.sub_kriteria_id');        
+        // $this->db->where('calculate.sub_kriteria_id', $sub_id);
+        $this->db->where('calculate.topic_id', $id);
+        // $this->db->group_by('calculate_id');
+        // $this->db->where('data_id', $id2);
+        $query = $this->db->get();
+        return $query->result();
+    }
 
 	public function createResult($form_data)
 	{
