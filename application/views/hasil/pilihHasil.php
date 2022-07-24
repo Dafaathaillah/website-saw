@@ -41,12 +41,16 @@ License: You must have a valid license purchased only from above link or https:/
 						<fieldset>
 							<div class="form-group">
 								<label for="exampleFormControlSelect1">Pilih Hasil</label>
-								<select class="form-control" id="exampleFormControlSelect1">
-									<option>1</option>
-									<option>2</option>
-									<option>3</option>
-									<option>4</option>
-									<option>5</option>
+								<select class="form-control" id="exampleFormControlSelect1" name="topic_id" id="topic_id">
+									<option value="#" disabled>-- Pilih Hasil --</option>																	
+								<?php
+									if($topic) {										
+										foreach ($topic as $key) { ?>											
+												<option value="<?= $key->id ?>"><?= $key->name ?></option>																																																																
+										<?php }
+									} else { ?>
+										<option class="text-center" colspan="6" value="#" disabled>Tidak ada hasil perhitungan!!</option>
+									<?php } ?>	
 								</select>
 							</div>
 							<input class="btn btn-primary" type="submit" value="Choose">

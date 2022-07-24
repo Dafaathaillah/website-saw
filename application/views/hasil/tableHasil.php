@@ -39,32 +39,45 @@ License: You must have a valid license purchased only from above link or https:/
 					<div class="card-body">
 						<h6 class="card-title">Tabel Hasil</h6>
 						<div class="table-responsive">
-							<table id="dataTableExample" class="table">
-								<thead>
-									<tr>
-										<th>Value</th>
-										<th>Data</th>
-										<th>Status</th>
-									</tr>
-								</theadData>
-								<tbody>
-									<tr>
-										<td>Tiger Nixon</td>
-										<td>System Architect</td>
-										<td>Edinburgh</td>
-									</tr>
-									<tr>
-										<td>Garrett Winters</td>
-										<td>Accountant</td>
-										<td>Tokyo</td>
-									</tr>
-									<tr>
-										<td>Ashton Cox</td>
-										<td>Junior Technical Author</td>
-										<td>San Francisco</td>
-									</tr>
-								</tbody>
-							</table>
+						<h3>Matriks Keputusan</h3>
+						<table id="dataTableExample" class="table">
+							<thead>
+								<tr>
+									<th rowspan="2">Alternative</th>
+									<?php
+									if($criteria) {										
+										foreach ($criteria as $key) { ?>											
+												<th><?= $key->name ?></th>																																																																	
+										<?php }
+									}?>
+								</tr>								
+							</thead>
+							<tbody>
+								<?php
+								$topic = 3;
+								if($data_alternatif) {										
+									foreach ($data_alternatif as $key) { 
+										if($key){?>		
+										<tr>									
+										<td><?= $key->data_name ?></td>	
+										<?php									
+											foreach ($scores as $sub) {									
+												if($sub->alternatif_id == $key->data_alternatif_id){?>									
+												<td><?= $sub->score ?></td>	
+												<?php 
+												} 											
+											}
+										?>
+										</tr>	
+									<?php
+									$topic++; 
+									}
+								}
+								} else { ?>
+									<td class="text-center" colspan="6">Tidak ada hasil perhitungan!!</td>
+								<?php } ?>								
+							</tbody>
+						</table>
 						</div>
 					</div>
 				</div>
