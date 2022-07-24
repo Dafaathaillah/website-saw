@@ -2,12 +2,17 @@
 class Result_model extends CI_Model
 {
 
-	public function getResult($limit, $start)
+	public function getResult($id)
 	{
-		$this->db->order_by('id');
-		$this->db->where('cond', 1);
-		$query = $this->db->get('result', $limit, $start);
-		return $query->result();
+		$this->db->select('data_alternatif.name AS name, result.hasil AS hasil');
+        $this->db->from('result');
+        $this->db->join('data_alternatif', 'data_alternatif.id=result.data_alternatif_id');   
+        $this->db->where('topic_id', $id);      
+        $this->db->order_by('result.hasil', 'desc');                   
+        // $this->db->where('calculate.sub_kriteria_id', $sub_id);
+        // $this->db->where('calculate.topic_id', $topic_id);
+        $query = $this->db->get();
+        return $query->result();
 	}
 
     public function getDataAlternatif(){
@@ -46,17 +51,17 @@ class Result_model extends CI_Model
         return $query->result();
     }
 
-    public function getMatrix()
-    {
-        $this->db->select('calculate.data_alternatif_id, calculate.topic_id, sub_kriteria.score AS score,criteria.sts AS status_criteria,calculate.criteria_id');
-        $this->db->from('calculate');
-        $this->db->join('criteria', 'criteria.id=calculate.criteria_id');
-        $this->db->join('sub_kriteria', 'sub_kriteria.id=calculate.sub_kriteria_id');
-        // $this->db->where('data_alternatif_id', $data_id);
-        // $this->db->where('topic_id', $topic_id);
-        $query = $this->db->get();
-        return $query->result();
-    }    
+    // public function getMatrix()
+    // {
+    //     $this->db->select('calculate.data_alternatif_id, calculate.topic_id, sub_kriteria.score AS score,criteria.sts AS status_criteria,calculate.criteria_id');
+    //     $this->db->from('calculate');
+    //     $this->db->join('criteria', 'criteria.id=calculate.criteria_id');
+    //     $this->db->join('sub_kriteria', 'sub_kriteria.id=calculate.sub_kriteria_id');
+    //     // $this->db->where('data_alternatif_id', $data_id);
+    //     // $this->db->where('topic_id', $topic_id);
+    //     $query = $this->db->get();
+    //     return $query->result();
+    // }    
 
     public function getCriteria(){
         $this->db->order_by('id');
@@ -88,17 +93,7 @@ class Result_model extends CI_Model
         return $query->result();
     }
     
-    public function normalisasi($data, $status, $score)
-    {
-        if ($status == 'Benefit') {
-            $result = $score/max($data);
-        } elseif ($status == 'Cost') {
-            $result = min($data)/$score;
-        } 
-        else {
-            return round($result, 3);
-        }        
-    }
+    
 
 	public function createResult($form_data)
 	{
