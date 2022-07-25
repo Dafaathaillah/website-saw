@@ -160,7 +160,6 @@ License: You must have a valid license purchased only from above link or https:/
 						</table>
 						</div>
 					</div>
-					
 				</div>
 			</div>
 		</div>
