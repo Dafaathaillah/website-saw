@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 14, 2022 at 09:06 AM
+-- Generation Time: Jul 25, 2022 at 04:50 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -47,6 +47,47 @@ CREATE TABLE `calculate` (
   `sub_kriteria_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `calculate`
+--
+
+INSERT INTO `calculate` (`id`, `data_alternatif_id`, `topic_id`, `criteria_id`, `sub_kriteria_id`) VALUES
+(1, 1, 3, 1, 4),
+(2, 1, 3, 2, 7),
+(3, 1, 3, 3, 3),
+(4, 1, 3, 4, 5),
+(5, 1, 3, 5, 6),
+(6, 2, 3, 1, 15),
+(7, 2, 3, 2, 7),
+(8, 2, 3, 3, 6),
+(9, 2, 3, 4, 17),
+(10, 2, 3, 5, 13),
+(29, 8, 3, 1, 8),
+(30, 8, 3, 2, 11),
+(31, 8, 3, 3, 4),
+(32, 8, 3, 4, 16),
+(33, 8, 3, 5, 13),
+(34, 1, 1, 1, 1),
+(35, 1, 1, 2, 7),
+(36, 1, 1, 3, 2),
+(37, 1, 1, 4, 5),
+(38, 1, 1, 5, 3),
+(39, 3, 3, 1, 9),
+(40, 3, 3, 2, 11),
+(41, 3, 3, 3, 4),
+(42, 3, 3, 4, 16),
+(43, 3, 3, 5, 13),
+(108, 5, 3, 1, 15),
+(109, 5, 3, 2, 12),
+(110, 5, 3, 3, 4),
+(111, 5, 3, 4, 16),
+(112, 5, 3, 5, 13),
+(113, 4, 3, 1, 8),
+(114, 4, 3, 2, 10),
+(115, 4, 3, 3, 6),
+(116, 4, 3, 4, 16),
+(117, 4, 3, 5, 13);
+
 -- --------------------------------------------------------
 
 --
@@ -66,11 +107,11 @@ CREATE TABLE `criteria` (
 --
 
 INSERT INTO `criteria` (`id`, `name`, `sts`, `bobot`, `cond`) VALUES
-(1, 'sindy', 'Cost', NULL, 1),
-(2, 'ibrahim', 'Benefit', NULL, 1),
-(3, 'sil', 'Cost', NULL, 1),
-(4, 'Membaca buku', NULL, NULL, 1),
-(5, 'Membaca buku', NULL, NULL, 1);
+(1, 'Waktu pengiriman', 'Cost', 5, 1),
+(2, 'Jarak', 'Benefit', 7, 1),
+(3, 'Biaya', 'Cost', 8, 1),
+(4, 'Armada', 'Cost', 9, 1),
+(5, 'Garansi', 'Benefit', 10, 1);
 
 -- --------------------------------------------------------
 
@@ -89,13 +130,15 @@ CREATE TABLE `data_alternatif` (
 --
 
 INSERT INTO `data_alternatif` (`id`, `name`, `cond`) VALUES
-(1, 'sindy', 1),
-(2, 'ibrahim', 1),
-(3, 'Maulana', 1),
-(4, 'frans', 1),
-(5, 'eewr', 1),
-(6, 'traass', 1),
-(7, 'eew', 1);
+(1, 'A1', 1),
+(2, 'A2', 1),
+(3, 'A3', 1),
+(4, 'A4', 1),
+(5, 'A5', 1),
+(6, 'A6', 1),
+(7, 'A7', 1),
+(8, 'A8', 1),
+(9, 'A9', 1);
 
 -- --------------------------------------------------------
 
@@ -109,6 +152,18 @@ CREATE TABLE `result` (
   `data_alternatif_id` int(11) DEFAULT NULL,
   `hasil` float DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `result`
+--
+
+INSERT INTO `result` (`id`, `topic_id`, `data_alternatif_id`, `hasil`) VALUES
+(1, 3, 1, 12),
+(2, 3, 2, 9.23),
+(3, 3, 3, 11.5),
+(4, 3, 4, 10.34),
+(5, 3, 5, 7.65),
+(6, 3, 8, 15.41);
 
 -- --------------------------------------------------------
 
@@ -129,8 +184,23 @@ CREATE TABLE `sub_kriteria` (
 --
 
 INSERT INTO `sub_kriteria` (`id`, `criteria_id`, `score`, `description`, `cond`) VALUES
-(1, 1, 3, 'ini ini in', NULL),
-(2, 3, 6, 'kjlasdkjlkjladsgjkldgs', NULL);
+(1, 1, 2, 'Lambat', 1),
+(2, 3, 6, 'Sedang', 1),
+(3, 5, 12, 'Selamanya', 1),
+(4, 3, 5, 'Mahal', 1),
+(5, 4, 12, 'Darat', 1),
+(6, 3, 11, 'Murah', 1),
+(7, 2, 10, 'Jawa dan Bali', 1),
+(8, 1, 3, 'Cepat', 1),
+(9, 1, 4, 'Sangat cepat', 1),
+(10, 2, 3, 'Kecamatan', 1),
+(11, 2, 20, 'Se-indonesia', 1),
+(12, 2, 15, 'Sumatera', 1),
+(13, 5, 15, '6 Bulan', 1),
+(14, 5, 10, '4 Minggu', 1),
+(15, 1, 2, 'Sangat Lambat', 1),
+(16, 4, 13, 'Laut udara', 1),
+(17, 4, 5, 'Udara', 1);
 
 -- --------------------------------------------------------
 
@@ -149,9 +219,9 @@ CREATE TABLE `topic` (
 --
 
 INSERT INTO `topic` (`id`, `name`, `cond`) VALUES
-(1, 'ibrahim', 1),
-(2, 'ibrahim', 1),
-(3, 'Membaca buku', 1),
+(1, 'Menentukan jodoh terbaik', 1),
+(2, 'Menentukan waktu makan terbaik', 1),
+(3, 'Menentukan jadwal tidur yang baik', 1),
 (4, 'Menentukan Paket terbaik', 1);
 
 --
@@ -221,37 +291,37 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `calculate`
 --
 ALTER TABLE `calculate`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=123;
 
 --
 -- AUTO_INCREMENT for table `criteria`
 --
 ALTER TABLE `criteria`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `data_alternatif`
 --
 ALTER TABLE `data_alternatif`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `result`
 --
 ALTER TABLE `result`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `sub_kriteria`
 --
 ALTER TABLE `sub_kriteria`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `topic`
 --
 ALTER TABLE `topic`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables
