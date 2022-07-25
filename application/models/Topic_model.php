@@ -16,6 +16,13 @@ class Topic_model extends CI_Model
 		return $query->result();
 	}
 
+	public function getAllTopic(){
+		$this->db->order_by('id');
+		$this->db->where('cond', 1);
+		$query = $this->db->get('topic');
+		return $query->result();
+	}
+
 	// public function gettopicByOrderId($id){
 	//     $this->db->join('product_order', 'product_order.product_id = product.id');
 	//     $this->db->join('order', 'product_order.order_id = order.id');
