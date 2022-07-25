@@ -172,8 +172,8 @@ License: You must have a valid license purchased only from above link or https:/
 													}											
 												}
 											}
-											$result['score'] = $hasil_normalisasi;	
-											$result['name'] = (String)$key->data_name;																																
+											$result['score'][] = $hasil_normalisasi;	
+											$result['name'][] = $key->data_name;																																
 										?>
 										
 										<td><?= round($hasil_normalisasi, 2) ?></td>																				
@@ -221,13 +221,12 @@ License: You must have a valid license purchased only from above link or https:/
 								array_push($result_final, $result);											
 								rsort($result_final);
 								$no=0;															
-								foreach ($result_final as $rank) { 
-									$no++;
+								foreach ($result_final as $rank) { 									
 									?>
 									<tr>										
-										<td><?= $rank['name']; ?></td>
-										<td><?= $rank['score']; ?></td>
-										<td><?= $no++ ?></>
+										<td><?php echo $rank['name']; ?></td>
+										<td><?php echo $rank['score']; ?></td>
+										<td><?php echo $no++ ?></>
 										</td>
 									</tr>
 								<?php } 								
