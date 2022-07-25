@@ -30,7 +30,9 @@ License: You must have a valid license purchased only from above link or https:/
 	<link rel="shortcut icon" href="assets/images/favicon.png" />
 </head>
 
-
+<?php
+ 
+?>
 <body>
 	<div class="container mt-3">
 		<div class="row">
@@ -54,8 +56,8 @@ License: You must have a valid license purchased only from above link or https:/
 							</thead>
 							<tbody>
 								<?php								
-								if($data_alternatif) {										
-									foreach ($data_alternatif as $key) { 
+								if($data) {										
+									foreach ($data as $key) { 
 										if($key){?>		
 										<tr>									
 										<td><?= $key->data_name ?></td>	
@@ -70,10 +72,7 @@ License: You must have a valid license purchased only from above link or https:/
 										</tr>	
 									<?php									
 									}
-								}
-								} else { ?>
-									<td class="text-center" colspan="6">Tidak ada hasil perhitungan!!</td>
-								<?php } ?>
+								}?>
 								<tr>
 								<td>Bobot</td>								
 								<?php
@@ -103,6 +102,10 @@ License: You must have a valid license purchased only from above link or https:/
 									<td class="text-center" colspan="6">Tidak ada hasil perhitungan!!</td>
 								<?php } ?>								
 								</tr>
+								<?php
+								} else { ?>
+									<td class="text-center" colspan="6">Tidak ada hasil perhitungan!!</td>
+								<?php } ?>								
 							</tbody>
 						</table>
 						</div>
@@ -125,42 +128,55 @@ License: You must have a valid license purchased only from above link or https:/
 								</tr>								
 							</thead>
 							<tbody>
-								<?php								
-								if($data_alternatif) {	
-									$hasil_normalisasi = 0;									
-									foreach ($data_alternatif as $key) { 
+								<?php	
+								$result = array();
+								$result_final = array();							
+								if($data) {																			
+									foreach ($data as $key) { 
 										if($key){?>		
 										<tr>									
 										<td><?= $key->data_name ?></td>	
-										<?php		
-											foreach ($scores as $sub) {														
+										<?php												
+										$hasil_normalisasi = 0;										
+											foreach ($scores as $sub) {
+												 												
 												if($sub->alternatif_id == $key->data_alternatif_id){																				
 													if($sub->sts == "Cost"){?>												
 													<?php														
-														number_format($calculate_result = (float)$min / (float)$sub->score, 1);
-														number_format($cross_result = $calculate_result * $sub->bobot, 1);
-														$hasil_normalisasi = $hasil_normalisasi + $cross_result;
-														// var_dump($max);
-														if ($sub->criteria_id == $criteria) {
-															
+														$query = "SELECT MIN(sub_kriteria.score) AS score FROM calculate JOIN sub_kriteria ON sub_kriteria.id = calculate.sub_kriteria_id WHERE calculate.criteria_id = $sub->criteria_id";
+														$sql = $this->db->query($query);																																					
+														// $min_value = $sql;
+														if ($sql->num_rows() > 0) {
+															$min_value = $sql->row()->score;
 														}
+														number_format((float)$calculate_result = $min_value / $sub->score, 3);
+														number_format((float)$cross_result = $calculate_result * $sub->bobot, 1);
+														$hasil_normalisasi = $hasil_normalisasi + $cross_result;																												
 													?>													
-													<td><?= $calculate_result ?></td>																																
+													<td><?= round($calculate_result, 2)?></td>																																
 													<?php 
-													} else if ($sub->sts == "Benefit"){ 																												
-														number_format($calculate_result = (float)$sub->score / (float)$max , 1);
-														number_format($cross_result = $calculate_result * $sub->bobot, 1);
+													} else if ($sub->sts == "Benefit"){ 										
+														$query = "SELECT MAX(sub_kriteria.score) AS score FROM calculate JOIN sub_kriteria ON sub_kriteria.id = calculate.sub_kriteria_id WHERE calculate.criteria_id = $sub->criteria_id";																																
+														$sql = $this->db->query($query);
+														if ($sql->num_rows() > 0) {
+															$max_value = $sql->row()->score;
+														}														
+														number_format((float)$calculate_result = $sub->score / $max_value , 1);
+														number_format((float)$cross_result = $calculate_result * $sub->bobot, 1);
 														$hasil_normalisasi = $hasil_normalisasi + $cross_result;
 													?>
-													<td><?= $calculate_result ?></td>
+													<td><?= round($calculate_result, 2) ?></td>
 													<?php
 													} else {
 														echo '<td> 0 </td>';
 													}											
 												}
 											}
+											$result['score'] = $hasil_normalisasi;	
+											$result['name'] = (String)$key->data_name;																																
 										?>
-										<td><?= $hasil_normalisasi ?></td>
+										
+										<td><?= round($hasil_normalisasi, 2) ?></td>																				
 										</tr>	
 									<?php									
 									// Cost
@@ -195,24 +211,27 @@ License: You must have a valid license purchased only from above link or https:/
 								</tr>								
 							</thead>
 							<tbody>
-								<?php
-								$no = 0;
-								if($results) {										
-									foreach ($results as $result) { 
-										$no++;
-										if($result){?>		
-										<tr>									
-										<td><?= $result->name ?></td>											
-										<td><?= $result->hasil ?></td>
-										<td><?= $no ?></td>
-										</tr>	
-									<?php
-									 
-									}
-								}
-								} else { ?>
-									<td class="text-center" colspan="6">Tidak ada hasil perhitungan!!</td>
-								<?php } ?>								
+																
+								<?php 
+								// if($data){
+								// 	foreach ($data as $key => $value) {
+								// 		$result['name'] = $value;
+								// 	}
+								// }
+								array_push($result_final, $result);											
+								rsort($result_final);
+								$no=0;															
+								foreach ($result_final as $rank) { 
+									$no++;
+									?>
+									<tr>										
+										<td><?= $rank['name']; ?></td>
+										<td><?= $rank['score']; ?></td>
+										<td><?= $no++ ?></>
+										</td>
+									</tr>
+								<?php } 								
+								 ?>								
 							</tbody>
 						</table>
 						</div>

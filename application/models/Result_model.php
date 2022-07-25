@@ -96,31 +96,32 @@ class Result_model extends CI_Model
         return $query->result();
     }
     
-    public function getMax($id)
-    {
-        $this->db->select_max('sub_kriteria.score', 'max_score');
-        $this->db->from('calculate');
-        $this->db->join('sub_kriteria', 'sub_kriteria.id=calculate.sub_kriteria_id');        
-        // $this->db->where('calculate.sub_kriteria_id', $sub_id);
-        $this->db->where('calculate.topic_id', $id);
-        // $this->db->group_by('calculate_id');
-        // $this->db->where('data_id', $id2);
-        $query = $this->db->get();
-        return $query->result();
-    }
+    // public function getMax($id)
+    // {
+    //     $this->db->select_max('sub_kriteria.score', 'max_score');
+    //     $this->db->from('calculate');
+    //     $this->db->join('sub_kriteria', 'sub_kriteria.id=calculate.sub_kriteria_id');        
+    //     // $this->db->where('calculate.sub_kriteria_id', $sub_id);
+    //     $this->db->where('calculate.topic_id', $id);
+    //     // $this->db->group_by('calculate_id');
+    //     // $this->db->where('criteria_id', $id2);
+    //     $query = $this->db->get();
+    //     return $query->result();
+    // }
 
-    public function getMin($id)
-    {
-        $this->db->select_min('sub_kriteria.score', 'min_score');
-        $this->db->from('calculate');
-        $this->db->join('sub_kriteria', 'sub_kriteria.id=calculate.sub_kriteria_id');        
-        // $this->db->where('calculate.sub_kriteria_id', $sub_id);
-        $this->db->where('calculate.topic_id', $id);
-        // $this->db->group_by('calculate_id');
-        // $this->db->where('data_id', $id2);
-        $query = $this->db->get();
-        return $query->result();
-    }
+    // public function getMin($id,$id2)
+    // {
+    //     $this->db->select_min('sub_kriteria.score', 'min_score');
+    //     $this->db->from('calculate');
+    //     $this->db->join('sub_kriteria', 'sub_kriteria.id=calculate.sub_kriteria_id');        
+    //     // $this->db->where('calculate.sub_kriteria_id', $sub_id);
+    //     $this->db->where('calculate.topic_id', $id);
+    //     // $this->db->group_by('calculate_id');
+    //     $this->db->where('calculate.criteria_id', $id2);
+    //     // $this->db->where('criteria_id');
+    //     $query = $this->db->get();
+    //     return $query->result();
+    // }
 
 	public function createResult($form_data)
 	{
