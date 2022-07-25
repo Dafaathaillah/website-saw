@@ -35,186 +35,191 @@ License: You must have a valid license purchased only from above link or https:/
 	<div class="container mt-3">
 		<div class="row">
 			<div class="col-md-12 grid-margin stretch-card">
-				<div class="card">
-					<div class="card-body">
-						<!-- <h6 class="card-title">Tabel Hasil</h6> -->
-						<div class="table-responsive">
-						<h3>Matriks Keputusan</h3>
-						<table id="dataTableExample" class="table">
-							<thead>
-								<tr>
-									<th rowspan="2">Alternative</th>
-									<?php
-									if($criteria) {										
-										foreach ($criteria as $key) { ?>											
-												<th><?= $key->name ?></th>																																																																	
-										<?php }
-									}?>
-								</tr>								
-							</thead>
-							<tbody>
-								<?php								
-								if($data_alternatif) {										
-									foreach ($data_alternatif as $key) { 
-										if($key){?>		
-										<tr>									
-										<td><?= $key->data_name ?></td>	
-										<?php									
-											foreach ($scores as $sub) {									
-												if($sub->alternatif_id == $key->data_alternatif_id){?>									
-												<td><?= $sub->score ?></td>	
-												<?php 
-												} 											
-											}
-										?>
-										</tr>	
-									<?php									
-									}
-								}
-								} else { ?>
-									<td class="text-center" colspan="6">Tidak ada hasil perhitungan!!</td>
-								<?php } ?>
-								<tr>
-								<td>Bobot</td>								
-								<?php
-								$topic = 3;
-								if($bobot) {										
-									foreach ($bobot as $key) { 
-										if($key){?>																
-										<td><?= $key->criteria_bobot ?></td>																					
-									<?php									
-									}
-								}
-								} else { ?>
-									<td class="text-center" colspan="6">Tidak ada hasil perhitungan!!</td>
-								<?php } ?>								
-								</tr>
-								<tr>
-								<td>Status</td>								
-								<?php								
-								if($bobot) {										
-									foreach ($bobot as $key) { 
-										if($key){?>																
-										<td><?= $key->criteria_status ?></td>																					
-									<?php									
-									}
-								}
-								} else { ?>
-									<td class="text-center" colspan="6">Tidak ada hasil perhitungan!!</td>
-								<?php } ?>								
-								</tr>
-							</tbody>
-						</table>
-						</div>
-					</div>
-					<div class="card-body">
-						<!-- <h6 class="card-title">Tabel Hasil</h6> -->
-						<div class="table-responsive">
-						<h3>Normalisasi</h3>
-						<table id="dataTableExample" class="table">
-							<thead>
-								<tr>
-									<th>Alternative</th>
-									<?php
-									if($criteria) {										
-										foreach ($criteria as $key) { ?>											
-												<th><?= $key->name ?></th>																																																																	
-										<?php }
-									}?>
-									<th>Vector</th>
-								</tr>								
-							</thead>
-							<tbody>
-								<?php								
-								if($data_alternatif) {	
-									$hasil_normalisasi = 0;									
-									foreach ($data_alternatif as $key) { 
-										if($key){?>		
-										<tr>									
-										<td><?= $key->data_name ?></td>	
-										<?php		
-											foreach ($scores as $sub) {														
-												if($sub->alternatif_id == $key->data_alternatif_id){																				
-													if($sub->sts == "Cost"){?>												
-													<?php														
-														number_format($calculate_result = (float)$min / (float)$sub->score, 1);
-														number_format($cross_result = $calculate_result * $sub->bobot, 1);
-														$hasil_normalisasi = $hasil_normalisasi + $cross_result;
-														// var_dump($max);
-														if ($sub->criteria_id == $criteria) {
-															
+				<div class="container">
+					<div class="card mb-3">
+						<div class="card-body">
+							<!-- <h6 class="card-title">Tabel Hasil</h6> -->
+							<div class="table-responsive">
+								<h3>Matriks Keputusan</h3>
+								<table id="dataTableExample" class="table">
+									<thead>
+										<tr>
+											<th rowspan="2">Alternative</th>
+											<?php
+											if ($criteria) {
+												foreach ($criteria as $key) { ?>
+													<th><?= $key->name ?></th>
+											<?php }
+											} ?>
+										</tr>
+									</thead>
+									<tbody>
+										<?php
+										if ($data_alternatif) {
+											foreach ($data_alternatif as $key) {
+												if ($key) { ?>
+													<tr>
+														<td><?= $key->data_name ?></td>
+														<?php
+														foreach ($scores as $sub) {
+															if ($sub->alternatif_id == $key->data_alternatif_id) { ?>
+																<td><?= $sub->score ?></td>
+														<?php
+															}
 														}
-													?>													
-													<td><?= $calculate_result ?></td>																																
-													<?php 
-													} else if ($sub->sts == "Benefit"){ 																												
-														number_format($calculate_result = (float)$sub->score / (float)$max , 1);
-														number_format($cross_result = $calculate_result * $sub->bobot, 1);
-														$hasil_normalisasi = $hasil_normalisasi + $cross_result;
-													?>
-													<td><?= $calculate_result ?></td>
-													<?php
-													} else {
-														echo '<td> 0 </td>';
-													}											
+														?>
+													</tr>
+											<?php
 												}
 											}
-										?>
-										<td><?= $hasil_normalisasi ?></td>
-										</tr>	
-									<?php									
-									// Cost
-									// number_format($hasil = $data_min['min'] / $data['bobot'], 3);
-									// echo  number_format($hasil_kali = $hasil * $data['weight'], 3);
-									// $hasil_normalisasi = $hasil_normalisasi + $hasil_kali;
-
-									// Benefit
-									// number_format($hasil = $data['bobot'] / $data_max['max'], 3);
-									// echo  number_format($hasil_kali = $hasil * $data['weight'], 3);
-									// $hasil_normalisasi = $hasil_normalisasi + $hasil_kali;
-										}
-									}
-								} else { ?>
-									<td class="text-center" colspan="6">Tidak ada hasil perhitungan!!</td>
-								<?php } ?>								
-							</tbody>
-						</table>
+										} else { ?>
+											<td class="text-center" colspan="6">Tidak ada hasil perhitungan!!</td>
+										<?php } ?>
+										<tr>
+											<td>Bobot</td>
+											<?php
+											$topic = 3;
+											if ($bobot) {
+												foreach ($bobot as $key) {
+													if ($key) { ?>
+														<td><?= $key->criteria_bobot ?></td>
+												<?php
+													}
+												}
+											} else { ?>
+												<td class="text-center" colspan="6">Tidak ada hasil perhitungan!!</td>
+											<?php } ?>
+										</tr>
+										<tr>
+											<td>Status</td>
+											<?php
+											if ($bobot) {
+												foreach ($bobot as $key) {
+													if ($key) { ?>
+														<td><?= $key->criteria_status ?></td>
+												<?php
+													}
+												}
+											} else { ?>
+												<td class="text-center" colspan="6">Tidak ada hasil perhitungan!!</td>
+											<?php } ?>
+										</tr>
+									</tbody>
+								</table>
+							</div>
 						</div>
 					</div>
-					<div class="card-body">
-						<!-- <h6 class="card-title">Tabel Hasil</h6> -->
-						<div class="table-responsive">
-						<h3>Hasil</h3>
-						<table id="dataTableExample" class="table">
-							<thead>
-								<tr>																		
-									<th>Alternative</th>
-									<th>Score</th>
-									<th>Rank</th>
-									
-								</tr>								
-							</thead>
-							<tbody>
-								<?php
-								$no = 0;
-								if($results) {										
-									foreach ($results as $result) { 
-										$no++;
-										if($result){?>		
-										<tr>									
-										<td><?= $result->name ?></td>											
-										<td><?= $result->hasil ?></td>
-										<td><?= $no ?></td>
-										</tr>	
-									<?php
-									 
-									}
-								}
-								} else { ?>
-									<td class="text-center" colspan="6">Tidak ada hasil perhitungan!!</td>
-								<?php } ?>								
-							</tbody>
-						</table>
+					<div class="card mb-3 mt-3">
+						<div class="card-body">
+							<!-- <h6 class="card-title">Tabel Hasil</h6> -->
+							<div class="table-responsive">
+								<h3>Normalisasi</h3>
+								<table id="dataTableExample" class="table">
+									<thead>
+										<tr>
+											<th>Alternative</th>
+											<?php
+											if ($criteria) {
+												foreach ($criteria as $key) { ?>
+													<th><?= $key->name ?></th>
+											<?php }
+											} ?>
+											<th>Vector</th>
+										</tr>
+									</thead>
+									<tbody>
+										<?php
+										if ($data_alternatif) {
+											$hasil_normalisasi = 0;
+											foreach ($data_alternatif as $key) {
+												if ($key) { ?>
+													<tr>
+														<td><?= $key->data_name ?></td>
+														<?php
+														foreach ($scores as $sub) {
+															if ($sub->alternatif_id == $key->data_alternatif_id) {
+																if ($sub->sts == "Cost") { ?>
+																	<?php
+																	number_format($calculate_result = (float)$min / (float)$sub->score, 1);
+																	number_format($cross_result = $calculate_result * $sub->bobot, 1);
+																	$hasil_normalisasi = $hasil_normalisasi + $cross_result;
+																	// var_dump($max);
+																	if ($sub->criteria_id == $criteria) {
+																	}
+																	?>
+																	<td><?= $calculate_result ?></td>
+																<?php
+																} else if ($sub->sts == "Benefit") {
+																	number_format($calculate_result = (float)$sub->score / (float)$max, 1);
+																	number_format($cross_result = $calculate_result * $sub->bobot, 1);
+																	$hasil_normalisasi = $hasil_normalisasi + $cross_result;
+																?>
+																	<td><?= $calculate_result ?></td>
+														<?php
+																} else {
+																	echo '<td> 0 </td>';
+																}
+															}
+														}
+														?>
+														<td><?= $hasil_normalisasi ?></td>
+													</tr>
+											<?php
+													// Cost
+													// number_format($hasil = $data_min['min'] / $data['bobot'], 3);
+													// echo  number_format($hasil_kali = $hasil * $data['weight'], 3);
+													// $hasil_normalisasi = $hasil_normalisasi + $hasil_kali;
+
+													// Benefit
+													// number_format($hasil = $data['bobot'] / $data_max['max'], 3);
+													// echo  number_format($hasil_kali = $hasil * $data['weight'], 3);
+													// $hasil_normalisasi = $hasil_normalisasi + $hasil_kali;
+												}
+											}
+										} else { ?>
+											<td class="text-center" colspan="6">Tidak ada hasil perhitungan!!</td>
+										<?php } ?>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-body">
+							<!-- <h6 class="card-title">Tabel Hasil</h6> -->
+							<div class="table-responsive">
+								<h3>Hasil</h3>
+								<table id="dataTableExample" class="table">
+									<thead>
+										<tr>
+											<th>Alternative</th>
+											<th>Score</th>
+											<th>Rank</th>
+
+										</tr>
+									</thead>
+									<tbody>
+										<?php
+										$no = 0;
+										if ($results) {
+											foreach ($results as $result) {
+												$no++;
+												if ($result) { ?>
+													<tr>
+														<td><?= $result->name ?></td>
+														<td><?= $result->hasil ?></td>
+														<td><?= $no ?></td>
+													</tr>
+											<?php
+
+												}
+											}
+										} else { ?>
+											<td class="text-center" colspan="6">Tidak ada hasil perhitungan!!</td>
+										<?php } ?>
+									</tbody>
+								</table>
+							</div>
 						</div>
 					</div>
 				</div>
