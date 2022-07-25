@@ -27,15 +27,11 @@ License: You must have a valid license purchased only from above link or https:/
 			</form> -->
 			<ul class="navbar-nav">
 				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button"
+					<a class="nav-link dropdown-toggle" id="languageDropdown" role="button"
 						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						<i class="flag-icon flag-icon-id mt-1" title="us"></i> <span
+						<i class="flag-icon flag-icon-id mt-1" title="ID"></i> <span
 							class="font-weight-medium ml-1 mr-1 d-none d-md-inline-block">Indonesia</span>
 					</a>
-					<div class="dropdown-menu" aria-labelledby="languageDropdown">
-						<a href="javascript:;" class="dropdown-item py-2"><i class="flag-icon flag-icon-us" title="us"
-								id="us"></i> <span class="ml-1"> English </span></a>
-					</div>
 				</li>
 				<li class="nav-item dropdown nav-profile">
 					<a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button"
@@ -55,7 +51,7 @@ License: You must have a valid license purchased only from above link or https:/
 						<div class="dropdown-body">
 							<ul class="profile-nav p-0 pt-3">
 								<li class="nav-item">
-									<a href="<?php base_url() ?> LogOut" class="nav-link">
+									<a href="<?php base_url() ?> LandingPage" class="nav-link">
 										<i data-feather="log-out"></i>
 										<span>Log Out</span>
 									</a>

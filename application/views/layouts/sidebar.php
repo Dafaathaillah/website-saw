@@ -23,7 +23,7 @@ License: You must have a valid license purchased only from above link or https:/
 		</div>
 		<div class="sidebar-body">
 			<ul class="nav">
-				<li class="nav-item nav-category">SIDEBAR</li>
+				<li class="nav-item nav-category">SIDEBAR - MENU</li>
 				<li class="nav-item">
 					<a href="<?php base_url() ?> Dashboard" class="nav-link">
 						<i class="link-icon" data-feather="box"></i>
