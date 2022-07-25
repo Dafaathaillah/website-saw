@@ -9,12 +9,11 @@ class Calculate extends CI_Controller {
         // $this->load->model('sub_criteria_model','sub_criteria');
         $this->load->model('calculate_model','calculate');
         $this->load->model('criteria_model','criteria');
+        $this->load->model('data_model','data_alternatif');
     }
 
     public function index()
-    {        
-        // $data['sub_criterias'] = $this->sub_criteria->getSub();
-        // $data['sub_criterias'] = $this->sub_criteria->getCriteriaById($sub_id);
+    {                
         $data = array();		
 		$data['topic'] = $this->calculate->getTopic();
 		$data['data_alternatif'] = $this->calculate->getData();
@@ -27,20 +26,14 @@ class Calculate extends CI_Controller {
     }
 
     public function form($calculate_id = null)
-    {
-        $data = array();
-        if($calculate_id){
-            // $data['sub_criterias'] = $this->sub_criteria->getCriteria();        
-            // $data['sub_criteria'] = $this->sub_criteria->getSubsByCriteriaId();            
-        }
+    {        
         redirect(base_url('calculate'));
     }
 
     public function view($id = null){
-        $data = array();
-        // $data['sub_criterias'] = $this->sub_criteria->getSub($id);  
+        $data = array();        
         $data['sub_criteria'] = $this->calculate->getSubsByCriteriaId();        
-        $this->load->view('perhitungan/mainSubKriteria', $data);
+        $this->load->view('perhitungan/mainPerhitungan', $data);
     }
 
     public function calculate(){
@@ -62,10 +55,7 @@ class Calculate extends CI_Controller {
         if(!$id){           
             foreach ($data['criteria'] as $key => $value) {
                 $form_data = array
-                (
-                    // 'topic_id' => $topic,
-                    // 'data_alternatif_id' => $data_alternatif,
-                    // 'criteria' => $key['criteria_id'],
+                (                    
                         'topic_id' => $this->input->post('topic_id'),
                         'data_alternatif_id' => $this->input->post('data_alternatif_id'),                        
                         'criteria_id' => $_POST['criteria_id'][$key],
