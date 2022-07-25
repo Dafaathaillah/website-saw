@@ -38,7 +38,7 @@ License: You must have a valid license purchased only from above link or https:/
 				<div class="card-body">
 					<h5 class="card-title">Input Sub Kriteria</h5>
 					<?php
-					$action_form = '/sub_criteria/save/';
+					$action_form = '/subcriteria/save/';
 					?>
 					<form class="cmxform" id="signupForm" method="post" action="<?=site_url($action_form)?>">
 						<fieldset>

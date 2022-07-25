@@ -37,20 +37,21 @@ License: You must have a valid license purchased only from above link or https:/
 			<div class="card">
 				<div class="card-body">
 					<h5 class="card-title">Edit Topik</h5>
-					<?php foreach($topiks as $topik) { ?>
-					<form class="cmxform" id="signupForm" method="post" action="<?php echo base_url().'Topic/update';?>">
+		
+					<form class="cmxform" method="post" enctype="multipart/form-data" action="">
+					<input type="hidden" name="id" value="<?php echo $topic->id?>" />
 						<fieldset>
 							<div class="form-group">
 								<label for="name">Nama Topik</label>
-								<input id="id" class="form-control" name="id" type="hidden" value="<?= $topik=['id']; ?>">
+								<input id="id" class="form-control" name="id" type="hidden" value="<?php echo $topic->id ?>">
 							</div>
-								<input id="name" class="form-control" name="name" type="text" value="<?= $topik=['name'] ?>">
+								<input id="name" class="form-control" name="name" type="text" value="<?php echo $topic->name ?>">
 							</div>
 							<input class="btn btn-primary" type="submit" value="Submit">
                             <button type="button" class="btn btn-warning">Cancel</button>
 						</fieldset>
 					</form>
-					<?php } ?>
+			
 				</div>
 			</div>
 		</div>

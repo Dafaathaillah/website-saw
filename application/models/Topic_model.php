@@ -1,12 +1,25 @@
 <?php
 class Topic_model extends CI_Model
 {
-
+	public function rules(){
+		return[
+			['field' => 'name',
+			'label' => 'name',
+			'rules' => 'required'],
+		];
+	}
 	public function getTopic($limit, $start)
 	{
 		$this->db->order_by('id');
 		$this->db->where('cond', 1);
 		$query = $this->db->get('topic', $limit, $start);
+		return $query->result();
+	}
+
+	public function getAllTopic(){
+		$this->db->order_by('id');
+		$this->db->where('cond', 1);
+		$query = $this->db->get('topic');
 		return $query->result();
 	}
 
@@ -23,10 +36,7 @@ class Topic_model extends CI_Model
 
 	public function getTopicById($id)
 	{
-		$this->db->where('id', $id);
-		$this->db->where('cond', 1);
-		$query = $this->db->get('topic');
-		return $query->result();
+		return $this->db->get_where($this->topic, ["id" => $id])->row();
 	}
 
 	public function createTopic($form_data)
@@ -35,11 +45,14 @@ class Topic_model extends CI_Model
 		return ($this->db->affected_rows() != 1) ? false : true;
 	}
 
-	public function updateTopic($form_data)
+	public function updateTopic()
 	{
-		$this->db->where('id', $form_data['id']);
-		$this->db->update('topic', $form_data);
-		return ($this->db->affected_rows() != 1) ? false : true;
+		$post = $this->input->post();
+		$this -> id = $post["id"];
+		$this -> name = $post["name"];
+		$this -> cond = $post["cond"];
+
+		return $this->db->update($this->topic, $this, array('id' => $post['id']));
 	}
 
 	public function deleteTopic($id)
@@ -54,15 +67,5 @@ class Topic_model extends CI_Model
 	public function find_topic($id)
 	{
 		return $this->db->get_where('topik', array('id' => $id))->row();
-	}
-
-	public function update($id)
-	{
-		$data = [
-			'name'=> $this->input->post('name'),
-		];
-
-		$result = $this->db->where('id', $id)->update('topik', $data);
-		return $result;
 	}
 }

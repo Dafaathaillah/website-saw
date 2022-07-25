@@ -64,13 +64,11 @@ License: You must have a valid license purchased only from above link or https:/
 													<a href="#" class="nav-link">
 														<i class="link-icon" data-feather="edit"></i>
 													</a>
-													<a href="#" class="nav-link">
+													<a href="<?php echo base_url() ?>Subcriteria/delete/<?php echo $sub_criteria->sub_kriteria_id?>" class="nav-link">
 														<i class="link-icon" data-feather="trash-2"></i>
 													</a>
 												</div>
 												</td>
-												<!-- <td><a href="">Edit</a></td>
-												<td><a class="delete-criteria" href="#" data-id="<?= base_url('criteria/delete/'.$criteria->id) ?>" data-toggle="modal" data-target="#deleteCriteriaModal">Delete</a></td> -->
 											</tr>
 										<?php }
 									} else { ?>

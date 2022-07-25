@@ -9,9 +9,10 @@ class Sub_criteria_model extends CI_Model {
     }
 
     public function getSubsByCriteriaId(){    
-        $this->db->select('criteria.id AS id_criteria, criteria.name, sub_kriteria.score, sub_kriteria.description');
+        $this->db->select('sub_kriteria.id AS sub_kriteria_id, criteria.id AS id_criteria, criteria.name, sub_kriteria.score, sub_kriteria.description');
         $this->db->from('sub_kriteria');
-        $this->db->join('criteria', 'criteria.id = sub_kriteria.criteria_id');                        
+        $this->db->join('criteria', 'criteria.id = sub_kriteria.criteria_id');
+		$this->db->where('sub_kriteria.cond', 1);                        
         $query = $this->db->get('');
         return $query->result();
     }

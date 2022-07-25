@@ -4,10 +4,10 @@ $(function() {
   $(function() {
     $('#dataTableExample').DataTable({
       "aLengthMenu": [
-        [10, 30, 50, -1],
-        [10, 30, 50, "All"]
+        [3, 5],
+        [3, 5]
       ],
-      "iDisplayLength": 10,
+      "iDisplayLength": 3,
       "language": {
         search: ""
       }
