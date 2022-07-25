@@ -23,6 +23,7 @@ License: You must have a valid license purchased only from above link or https:/
 	<!-- inject:css -->
 	<link rel="stylesheet" href="<?php echo base_url();?>assets/fonts/feather-font/css/iconfont.css">
 	<link rel="stylesheet" href="<?php echo base_url();?>assets/assets/flag-icon-css/css/flag-icon.min.css">
+	<link rel="stylesheet" href="<?php echo base_url() ?>assets/assets/datatables.net-bs4/dataTables.bootstrap4.css">
 	<!-- endinject -->
 	<!-- Layout styles -->
 	<link rel="stylesheet" href="<?php echo base_url();?>assets/css/demo_1/style.css">
@@ -107,6 +108,9 @@ License: You must have a valid license purchased only from above link or https:/
 	<script src="<?php echo base_url();?>assets/js/dashboard.js"></script>
 	<script src="<?php echo base_url();?>assets/js/datepicker.js"></script>
 	<!-- end custom js for this page -->
+	<script src="<?php echo base_url();?>assets/assets/datatables.net/jquery.dataTables.js"></script>
+	<script src="<?php echo base_url();?>assets/assets/datatables.net-bs4/dataTables.bootstrap4.js"></script>
+	<script src="<?php echo base_url();?>assets/js/data-table.js"></script>
 </body>
 
 </html>
