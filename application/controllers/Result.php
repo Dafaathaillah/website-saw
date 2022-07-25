@@ -25,6 +25,7 @@ class Result extends CI_Controller {
         $data['min'] = $this->result->getMin($input);
         $data['max'] = $this->result->getMax($input);
         $data['bobot'] = $this->result->getBobot($input);
+        $data['sts'] = $this->result->getBobot($input);
         $data['scores'] = $this->result->getArrayScore($input); 
         // $data['calculates'] = $this->result->getCalculate();
         // $data['matrix'] = $this->result->getMatrix(); 

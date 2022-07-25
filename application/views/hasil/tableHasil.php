@@ -53,8 +53,7 @@ License: You must have a valid license purchased only from above link or https:/
 								</tr>								
 							</thead>
 							<tbody>
-								<?php
-								$topic = 3;
+								<?php								
 								if($data_alternatif) {										
 									foreach ($data_alternatif as $key) { 
 										if($key){?>		
@@ -69,13 +68,41 @@ License: You must have a valid license purchased only from above link or https:/
 											}
 										?>
 										</tr>	
-									<?php
-									$topic++; 
+									<?php									
+									}
+								}
+								} else { ?>
+									<td class="text-center" colspan="6">Tidak ada hasil perhitungan!!</td>
+								<?php } ?>
+								<tr>
+								<td>Bobot</td>								
+								<?php
+								$topic = 3;
+								if($bobot) {										
+									foreach ($bobot as $key) { 
+										if($key){?>																
+										<td><?= $key->criteria_bobot ?></td>																					
+									<?php									
 									}
 								}
 								} else { ?>
 									<td class="text-center" colspan="6">Tidak ada hasil perhitungan!!</td>
 								<?php } ?>								
+								</tr>
+								<tr>
+								<td>Status</td>								
+								<?php								
+								if($bobot) {										
+									foreach ($bobot as $key) { 
+										if($key){?>																
+										<td><?= $key->criteria_status ?></td>																					
+									<?php									
+									}
+								}
+								} else { ?>
+									<td class="text-center" colspan="6">Tidak ada hasil perhitungan!!</td>
+								<?php } ?>								
+								</tr>
 							</tbody>
 						</table>
 						</div>
@@ -87,36 +114,66 @@ License: You must have a valid license purchased only from above link or https:/
 						<table id="dataTableExample" class="table">
 							<thead>
 								<tr>
-									<th rowspan="2">Alternative</th>
+									<th>Alternative</th>
 									<?php
 									if($criteria) {										
 										foreach ($criteria as $key) { ?>											
 												<th><?= $key->name ?></th>																																																																	
 										<?php }
 									}?>
+									<th>Vector</th>
 								</tr>								
 							</thead>
 							<tbody>
-								<?php
-								$topic = 3;
-								if($data_alternatif) {										
+								<?php								
+								if($data_alternatif) {	
+									$hasil_normalisasi = 0;									
 									foreach ($data_alternatif as $key) { 
 										if($key){?>		
 										<tr>									
 										<td><?= $key->data_name ?></td>	
-										<?php									
-											foreach ($scores as $sub) {									
-												if($sub->alternatif_id == $key->data_alternatif_id){?>									
-												<td><?= $sub->score ?></td>	
-												<?php 
-												} 											
+										<?php		
+											foreach ($scores as $sub) {														
+												if($sub->alternatif_id == $key->data_alternatif_id){																				
+													if($sub->sts == "Cost"){?>												
+													<?php														
+														number_format($calculate_result = (float)$min / (float)$sub->score, 1);
+														number_format($cross_result = $calculate_result * $sub->bobot, 1);
+														$hasil_normalisasi = $hasil_normalisasi + $cross_result;
+														// var_dump($max);
+														if ($sub->criteria_id == $criteria) {
+															
+														}
+													?>													
+													<td><?= $calculate_result ?></td>																																
+													<?php 
+													} else if ($sub->sts == "Benefit"){ 																												
+														number_format($calculate_result = (float)$sub->score / (float)$max , 1);
+														number_format($cross_result = $calculate_result * $sub->bobot, 1);
+														$hasil_normalisasi = $hasil_normalisasi + $cross_result;
+													?>
+													<td><?= $calculate_result ?></td>
+													<?php
+													} else {
+														echo '<td> 0 </td>';
+													}											
+												}
 											}
 										?>
+										<td><?= $hasil_normalisasi ?></td>
 										</tr>	
-									<?php
-									$topic++; 
+									<?php									
+									// Cost
+									// number_format($hasil = $data_min['min'] / $data['bobot'], 3);
+									// echo  number_format($hasil_kali = $hasil * $data['weight'], 3);
+									// $hasil_normalisasi = $hasil_normalisasi + $hasil_kali;
+
+									// Benefit
+									// number_format($hasil = $data['bobot'] / $data_max['max'], 3);
+									// echo  number_format($hasil_kali = $hasil * $data['weight'], 3);
+									// $hasil_normalisasi = $hasil_normalisasi + $hasil_kali;
+										}
 									}
-								}
 								} else { ?>
 									<td class="text-center" colspan="6">Tidak ada hasil perhitungan!!</td>
 								<?php } ?>								
