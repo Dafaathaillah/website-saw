@@ -34,18 +34,7 @@ class Calculate extends CI_Controller {
         $data = array();        
         $data['sub_criteria'] = $this->calculate->getSubsByCriteriaId();        
         $this->load->view('perhitungan/mainPerhitungan', $data);
-    }
-
-    public function calculate(){
-        
-        $data = array();
-        $data['calculates'] = $this->calculate->getCalculateByAllId();        
-        
-        foreach ($calculates as $calulate) {
-            $data_alternatif[] = $data_alternatif['criteria'];
-        }
-
-    }
+    }    
 
     public function save($id = null)
     {                
