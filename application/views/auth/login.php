@@ -60,7 +60,7 @@ License: You must have a valid license purchased only from above link or https:/
 												</label>
 											</div>
 											<div class="mt-3">
-												<a href="<?php base_url() ?> Dashboard" class="btn btn-primary mr-2 mb-2 mb-md-0 text-white">Login</a>
+												<a href="<?php base_url() ?> Result" class="btn btn-primary mr-2 mb-2 mb-md-0 text-white">Login</a>
 												<button type="button" class="btn btn-outline-primary btn-icon-text mb-2 mb-md-0">
 													<i class="btn-icon-prepend" data-feather="twitter"></i>
 													Login with twitter
