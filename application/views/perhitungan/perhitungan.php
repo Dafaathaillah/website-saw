@@ -45,6 +45,8 @@ License: You must have a valid license purchased only from above link or https:/
 										<th>No</th>
 										<th>Topik</th>
 										<th>Data Alternatif</th>
+										<th>Kriteria</th>
+										<th>Score</th>
 										<th>Action</th>                                        
 									</tr>
 								</theadData>
@@ -56,12 +58,11 @@ License: You must have a valid license purchased only from above link or https:/
 											<tr>
 												<td><?= ++$no ?></td>											
 												<td><?= $calculate->topic ?></td>																																
-												<td><?= $calculate->data_alternatif ?></td>						
+												<td><?= $calculate->data_alternatif ?></td>
+												<td><?= $calculate->criteria_name ?></td>
+												<td><?= $calculate->sub_score ?></td>						
 												<td class="text-center">
 													<div class="row">
-														<a href="#" class="nav-link">
-															<i class="link-icon" data-feather="edit"></i>
-														</a>
 														<a href="#" class="nav-link">
 															<i class="link-icon" data-feather="trash-2"></i>
 														</a>
