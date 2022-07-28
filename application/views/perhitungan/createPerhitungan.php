@@ -40,54 +40,56 @@ License: You must have a valid license purchased only from above link or https:/
 					<?php
 					$action_form = '/calculate/save/';
 					?>
-					<form class="cmxform" id="form_calculate" method="post" enctype="multipart/form-data" action="<?=site_url($action_form)?>">
+					<form class="cmxform" id="form_calculate" method="post" enctype="multipart/form-data" action="<?= site_url($action_form) ?>">
 						<fieldset>
-							<div class="form-group">
-								<label for="exampleFormControlSelect1">Topik</label>
-								<select class="form-control" id="topic_id" name="topic_id">
-								<option value="#" disabled>Pilih Topik</option>
-								<?php
-								if($topic) {																					
-									foreach ($topic as $topics) { ?>									
-									<option value="<?= $topics->id ?>"><?= $topics->name ?></option>	
-									<?php }
-								} else { ?>									
-								<?php } ?>									
-								</select>
-							</div> 
-							<div class="form-group">
-								<label for="exampleFormControlSelect1">Data Alternatif</label>
-								<select class="form-control" id="data_alternatif_id" name="data_alternatif_id">
-								<option value="#" disabled>Pilih Data Alternatif</option>
-								<?php
-								if($data_alternatif) {																					
-									foreach ($data_alternatif as $data_alternatifs) { ?>									
-									<option value="<?= $data_alternatifs->id ?>"><?= $data_alternatifs->name ?></option>	
-									<?php }
-								} else { ?>									
-								<?php } ?>									
-								</select>
-							</div>     																	
-							<?php
-							if($criterias) {																					
-								foreach ($criterias as $criteria) { ?>	
-								<div class="form-group">		
-									<label for="exampleFormControlSelect1"><?= $criteria->name ?></label>
-									<input type='hidden' value="<?= $criteria->id ?>" id='criteria_id[]' name='criteria_id[]'>
-									<select class="form-control" id="sub_kriteria_id[]" name="sub_kriteria_id[]">
-									<option value="#" disabled>Pilih Sub Kriteria</option>						
-									<?php									
-									foreach ($subs as $sub) { 
-										if($sub->criteria_id == $criteria->id){?>									
-										<option value="<?= $sub->id ?>"><?= $sub->description ?></option>	
-										<?php 
-										}
-									}
-									?>	
+							<div class="row">
+								<div class="form-group col-md-3">
+									<label for="exampleFormControlSelect1">Topik</label>
+									<select class="form-control" id="topic_id" name="topic_id">
+										<option value="#" disabled>Pilih Topik</option>
+										<?php
+										if ($topic) {
+											foreach ($topic as $topics) { ?>
+												<option value="<?= $topics->id ?>"><?= $topics->name ?></option>
+											<?php }
+										} else { ?>
+										<?php } ?>
 									</select>
-								</div>   
+								</div>
+								<div class="form-group col-md-3">
+									<label for="exampleFormControlSelect1">Data Alternatif</label>
+									<select class="form-control" id="data_alternatif_id" name="data_alternatif_id">
+										<option value="#" disabled>Pilih Data Alternatif</option>
+										<?php
+										if ($data_alternatif) {
+											foreach ($data_alternatif as $data_alternatifs) { ?>
+												<option value="<?= $data_alternatifs->id ?>"><?= $data_alternatifs->name ?></option>
+											<?php }
+										} else { ?>
+										<?php } ?>
+									</select>
+								</div>
+								<?php
+								if ($criterias) {
+									foreach ($criterias as $criteria) { ?>
+										<div class="form-group col-md-3">
+											<label for="exampleFormControlSelect1"><?= $criteria->name ?></label>
+											<input type='hidden' value="<?= $criteria->id ?>" id='criteria_id[]' name='criteria_id[]'>
+											<select class="form-control" id="sub_kriteria_id[]" name="sub_kriteria_id[]">
+												<option value="#" disabled>Pilih Sub Kriteria</option>
+												<?php
+												foreach ($subs as $sub) {
+													if ($sub->criteria_id == $criteria->id) { ?>
+														<option value="<?= $sub->id ?>"><?= $sub->description ?></option>
+												<?php
+													}
+												}
+												?>
+											</select>
+										</div>
 								<?php }
-							}?>										
+								} ?>
+							</div>
 							<input class="btn btn-primary" type="submit" value="Choose">
 							<button type="button" class="btn btn-warning">Cancel</button>
 						</fieldset>

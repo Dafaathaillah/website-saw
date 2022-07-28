@@ -61,9 +61,6 @@ License: You must have a valid license purchased only from above link or https:/
 												<td><?= $sub_criteria->description ?></td>
 												<td class="text-center">
 												<div class="row">
-													<a href="#" class="nav-link">
-														<i class="link-icon" data-feather="edit"></i>
-													</a>
 													<a href="<?php echo base_url() ?>Subcriteria/delete/<?php echo $sub_criteria->sub_kriteria_id?>" class="nav-link">
 														<i class="link-icon" data-feather="trash-2"></i>
 													</a>

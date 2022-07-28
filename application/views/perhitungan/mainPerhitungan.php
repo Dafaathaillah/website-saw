@@ -64,15 +64,15 @@ License: You must have a valid license purchased only from above link or https:/
 					</div>
 				</div>
 
-				<div class="row">
-					<div class="col-lg-5 col-xl-4 grid-margin grid-margin-xl-0 stretch-card">
+				<div class="container">
+					<div class="mb-3">
 						<div class="card">
 							<div class="card-body">
 								<?php $this->load->view("perhitungan/createPerhitungan.php") ?>
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-7 col-xl-8 stretch-card">
+					<div>
 						<div class="card">
 							<div class="card-body">
 								<?php $this->load->view("perhitungan/perhitungan.php") ?>
