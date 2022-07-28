@@ -37,6 +37,12 @@ License: You must have a valid license purchased only from above link or https:/
 					</a>
 				</li>
 				<li class="nav-item">
+					<a href="<?php base_url() ?> Data" class="nav-link">
+						<i class="link-icon" data-feather="book-open"></i>
+						<span class="link-title">Data Alternatif</span>
+					</a>
+				</li>
+				<li class="nav-item">
 					<a href="<?php base_url() ?> Criteria" class="nav-link">
 						<i class="link-icon" data-feather="book"></i>
 						<span class="link-title">Data Kriteria</span>
@@ -46,12 +52,6 @@ License: You must have a valid license purchased only from above link or https:/
 					<a href="<?php base_url() ?> Subcriteria" class="nav-link">
 						<i class="link-icon" data-feather="minus-square"></i>
 						<span class="link-title">Sub Kriteria</span>
-					</a>
-				</li>
-				<li class="nav-item">
-					<a href="<?php base_url() ?> Data" class="nav-link">
-						<i class="link-icon" data-feather="book-open"></i>
-						<span class="link-title">Data Alternatif</span>
 					</a>
 				</li>
 				<li class="nav-item">
